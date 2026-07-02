@@ -8,17 +8,17 @@ from datetime import datetime
 
 st.set_page_config(page_title="SN Predict", page_icon="🚀", layout="wide")
 
-# Estilos profesionales
 st.markdown("""
 <style>
     .main {background-color: #f8f9fa;}
-    .header {font-size: 2.8rem; color: #1E3A8A; font-weight: 700;}
-    .card {background-color: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);}
+    h1 {color: #1E3A8A; font-weight: 700;}
+    .stButton>button {width: 100%; height: 3.2rem; font-weight: 600;}
+    .metric {font-size: 1.8rem; font-weight: bold;}
 </style>
 """, unsafe_allow_html=True)
 
 st.title("🚀 SN Predict")
-st.markdown('<p class="header">Sistema Inteligente de Planificación Formativa</p>', unsafe_allow_html=True)
+st.subheader("Sistema Inteligente de Planificación y Predicción Formativa")
 
 # Carga de datos
 @st.cache_data
@@ -30,103 +30,99 @@ def load_data():
         df.to_csv('data_historico.csv', index=False)
         return df
     else:
-        st.error("Archivo de datos no encontrado.")
+        st.error("❌ Archivo de datos no encontrado.")
         st.stop()
 
 df = load_data()
 
-# Filtros
+# Preprocesamiento
+@st.cache_data
+def preprocess(df):
+    df = df.copy()
+    df['MUNICIPIO'] = df['NOMBRE_MUNICIPIO_CURSO']
+    df['PROGRAMA'] = df['NOMBRE_PROGRAMA_FORMACION'].fillna('').str.strip().str.lower()
+    df['NIVEL'] = df['NIVEL_FORMACION']
+    df['SECTOR'] = df['NOMBRE_NUEVO_SECTOR'].fillna('OTRO')
+    df['FECHA_INICIO'] = pd.to_datetime(df['FECHA_INICIO_FICHA'], errors='coerce')
+    df['AÑO'] = df['FECHA_INICIO'].dt.year.fillna(2024)
+    df['MES_INICIO'] = df['FECHA_INICIO'].dt.month.fillna(6)
+    df['DURACION'] = df['DURACION_PROGRAMA']
+    return df
+
+df_prep = preprocess(df)
+
+# Modelo
+@st.cache_resource
+def train_model():
+    features = ['MUNICIPIO', 'PROGRAMA', 'NIVEL', 'SECTOR', 'MES_INICIO', 'DURACION']
+    X = pd.get_dummies(df_prep[features], drop_first=True)
+    y = df_prep['TOTAL_APRENDICES']
+    
+    model = RandomForestRegressor(n_estimators=180, max_depth=14, random_state=42, n_jobs=-1)
+    model.fit(X, y)
+    return model, X.columns.tolist()
+
+model, feature_names = train_model()
+
+# Filtro
 st.sidebar.header("🔍 Filtros")
-municipio_filtro = st.sidebar.selectbox("Municipio", ['Todos'] + sorted(df['NOMBRE_MUNICIPIO_CURSO'].unique()))
+municipio_filtro = st.sidebar.selectbox("Municipio", ['Todos'] + sorted(df_prep['MUNICIPIO'].unique()))
 
-# Preparación
-df['MUNICIPIO'] = df['NOMBRE_MUNICIPIO_CURSO']
-df['PROGRAMA'] = df['NOMBRE_PROGRAMA_FORMACION'].fillna('').str.strip()
-df['NIVEL'] = df['NIVEL_FORMACION']
-df['SECTOR'] = df['NOMBRE_NUEVO_SECTOR'].fillna('OTRO')
-df['AÑO'] = pd.to_datetime(df['FECHA_INICIO_FICHA'], errors='coerce').dt.year.fillna(2024)
-
-# Tabs
-tab1, tab2, tab3, tab4 = st.tabs(["🎯 Predictor Inteligente", "📊 Demanda por Nivel", "📈 Tendencias", "💡 Recomendaciones"])
+tab1, tab2, tab3, tab4 = st.tabs(["🎯 Predictor", "📊 Demanda por Nivel", "📈 Tendencias", "💡 Recomendaciones"])
 
 with tab1:
     st.header("🎯 Predictor Inteligente")
-    st.markdown("**Predice la demanda y evalúa viabilidad de apertura**")
+    st.markdown("**Predice demanda y evalúa viabilidad de apertura**")
     
-    col1, col2 = st.columns([1,1])
+    col1, col2 = st.columns(2)
     with col1:
-        mun_sel = st.selectbox("📍 Municipio", sorted(df['MUNICIPIO'].unique()), key="mun")
-        prog_sel = st.text_input("📘 Nombre del Programa", "MANIPULACION HIGIENICA DE ALIMENTOS")
-        nivel_sel = st.selectbox("📚 Nivel", sorted(df['NIVEL'].unique()))
-    
+        mun_sel = st.selectbox("📍 Municipio", sorted(df_prep['MUNICIPIO'].unique()), key="pred_mun")
+        prog_sel = st.text_input("📘 Programa", "manipulacion higienica de alimentos")
+        nivel_sel = st.selectbox("📚 Nivel", sorted(df_prep['NIVEL'].unique()))
     with col2:
-        sector_sel = st.selectbox("🏭 Sector", sorted(df['SECTOR'].unique()))
+        sector_sel = st.selectbox("🏭 Sector", sorted(df_prep['SECTOR'].unique()))
         duracion_sel = st.number_input("⏱️ Duración (horas)", min_value=8, value=48)
-        mes_sel = st.slider("📅 Mes de Inicio", 1, 12, value=datetime.now().month)
+        mes_sel = st.slider("📅 Mes", 1, 12, datetime.now().month)
     
-    if st.button("🔮 Generar Predicción y Evaluación", type="primary"):
-        # Predicción
+    if st.button("🚀 Generar Predicción y Evaluación", type="primary"):
         input_df = pd.DataFrame([{
             'MUNICIPIO': mun_sel, 'PROGRAMA': prog_sel.lower(),
             'NIVEL': nivel_sel, 'SECTOR': sector_sel,
             'MES_INICIO': mes_sel, 'DURACION': duracion_sel
         }])
         
-        # Modelo simple (para demo)
-        X = pd.get_dummies(df[['MUNICIPIO','PROGRAMA','NIVEL','SECTOR','MES_INICIO','DURACION']], drop_first=True)
-        model = RandomForestRegressor(n_estimators=120, random_state=42)
-        model.fit(X, df['TOTAL_APRENDICES'])
-        
-        input_encoded = pd.get_dummies(input_df, drop_first=True).reindex(columns=X.columns, fill_value=0)
+        input_encoded = pd.get_dummies(input_df, drop_first=True).reindex(columns=feature_names, fill_value=0)
         pred = int(round(model.predict(input_encoded)[0]))
         
-        # Evaluación
-        if pred >= 25:
-            viabilidad = "Alta"
-            color = "🟢"
-        elif pred >= 15:
-            viabilidad = "Media"
-            color = "🟡"
-        else:
-            viabilidad = "Baja"
-            color = "🔴"
+        if pred >= 30: viab = "🟢 Alta"
+        elif pred >= 18: viab = "🟡 Media"
+        else: viab = "🔴 Baja"
         
-        st.success(f"**Predicción: {pred} aprendices** | Viabilidad: {color} {viabilidad}", icon="🎯")
+        st.success(f"**{pred} aprendices esperados** | Viabilidad: {viab}", icon="🎯")
 
 with tab2:
     st.header("📊 Demanda por Nivel de Formación")
-    if municipio_filtro != 'Todos':
-        df_f = df[df['MUNICIPIO'] == municipio_filtro]
-    else:
-        df_f = df
-    
-    niveles = df_f.groupby(['NIVEL', 'NOMBRE_PROGRAMA_FORMACION'])['TOTAL_APRENDICES'].sum().reset_index()
+    df_f = df_prep if municipio_filtro == 'Todos' else df_prep[df_prep['MUNICIPIO'] == municipio_filtro]
     for nivel in df_f['NIVEL'].unique():
-        st.subheader(f"Nivel: **{nivel}**")
-        data_nivel = niveles[niveles['NIVEL'] == nivel].nlargest(8, 'TOTAL_APRENDICES')
-        st.bar_chart(data_nivel.set_index('NOMBRE_PROGRAMA_FORMACION')['TOTAL_APRENDICES'])
+        st.subheader(f"**{nivel}**")
+        data = df_f[df_f['NIVEL'] == nivel].groupby('PROGRAMA')['TOTAL_APRENDICES'].sum().nlargest(10)
+        fig = px.bar(x=data.values, y=data.index, orientation='h', title=f"Top programas - {nivel}")
+        st.plotly_chart(fig, use_container_width=True)
 
 with tab3:
     st.header("📈 Tendencias Históricas")
     col1, col2 = st.columns(2)
     with col1:
-        yearly = df.groupby('AÑO')['TOTAL_APRENDICES'].sum()
-        st.plotly_chart(px.line(yearly, title="Evolución General"), use_container_width=True)
+        st.plotly_chart(px.line(df_prep.groupby('AÑO')['TOTAL_APRENDICES'].sum(), title="Evolución Anual"), use_container_width=True)
     with col2:
-        sector_trend = df.groupby(['AÑO', 'SECTOR'])['TOTAL_APRENDICES'].sum().reset_index()
-        st.plotly_chart(px.bar(sector_trend, x='AÑO', y='TOTAL_APRENDICES', color='SECTOR'), use_container_width=True)
+        st.plotly_chart(px.pie(df_prep.groupby('SECTOR')['TOTAL_APRENDICES'].sum(), title="Distribución por Sector"), use_container_width=True)
 
 with tab4:
     st.header("💡 Recomendaciones de Apertura")
-    if municipio_filtro != 'Todos':
-        df_rec = df[df['MUNICIPIO'] == municipio_filtro]
-    else:
-        df_rec = df
-    
-    top = df_rec.groupby(['PROGRAMA', 'NIVEL', 'SECTOR'])['TOTAL_APRENDICES'].agg(['sum', 'mean']).reset_index()
-    top = top.sort_values('sum', ascending=False).head(12)
-    top['Probabilidad Apertura'] = top['sum'].apply(lambda x: "Alta" if x > 30 else "Media" if x > 15 else "Baja")
-    
-    st.dataframe(top, use_container_width=True)
+    df_rec = df_prep if municipio_filtro == 'Todos' else df_prep[df_prep['MUNICIPIO'] == municipio_filtro]
+    rec = df_rec.groupby(['PROGRAMA', 'NIVEL', 'SECTOR'])['TOTAL_APRENDICES'].sum().reset_index()
+    rec = rec.sort_values('TOTAL_APRENDICES', ascending=False).head(15)
+    rec['Viabilidad'] = rec['TOTAL_APRENDICES'].apply(lambda x: "Alta" if x>35 else "Media" if x>20 else "Baja")
+    st.dataframe(rec, use_container_width=True)
 
-st.caption("SN Predict © 2026 | Herramienta de Planificación Formativa Inteligente")
+st.caption("SN Predict © 2026 | Herramienta de Inteligencia para la Formación Profesional")
