@@ -2,7 +2,7 @@
 SN Predict — app.py
 ====================
 Sistema Inteligente de Planificación y Predicción Formativa
-Centro SENA Occidente de Antioquia
+Occidente de Antioquia
 
 Módulos
 ───────
