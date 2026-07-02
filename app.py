@@ -1,5 +1,5 @@
 """
-SN Predict — app.py
+Sistema de Predicción de Programas — app.py
 ====================
 Sistema Inteligente de Planificación y Predicción Formativa
 Occidente de Antioquia
@@ -64,7 +64,7 @@ COLOR_NEUTRAL   = "#888780"
 # ══════════════════════════════════════════════════════════════════════════════
 
 st.set_page_config(
-    page_title="SN Predict — SENA Occidente",
+    page_title="SN Predict — Occidente Antioqueño",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -318,7 +318,7 @@ with st.sidebar:
       <div class="brand-mark">🎓</div>
       <div class="brand-text">
         <h2>SN Predict</h2>
-        <p>SENA Occidente de Antioquia</p>
+        <p> Occidente de Antioquia</p>
       </div>
     </div>
     """, unsafe_allow_html=True)
