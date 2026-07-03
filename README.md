@@ -1,5 +1,6 @@
-[README_sn_predict.md](https://github.com/user-attachments/files/29616845/README_sn_predict.md)
-# SN Predict v2 — Sistema Inteligente de Planificación Formativa SENA
+[README_sn_predict.md](https://github.com/user-attachments/files/29645036/README_sn_predict.md)
+
+# SN Predict v2 — Sistema Inteligente de Planificación Formativa 
 
 > Occidente de Antioquia · Predicción de demanda con ML y analítica territorial
 
@@ -93,4 +94,4 @@ sn-predict-v2/
 ## Autor
 
 **[Nombre del estudiante]**  
-Formación en Inteligencia Artificial — SENA · Junio 2026
+Inteligencia Artificial · Junio 2026
