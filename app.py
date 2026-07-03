@@ -935,20 +935,38 @@ elif modulo == "🔭 Oportunidades de mejora":
             st.plotly_chart(fig_ev, use_container_width=True)
 
     st.markdown("---")
-    col_b1, col_b2 = st.columns(2)
+     col_b1, col_b2 = st.columns(2)
     with col_b1:
         st.markdown("**Brechas detectadas**")
         todos_mun = sorted(df_f["NOMBRE_MUNICIPIO_CURSO"].dropna().unique().tolist())
         mun_tec2 = df_f[df_f["NIVEL_FORMACION"]=="TECNÓLOGO"]["NOMBRE_MUNICIPIO_CURSO"].dropna().unique().tolist()
         mun_sin_tec2 = [m for m in todos_mun if m not in mun_tec2]
         if mun_tec2:
-            st.markdown(f'<div style="background:#EAF3DE;border:.5px solid #C0DD97;border-radius:8px;padding:9px 12px;font-size:11px;color:#3B6D11;margin-bottom:7px"><b>Con Tecnólogo ({len(mun_tec2)}):</b> {", ".join(mun_tec2[:5])}{"…" if len(mun_tec2)>5 else ""}.</div>', unsafe_allow_html=True)
+            st.success(f"Con Tecnólogo ({len(mun_tec2)}): {', '.join(mun_tec2[:5])}{'…' if len(mun_tec2)>5 else ''}.")
         if mun_sin_tec2:
-            st.markdown(f'<div style="background:#FAEEDA;border:.5px solid #FAC775;border-radius:8px;padding:9px 12px;font-size:11px;color:#854F0B;margin-bottom:7px"><b>Sin Tecnólogo aún ({len(mun_sin_tec2)}):</b> {", ".join(mun_sin_tec2[:6])}{"…" if len(mun_sin_tec2)>6 else ""}. Candidatos a escalar.</div>', unsafe_allow_html=True)
+            st.warning(f"Sin Tecnólogo aún ({len(mun_sin_tec2)}): {', '.join(mun_sin_tec2[:6])}{'…' if len(mun_sin_tec2)>6 else ''}. Candidatos a escalar.")
         if rubro_sel != "Todos los rubros":
             mun_sin_rubro = [m for m in list(MUN_STATS.keys()) if m not in todos_mun][:5]
             if mun_sin_rubro:
-                st.markdown(f'<div style="background:#FCEBEB;border:.5px solid #F7C1C1;border-radius:8px;padding:9px 12px;font-size:11px;color:#A32D2D;margin-bottom:7px"><b>Sin cobertura en {rubro_sel}:</b> {", ".join(mun_sin_rubro)}. Oportunidad para nuevas fichas.</div>', unsafe_allow_html=True)
+                st.error(f"Sin cobertura en {rubro_sel}: {', '.join(mun_sin_rubro)}. Oportunidad para nuevas fichas.")
+    with col_b2:
+        st.markdown("**Tabla resumen por municipio**")
+        tab_data = (
+            df_f.groupby("NOMBRE_MUNICIPIO_CURSO")["TOTAL_APRENDICES"]
+            .agg(Total="sum", Fichas="count")
+            .reset_index()
+            .sort_values("Total", ascending=False)
+            .head(22)
+        )
+        tab_data.columns = ["Municipio", "Aprendices", "Fichas"]
+        tab_data["Aprendices"] = tab_data["Aprendices"].astype(int)
+        tab_data["Fichas"] = tab_data["Fichas"].astype(int)
+        tab_data["Prom/ficha"] = (tab_data["Aprendices"] / tab_data["Fichas"].replace(0, 1)).round(1)
+        st.table(tab_data.reset_index(drop=True))
+
+Regla clave al pegar en GitHub: el editor web de GitHub a veces convierte tabs a espacios de forma inconsistente. Después de pegar, revisa visualmente que todas las líneas dentro del with col_b2: empiecen con 8 espacios (4 del elif + 4 del with).
+Commit changes → el error desaparece.
+
 
       with col_b2:
         st.markdown("**Tabla resumen por municipio**")
