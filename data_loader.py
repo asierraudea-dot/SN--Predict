@@ -19,7 +19,9 @@ import numpy as np
 import pandas as pd
 
 ROOT     = Path(__file__).parent.parent
-DATA_RAW = ROOT / "data" / "PE04_HISTORICO_PREVIOS.xlsx"
+DATA_RAW = (ROOT / "data" / "PE04_HISTORICO_PREVIOS.xlsx"
+            if (ROOT / "data" / "PE04_HISTORICO_PREVIOS.xlsx").exists()
+            else ROOT / "PE04_HISTÓRICO_PREVIOS.xlsx")
 
 # Coordenadas de los 22 municipios del Centro Occidente de Antioquia
 MUN_COORDS: dict[str, tuple[float, float]] = {
