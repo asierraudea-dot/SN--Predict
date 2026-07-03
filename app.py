@@ -752,6 +752,7 @@ elif modulo == "⚡ Recomendaciones":
 # ══════════════════════════════════════════════════════════════════════════════
 
 elif modulo == "🔭 Oportunidades de mejora":
+    render_oportunidades(df, MUN_STATS)
     st.markdown("### 🔭 Oportunidades de mejora")
     st.caption("Brechas entre oferta y demanda por rubro productivo y municipio.")
 
