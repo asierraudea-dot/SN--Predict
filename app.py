@@ -2,7 +2,7 @@
 app.py  —  SN Predict v2
 ==========================
 Sistema Inteligente de Planificación y Predicción Formativa
-Centro SENA Occidente de Antioquia
+Occidente de Antioquia
 
 Módulos
 ───────
@@ -33,7 +33,7 @@ import streamlit as st
 
 # Asegurar imports locales
 sys.path.insert(0, str(Path(__file__).parent))
-from oportunidades_mejora import render_oportunidades
+
 from components import (
     C_AMBER, C_BLUE, C_BORDER, C_GRAY, C_GREEN, C_RED,
     badge_html, footer_html, inject_css, kpi_row_html,
@@ -752,7 +752,214 @@ elif modulo == "⚡ Recomendaciones":
 # ══════════════════════════════════════════════════════════════════════════════
 
 elif modulo == "🔭 Oportunidades de mejora":
-    render_oportunidades(df, MUN_STATS)
+    st.markdown("### 🔭 Oportunidades de mejora")
+    st.caption("Barras apiladas por nivel · Filtros de año y rubro · Carga de datos actualizados")
+
+    COLORES_NIVEL = {
+        "CURSO ESPECIAL": "#185FA5",
+        "TÉCNICO":        "#1D9E75",
+        "TECNÓLOGO":      "#BA7517",
+        "EVENTO":         "#888780",
+    }
+    LABEL_NIVEL = {
+        "CURSO ESPECIAL": "Complementario",
+        "TÉCNICO": "Técnico",
+        "TECNÓLOGO": "Tecnólogo",
+        "EVENTO": "Evento",
+    }
+    RUBROS_KW_OPP = {
+        "Café":          ["cafe","café","cafeto"],
+        "Cacao":         ["cacao"],
+        "Ganadería":     ["ganader","bovino","vacuno","pecuari"],
+        "Avicultura":    ["avicul","gallina","pollo","ponedora"],
+        "Turismo":       ["turismo","ecoturismo"],
+        "Agricultura":   ["agric","cultivo","sembr","vegetal","agropecuar"],
+        "Alturas":       ["altura"],
+        "Inglés":        ["ingles","english"],
+        "Emprendimiento":["emprend","negocio","empresar"],
+        "Alimentos":     ["alimento","higien","manipul","cocina","gastro"],
+        "TIC / Excel":   ["excel","ofimati","sistemas","software","inform","word"],
+        "Medio Ambiente":["ambient","ecolog","conserv"],
+        "Artesanías":    ["bisuter","artesanal","tejid","mostacilla"],
+    }
+
+    with st.expander("📂 Cargar datos actualizados — nuevo archivo Excel", expanded=False):
+        col_up1, col_up2 = st.columns([1.2, 0.8])
+        with col_up1:
+            archivo_nuevo = st.file_uploader(
+                "Selecciona el nuevo archivo PE04",
+                type=["xlsx","xls"],
+                key="uploader_pe04",
+            )
+            if archivo_nuevo:
+                try:
+                    df_nuevo = pd.read_excel(archivo_nuevo)
+                    df_nuevo.columns = [c.strip() for c in df_nuevo.columns]
+                    df_nuevo["TOTAL_APRENDICES"] = pd.to_numeric(df_nuevo.get("TOTAL_APRENDICES",0), errors="coerce").fillna(0)
+                    df_nuevo["AÑO"] = pd.to_numeric(df_nuevo.get("AÑO",0), errors="coerce")
+                    st.session_state["df_extra_opp"] = df_nuevo
+                    años_nuevos = sorted(df_nuevo["AÑO"].dropna().unique().astype(int).tolist())
+                    st.success(f"✅ {archivo_nuevo.name} cargado: {len(df_nuevo):,} fichas · Años: {años_nuevos}", icon="✅")
+                except Exception as e:
+                    st.error(f"Error: {e}")
+        with col_up2:
+            st.markdown("**Para carga permanente:**")
+            st.code("git add data/PE04_NUEVO.xlsx\ngit commit -m 'datos: nuevo PE04'\ngit push", language="bash")
+            st.caption("Streamlit Cloud recarga automáticamente en ~60 segundos.")
+
+    df_extra_opp = st.session_state.get("df_extra_opp")
+    if TIENE_DATOS and df_extra_opp is not None:
+        df_opp = pd.concat([df, df_extra_opp], ignore_index=True)
+        if "IDENTIFICADOR_FICHA" in df_opp.columns:
+            df_opp = df_opp.drop_duplicates(subset=["IDENTIFICADOR_FICHA"])
+    elif TIENE_DATOS:
+        df_opp = df.copy()
+    else:
+        st.warning("Dataset no disponible.", icon="⚠️")
+        st.stop()
+
+    st.markdown("---")
+    col_f1, col_f2, col_f3 = st.columns(3)
+    with col_f1:
+        st.markdown("**📅 Años**")
+        años_disp = sorted(df_opp["AÑO"].dropna().unique().astype(int).tolist())
+        años_sel = st.multiselect("Años", años_disp, default=años_disp, key="años_opp", label_visibility="collapsed")
+    with col_f2:
+        st.markdown("**🌿 Rubro**")
+        rubro_sel = st.selectbox("Rubro", ["Todos los rubros"] + list(RUBROS_KW_OPP.keys()), key="rubro_opp", label_visibility="collapsed")
+    with col_f3:
+        st.markdown("**🎓 Nivel**")
+        nivel_sel = st.multiselect("Nivel", ["CURSO ESPECIAL","TÉCNICO","TECNÓLOGO","EVENTO"], default=["CURSO ESPECIAL","TÉCNICO","TECNÓLOGO"], key="nivel_opp", label_visibility="collapsed")
+
+    if not años_sel:
+        st.warning("Selecciona al menos un año.", icon="⚠️")
+        st.stop()
+
+    df_f = df_opp[df_opp["AÑO"].isin(años_sel)].copy()
+    if rubro_sel != "Todos los rubros":
+        kws = RUBROS_KW_OPP.get(rubro_sel, [])
+        if kws:
+            df_f = df_f[df_f["NOMBRE_PROGRAMA_FORMACION"].str.lower().str.contains("|".join(kws), na=False)]
+    if nivel_sel:
+        df_f = df_f[df_f["NIVEL_FORMACION"].isin(nivel_sel)]
+
+    if df_f.empty:
+        st.info("Sin datos para este filtro.", icon="ℹ️")
+        st.stop()
+
+    anos_txt = " · ".join(str(a) for a in sorted(años_sel))
+    k1, k2, k3, k4 = st.columns(4)
+    k1.metric("Fichas", f"{len(df_f):,}")
+    k2.metric("Aprendices", f"{int(df_f['TOTAL_APRENDICES'].sum()):,}")
+    k3.metric("Municipios", df_f["NOMBRE_MUNICIPIO_CURSO"].nunique())
+    k4.metric("Años", f"{len(años_sel)} ({anos_txt})")
+
+    st.markdown("---")
+    col_bars, col_right = st.columns([1.4, 0.6])
+
+    with col_bars:
+        st.markdown(f"**Municipios líderes — aprendices por nivel · {rubro_sel} · {anos_txt}**")
+        pivot = (
+            df_f.groupby(["NOMBRE_MUNICIPIO_CURSO","NIVEL_FORMACION"])["TOTAL_APRENDICES"]
+            .sum().reset_index()
+        )
+        pivot_wide = pivot.pivot_table(
+            index="NOMBRE_MUNICIPIO_CURSO", columns="NIVEL_FORMACION",
+            values="TOTAL_APRENDICES", fill_value=0,
+        ).reset_index()
+        pivot_wide.columns.name = None
+        pivot_wide["TOTAL"] = pivot_wide.drop(columns=["NOMBRE_MUNICIPIO_CURSO"]).sum(axis=1)
+        pivot_wide = pivot_wide.sort_values("TOTAL", ascending=True).tail(18)
+
+        fig_stack = go.Figure()
+        for nivel in ["CURSO ESPECIAL","TÉCNICO","TECNÓLOGO","EVENTO"]:
+            if nivel in pivot_wide.columns:
+                fig_stack.add_trace(go.Bar(
+                    name=LABEL_NIVEL.get(nivel, nivel),
+                    y=pivot_wide["NOMBRE_MUNICIPIO_CURSO"],
+                    x=pivot_wide[nivel],
+                    orientation="h",
+                    marker_color=COLORES_NIVEL[nivel],
+                    hovertemplate=f"<b>%{{y}}</b><br>{LABEL_NIVEL.get(nivel,nivel)}: %{{x:,}} ap<extra></extra>",
+                ))
+        fig_stack.update_layout(
+            barmode="stack",
+            height=max(320, len(pivot_wide)*28+80),
+            margin=dict(t=10,b=30,l=10,r=10),
+            plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", y=1.02, x=0, font=dict(size=11), bgcolor="rgba(0,0,0,0)"),
+            xaxis=dict(gridcolor="#e1e0d9", title="Aprendices", tickfont=dict(size=10)),
+            yaxis=dict(tickfont=dict(size=10)),
+        )
+        st.plotly_chart(fig_stack, use_container_width=True)
+
+    with col_right:
+        st.markdown("**Distribución por nivel**")
+        tot_niv = df_f.groupby("NIVEL_FORMACION")["TOTAL_APRENDICES"].sum()
+        grand = tot_niv.sum() or 1
+        for niv in ["CURSO ESPECIAL","TÉCNICO","TECNÓLOGO","EVENTO"]:
+            if niv in tot_niv.index:
+                val = int(tot_niv[niv])
+                pct = round(val/grand*100)
+                color = COLORES_NIVEL[niv]
+                st.markdown(f"""
+<div style="margin-bottom:8px">
+  <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px">
+    <span style="display:flex;align-items:center;gap:5px">
+      <span style="width:9px;height:9px;border-radius:2px;background:{color};display:inline-block"></span>
+      {LABEL_NIVEL[niv]}
+    </span>
+    <span style="font-weight:500">{val:,} <span style="color:#898781;font-weight:400">({pct}%)</span></span>
+  </div>
+  <div style="height:6px;background:#f1f0ea;border-radius:3px;overflow:hidden">
+    <div style="width:{pct}%;height:100%;background:{color};border-radius:3px"></div>
+  </div>
+</div>""", unsafe_allow_html=True)
+
+        st.markdown("**Evolución anual por nivel**")
+        evol = df_f.groupby(["AÑO","NIVEL_FORMACION"])["TOTAL_APRENDICES"].sum().reset_index()
+        if not evol.empty:
+            fig_ev = px.bar(
+                evol, x="AÑO", y="TOTAL_APRENDICES", color="NIVEL_FORMACION",
+                color_discrete_map=COLORES_NIVEL, barmode="stack",
+                labels={"AÑO":"Año","TOTAL_APRENDICES":"Aprendices","NIVEL_FORMACION":"Nivel"},
+            )
+            fig_ev.update_layout(
+                height=220, margin=dict(t=10,b=20,l=10,r=10),
+                plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+                legend=dict(font=dict(size=9), orientation="h", y=1.08),
+                xaxis=dict(tickfont=dict(size=10), dtick=1),
+                yaxis=dict(tickfont=dict(size=10)),
+                showlegend=True,
+            )
+            st.plotly_chart(fig_ev, use_container_width=True)
+
+    st.markdown("---")
+    col_b1, col_b2 = st.columns(2)
+    with col_b1:
+        st.markdown("**Brechas detectadas**")
+        todos_mun = sorted(df_f["NOMBRE_MUNICIPIO_CURSO"].dropna().unique().tolist())
+        mun_tec2 = df_f[df_f["NIVEL_FORMACION"]=="TECNÓLOGO"]["NOMBRE_MUNICIPIO_CURSO"].dropna().unique().tolist()
+        mun_sin_tec2 = [m for m in todos_mun if m not in mun_tec2]
+        if mun_tec2:
+            st.markdown(f'<div style="background:#EAF3DE;border:.5px solid #C0DD97;border-radius:8px;padding:9px 12px;font-size:11px;color:#3B6D11;margin-bottom:7px"><b>Con Tecnólogo ({len(mun_tec2)}):</b> {", ".join(mun_tec2[:5])}{"…" if len(mun_tec2)>5 else ""}.</div>', unsafe_allow_html=True)
+        if mun_sin_tec2:
+            st.markdown(f'<div style="background:#FAEEDA;border:.5px solid #FAC775;border-radius:8px;padding:9px 12px;font-size:11px;color:#854F0B;margin-bottom:7px"><b>Sin Tecnólogo aún ({len(mun_sin_tec2)}):</b> {", ".join(mun_sin_tec2[:6])}{"…" if len(mun_sin_tec2)>6 else ""}. Candidatos a escalar.</div>', unsafe_allow_html=True)
+        if rubro_sel != "Todos los rubros":
+            mun_sin_rubro = [m for m in list(MUN_STATS.keys()) if m not in todos_mun][:5]
+            if mun_sin_rubro:
+                st.markdown(f'<div style="background:#FCEBEB;border:.5px solid #F7C1C1;border-radius:8px;padding:9px 12px;font-size:11px;color:#A32D2D;margin-bottom:7px"><b>Sin cobertura en {rubro_sel}:</b> {", ".join(mun_sin_rubro)}. Oportunidad para nuevas fichas.</div>', unsafe_allow_html=True)
+
+    with col_b2:
+        st.markdown("**Tabla resumen por municipio**")
+        resumen = pivot.pivot_table(index="NOMBRE_MUNICIPIO_CURSO", columns="NIVEL_FORMACION", values="TOTAL_APRENDICES", fill_value=0).reset_index()
+        resumen.columns.name = None
+        resumen["Total"] = resumen.drop(columns=["NOMBRE_MUNICIPIO_CURSO"]).sum(axis=1)
+        resumen = resumen.sort_values("Total", ascending=False).rename(columns={"NOMBRE_MUNICIPIO_CURSO":"Municipio","CURSO ESPECIAL":"Complementario"})
+        for col in resumen.columns:
+            if col != "Municipio":
+                resumen[col] = resumen[col].astype(int)
+        st.dataframe(resumen, use_container_width=True, hide_index=True, height=300)
     st.markdown("### 🔭 Oportunidades de mejora")
     st.caption("Brechas entre oferta y demanda por rubro productivo y municipio.")
 
