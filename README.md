@@ -8,7 +8,7 @@
 
 ## Descripción
 
-SN Predict v2 es una aplicación Streamlit de inteligencia artificial que analiza **2.551 fichas históricas** de formación del Centro SENA Occidente de Antioquia (2020–2025) para:
+SN Predict v2 es una aplicación Streamlit de inteligencia artificial que analiza **2.551 fichas históricas** de formación del Occidente de Antioquia (2023–2025) para:
 
 - **Predecir** cuántos aprendices participarán en una nueva ficha.
 - **Recomendar** los programas más pertinentes por municipio y sector.
