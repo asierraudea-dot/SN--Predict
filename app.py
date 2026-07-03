@@ -934,9 +934,8 @@ elif modulo == "🔭 Oportunidades de mejora":
             )
             st.plotly_chart(fig_ev, use_container_width=True)
 
-    st.markdown("---")
-     
-  col_b1, col_b2 = st.columns(2)
+  st.markdown("---")
+    col_b1, col_b2 = st.columns(2)
     with col_b1:
         st.markdown("**Brechas detectadas**")
         todos_mun = sorted(df_f["NOMBRE_MUNICIPIO_CURSO"].dropna().unique().tolist())
@@ -945,11 +944,11 @@ elif modulo == "🔭 Oportunidades de mejora":
         if mun_tec2:
             st.success(f"Con Tecnólogo ({len(mun_tec2)}): {', '.join(mun_tec2[:5])}{'…' if len(mun_tec2)>5 else ''}.")
         if mun_sin_tec2:
-            st.warning(f"Sin Tecnólogo aún ({len(mun_sin_tec2)}): {', '.join(mun_sin_tec2[:6])}{'…' if len(mun_sin_tec2)>6 else ''}. Candidatos a escalar.")
+            st.warning(f"Sin Tecnólogo aún ({len(mun_sin_tec2)}): {', '.join(mun_sin_tec2[:6])}{'…' if len(mun_sin_tec2)>6 else ''}.")
         if rubro_sel != "Todos los rubros":
             mun_sin_rubro = [m for m in list(MUN_STATS.keys()) if m not in todos_mun][:5]
             if mun_sin_rubro:
-                st.error(f"Sin cobertura en {rubro_sel}: {', '.join(mun_sin_rubro)}. Oportunidad para nuevas fichas.")
+                st.error(f"Sin cobertura en {rubro_sel}: {', '.join(mun_sin_rubro)}.")
     with col_b2:
         st.markdown("**Tabla resumen por municipio**")
         tab_data = (
@@ -962,7 +961,7 @@ elif modulo == "🔭 Oportunidades de mejora":
         tab_data.columns = ["Municipio", "Aprendices", "Fichas"]
         tab_data["Aprendices"] = tab_data["Aprendices"].astype(int)
         tab_data["Fichas"] = tab_data["Fichas"].astype(int)
-        tab_data["Prom/ficha"] = (tab_data["Aprendices"] / tab_data["Fichas"].replace(0, 1)).round(1)
+        tab_data["Prom"] = (tab_data["Aprendices"] / tab_data["Fichas"].replace(0,1)).round(1)
         st.table(tab_data.reset_index(drop=True))
 
 Regla clave al pegar en GitHub: el editor web de GitHub a veces convierte tabs a espacios de forma inconsistente. Después de pegar, revisa visualmente que todas las líneas dentro del with col_b2: empiecen con 8 espacios (4 del elif + 4 del with).
