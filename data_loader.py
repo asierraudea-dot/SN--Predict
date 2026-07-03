@@ -2,10 +2,6 @@
 data_loader.py  —  SN Predict v2
 =================================
 Carga, limpia y preprocesa el dataset PE04 Histórico Previos.
-Expone funciones que devuelven estructuras listas para consumir en la app.
-
-Todas las funciones están decoradas con @st.cache_data cuando se llaman
-desde la app, por lo que solo se ejecutan una vez por sesión.
 
 Autor:  [nombre del estudiante]
 Fecha:  Junio 2026
@@ -13,15 +9,25 @@ Fecha:  Junio 2026
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
 
 import numpy as np
 import pandas as pd
 
-ROOT     = Path(__file__).parent.parent
-DATA_RAW = (ROOT / "data" / "PE04_HISTORICO_PREVIOS.xlsx"
-            if (ROOT / "data" / "PE04_HISTORICO_PREVIOS.xlsx").exists()
-            else ROOT / "PE04_HISTÓRICO_PREVIOS.xlsx")
+ROOT = Path(__file__).resolve().parent
+
+# Busca el archivo Excel en todas las ubicaciones posibles
+# (raíz del repo, carpeta data/, con tilde y sin tilde)
+_CANDIDATOS = [
+    ROOT / "PE04_HISTÓRICO_PREVIOS.xlsx",
+    ROOT / "PE04_HISTORICO_PREVIOS.xlsx",
+    ROOT / "data" / "PE04_HISTÓRICO_PREVIOS.xlsx",
+    ROOT / "data" / "PE04_HISTORICO_PREVIOS.xlsx",
+    ROOT.parent / "PE04_HISTÓRICO_PREVIOS.xlsx",
+    ROOT.parent / "PE04_HISTORICO_PREVIOS.xlsx",
+    ROOT.parent / "data" / "PE04_HISTÓRICO_PREVIOS.xlsx",
+    ROOT.parent / "data" / "PE04_HISTORICO_PREVIOS.xlsx",
+]
+DATA_RAW = next((p for p in _CANDIDATOS if p.exists()), None)
 
 # Coordenadas de los 22 municipios del Centro Occidente de Antioquia
 MUN_COORDS: dict[str, tuple[float, float]] = {
@@ -49,7 +55,7 @@ MUN_COORDS: dict[str, tuple[float, float]] = {
     "MEDELLÍN":             (6.2518, -75.5636),
 }
 
-# Palabras clave para identificar rubros productivos en nombres de programas
+# Palabras clave para identificar rubros productivos
 RUBROS_KW: dict[str, list[str]] = {
     "Café":           ["cafe", "café", "cafeto", "beneficio del cafe"],
     "Cacao":          ["cacao"],
@@ -77,34 +83,36 @@ def cargar_df() -> pd.DataFrame:
         DataFrame limpio con tipos corregidos y columnas auxiliares.
 
     Raises:
-        FileNotFoundError: Si el XLSX no existe en data/.
+        FileNotFoundError: Si el XLSX no se encuentra en ninguna ubicación.
     """
-    if not DATA_RAW.exists():
+    if DATA_RAW is None:
+        rutas_buscadas = "\n".join(str(p) for p in _CANDIDATOS)
         raise FileNotFoundError(
-            f"Dataset no encontrado: {DATA_RAW}\n"
-            "Copia PE04_HISTORICO_PREVIOS.xlsx a la carpeta data/"
+            f"Dataset PE04 no encontrado. Se buscó en:\n{rutas_buscadas}"
         )
+
     df = pd.read_excel(DATA_RAW, sheet_name="Hoja1")
     df.columns = [c.strip() for c in df.columns]
 
     # Fechas
     for col in ["FECHA_INICIO_FICHA", "FECHA_TERMINACION_FICHA"]:
-        df[col] = pd.to_datetime(df[col], errors="coerce", dayfirst=True)
+        if col in df.columns:
+            df[col] = pd.to_datetime(df[col], errors="coerce", dayfirst=True)
 
     # Numéricos
-    df["TOTAL_APRENDICES"] = pd.to_numeric(df["TOTAL_APRENDICES"], errors="coerce").fillna(0)
+    df["TOTAL_APRENDICES"]  = pd.to_numeric(df["TOTAL_APRENDICES"],  errors="coerce").fillna(0)
     df["DURACION_PROGRAMA"] = pd.to_numeric(df["DURACION_PROGRAMA"], errors="coerce").fillna(0)
-    df["AÑO"]               = pd.to_numeric(df["AÑO"], errors="coerce")
+    df["AÑO"]               = pd.to_numeric(df["AÑO"],               errors="coerce")
 
-    # Auxiliares
-    df["MES"]     = df["FECHA_INICIO_FICHA"].dt.month
+    # Auxiliares de fecha
+    df["MES"]       = df["FECHA_INICIO_FICHA"].dt.month
     df["TRIMESTRE"] = df["FECHA_INICIO_FICHA"].dt.quarter
 
     # Texto limpio
     texto_cols = [
         "NOMBRE_MUNICIPIO_CURSO", "NOMBRE_PROGRAMA_FORMACION",
-        "NOMBRE_RESPONSABLE", "NIVEL_FORMACION",
-        "NOMBRE_NUEVO_SECTOR", "NOMBRE_PROGRAMA_ESPECIAL",
+        "NOMBRE_RESPONSABLE",     "NIVEL_FORMACION",
+        "NOMBRE_NUEVO_SECTOR",    "NOMBRE_PROGRAMA_ESPECIAL",
     ]
     for col in texto_cols:
         if col in df.columns:
@@ -117,17 +125,7 @@ def cargar_df() -> pd.DataFrame:
 
 
 def get_sec_prog(df: pd.DataFrame) -> dict[str, list[dict]]:
-    """
-    Devuelve un diccionario sector → lista de programas con estadísticas.
-
-    Cada entrada de la lista contiene: prog, nivel, fichas, prom, dur, ap.
-
-    Args:
-        df: DataFrame limpio.
-
-    Returns:
-        Dict con 12 sectores y hasta 10 programas por sector.
-    """
+    """Devuelve sector → lista de programas con estadísticas."""
     out: dict[str, list[dict]] = {}
     for sec in df["NOMBRE_NUEVO_SECTOR"].dropna().unique():
         sub = df[df["NOMBRE_NUEVO_SECTOR"] == sec]
@@ -158,16 +156,7 @@ def get_sec_prog(df: pd.DataFrame) -> dict[str, list[dict]]:
 
 
 def get_prog_mun(df: pd.DataFrame) -> dict[str, list[dict]]:
-    """
-    Devuelve un diccionario programa → municipios donde se ha ofertado.
-
-    Args:
-        df: DataFrame limpio.
-
-    Returns:
-        Dict con programa (truncado a 70 chars) → lista de municipios con stats.
-    """
-    # Solo programas con al menos 3 fichas
+    """Devuelve programa → municipios donde se ha ofertado."""
     progs_validos = (
         df.groupby("NOMBRE_PROGRAMA_FORMACION")
         .size()
@@ -180,56 +169,55 @@ def get_prog_mun(df: pd.DataFrame) -> dict[str, list[dict]]:
         sub = df[df["NOMBRE_PROGRAMA_FORMACION"] == prog]
         muns = (
             sub.groupby("NOMBRE_MUNICIPIO_CURSO")
-            .agg(ap=("TOTAL_APRENDICES", "sum"), fichas=("TOTAL_APRENDICES", "count"),
-                 prom=("TOTAL_APRENDICES", "mean"))
+            .agg(
+                ap=("TOTAL_APRENDICES", "sum"),
+                fichas=("TOTAL_APRENDICES", "count"),
+                prom=("TOTAL_APRENDICES", "mean"),
+            )
             .reset_index()
             .sort_values("ap", ascending=False)
             .head(8)
         )
         out[prog[:70]] = [
-            {"mun": r["NOMBRE_MUNICIPIO_CURSO"], "ap": int(r["ap"]),
-             "fichas": int(r["fichas"]), "prom": round(float(r["prom"]), 1)}
+            {
+                "mun":    r["NOMBRE_MUNICIPIO_CURSO"],
+                "ap":     int(r["ap"]),
+                "fichas": int(r["fichas"]),
+                "prom":   round(float(r["prom"]), 1),
+            }
             for _, r in muns.iterrows()
         ]
     return out
 
 
 def get_resp_stats(df: pd.DataFrame) -> list[dict]:
-    """
-    Devuelve estadísticas por instructor/responsable.
-
-    Args:
-        df: DataFrame limpio.
-
-    Returns:
-        Lista de dicts con n, fichas, prom, total, max_ap — ordenada por fichas desc.
-    """
+    """Devuelve estadísticas por instructor ordenadas por fichas."""
     resp = (
         df.groupby("NOMBRE_RESPONSABLE")
-        .agg(fichas=("TOTAL_APRENDICES", "count"), total=("TOTAL_APRENDICES", "sum"),
-             prom=("TOTAL_APRENDICES", "mean"), max_ap=("TOTAL_APRENDICES", "max"))
+        .agg(
+            fichas=("TOTAL_APRENDICES", "count"),
+            total=("TOTAL_APRENDICES", "sum"),
+            prom=("TOTAL_APRENDICES", "mean"),
+            max_ap=("TOTAL_APRENDICES", "max"),
+        )
         .reset_index()
         .sort_values("fichas", ascending=False)
         .head(25)
     )
     return [
-        {"n": r["NOMBRE_RESPONSABLE"], "fichas": int(r["fichas"]),
-         "prom": round(float(r["prom"]), 1), "total": int(r["total"]), "max_ap": int(r["max_ap"])}
+        {
+            "n":      r["NOMBRE_RESPONSABLE"],
+            "fichas": int(r["fichas"]),
+            "prom":   round(float(r["prom"]), 1),
+            "total":  int(r["total"]),
+            "max_ap": int(r["max_ap"]),
+        }
         for _, r in resp.iterrows()
     ]
 
 
 def get_mun_stats(df: pd.DataFrame) -> dict[str, dict]:
-    """
-    Devuelve estadísticas por municipio incluyendo tendencia interanual.
-
-    Args:
-        df: DataFrame limpio.
-
-    Returns:
-        Dict municipio → dict con ap, fichas, prom, sector, tend (% cambio 2022→2024),
-        lat, lng.
-    """
+    """Devuelve estadísticas por municipio con tendencia interanual."""
     out: dict[str, dict] = {}
     for mun in df["NOMBRE_MUNICIPIO_CURSO"].dropna().unique():
         sub = df[df["NOMBRE_MUNICIPIO_CURSO"] == mun]
@@ -238,9 +226,9 @@ def get_mun_stats(df: pd.DataFrame) -> dict[str, dict]:
             .count().idxmax()
             if len(sub) > 0 else "SERVICIOS"
         )
-        a22 = float(sub[sub["AÑO"] == 2022]["TOTAL_APRENDICES"].sum())
-        a24 = float(sub[sub["AÑO"] == 2024]["TOTAL_APRENDICES"].sum())
-        tend = round((a24 - a22) / max(a22, 1) * 100, 1) if a22 > 0 else 0.0
+        a22   = float(sub[sub["AÑO"] == 2022]["TOTAL_APRENDICES"].sum())
+        a24   = float(sub[sub["AÑO"] == 2024]["TOTAL_APRENDICES"].sum())
+        tend  = round((a24 - a22) / max(a22, 1) * 100, 1) if a22 > 0 else 0.0
         lat, lng = MUN_COORDS.get(mun, (6.5, -75.9))
         out[mun] = {
             "ap":     int(sub["TOTAL_APRENDICES"].sum()),
@@ -255,15 +243,7 @@ def get_mun_stats(df: pd.DataFrame) -> dict[str, dict]:
 
 
 def get_niv_sec(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Tabla cruzada nivel × sector con fichas y aprendices.
-
-    Args:
-        df: DataFrame limpio.
-
-    Returns:
-        DataFrame con columnas: NIVEL_FORMACION, NOMBRE_NUEVO_SECTOR, fichas, ap.
-    """
+    """Tabla cruzada nivel × sector."""
     return (
         df.groupby(["NIVEL_FORMACION", "NOMBRE_NUEVO_SECTOR"])
         .agg(fichas=("TOTAL_APRENDICES", "count"), ap=("TOTAL_APRENDICES", "sum"))
@@ -272,15 +252,7 @@ def get_niv_sec(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def get_rubros(df: pd.DataFrame) -> dict[str, dict]:
-    """
-    Clasifica fichas por rubro productivo detectando palabras clave en el nombre del programa.
-
-    Args:
-        df: DataFrame limpio.
-
-    Returns:
-        Dict rubro → dict con fichas, ap total y top municipios.
-    """
+    """Clasifica fichas por rubro productivo usando palabras clave."""
     out: dict[str, dict] = {}
     for rub, kws in RUBROS_KW.items():
         mask = df["NOMBRE_PROGRAMA_FORMACION"].str.lower().str.contains(
@@ -305,15 +277,7 @@ def get_rubros(df: pd.DataFrame) -> dict[str, dict]:
 
 
 def get_serie_temporal(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Serie mensual de aprendices y fichas para la sección de Tendencias.
-
-    Args:
-        df: DataFrame limpio.
-
-    Returns:
-        DataFrame indexado por ANO_MES con columnas: ap, fichas.
-    """
+    """Serie mensual de aprendices y fichas."""
     df2 = df.copy()
     df2["ANO_MES"] = df2["FECHA_INICIO_FICHA"].dt.to_period("M").astype(str)
     return (
