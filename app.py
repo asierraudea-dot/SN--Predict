@@ -935,7 +935,8 @@ elif modulo == "🔭 Oportunidades de mejora":
             st.plotly_chart(fig_ev, use_container_width=True)
 
     st.markdown("---")
-     col_b1, col_b2 = st.columns(2)
+     
+  col_b1, col_b2 = st.columns(2)
     with col_b1:
         st.markdown("**Brechas detectadas**")
         todos_mun = sorted(df_f["NOMBRE_MUNICIPIO_CURSO"].dropna().unique().tolist())
