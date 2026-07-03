@@ -68,7 +68,11 @@ inject_css()
 def load_all():
     try:
         df = cargar_df()
-    except FileNotFoundError:
+    except FileNotFoundError as e:
+        st.error(f"Error cargando datos: {e}")
+        return None, {}, {}, [], {}, pd.DataFrame(), {}, pd.DataFrame()
+    except Exception as e:
+        st.error(f"Error inesperado: {e}")
         return None, {}, {}, [], {}, pd.DataFrame(), {}, pd.DataFrame()
     return (
         df,
@@ -87,9 +91,10 @@ TIENE_DATOS = df is not None
 
 # Fallback con datos embebidos cuando no hay XLSX
 if not TIENE_DATOS:
+    from data_loader import _CANDIDATOS, DATA_RAW
+    rutas = chr(10).join([f"  • {p} — {'✅ EXISTE' if p.exists() else '❌ no existe'}" for p in _CANDIDATOS])
     st.warning(
-        "⚠️ Dataset no encontrado en `data/`. "
-        "Copia `PE04_HISTORICO_PREVIOS.xlsx` a la carpeta `data/` y recarga la app.",
+        f"⚠️ Dataset no cargado. Rutas buscadas:{chr(10)}{rutas}",
         icon="⚠️",
     )
     SEC_PROG = {
