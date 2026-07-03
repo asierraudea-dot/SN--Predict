@@ -795,8 +795,12 @@ elif modulo == "🔭 Oportunidades de mejora":
                 try:
                     df_nuevo = pd.read_excel(archivo_nuevo)
                     df_nuevo.columns = [c.strip() for c in df_nuevo.columns]
-                    df_nuevo["TOTAL_APRENDICES"] = pd.to_numeric(df_nuevo.get("TOTAL_APRENDICES",0), errors="coerce").fillna(0)
-                    df_nuevo["AÑO"] = pd.to_numeric(df_nuevo.get("AÑO",0), errors="coerce")
+                    df_nuevo["TOTAL_APRENDICES"] = pd.to_numeric(
+                        df_nuevo.get("TOTAL_APRENDICES", 0), errors="coerce"
+                    ).fillna(0)
+                    df_nuevo["AÑO"] = pd.to_numeric(
+                        df_nuevo.get("AÑO", 0), errors="coerce"
+                    )
                     st.session_state["df_extra_opp"] = df_nuevo
                     años_nuevos = sorted(df_nuevo["AÑO"].dropna().unique().astype(int).tolist())
                     st.success(f"✅ {archivo_nuevo.name} cargado: {len(df_nuevo):,} fichas · Años: {años_nuevos}", icon="✅")
@@ -804,7 +808,7 @@ elif modulo == "🔭 Oportunidades de mejora":
                     st.error(f"Error: {e}")
         with col_up2:
             st.markdown("**Para carga permanente:**")
-            st.code("git add data/PE04_NUEVO.xlsx\ngit commit -m 'datos: nuevo PE04'\ngit push", language="bash")
+            st.code("git add data/PE04_NUEVO.xlsx\ngit commit -m \'datos: nuevo PE04\'\ngit push", language="bash")
             st.caption("Streamlit Cloud recarga automáticamente en ~60 segundos.")
 
     df_extra_opp = st.session_state.get("df_extra_opp")
@@ -864,10 +868,14 @@ elif modulo == "🔭 Oportunidades de mejora":
             .sum().reset_index()
         )
         pivot_wide = pivot.pivot_table(
-            index="NOMBRE_MUNICIPIO_CURSO", columns="NIVEL_FORMACION",
-            values="TOTAL_APRENDICES", fill_value=0,
-        ).reset_index()
+            index="NOMBRE_MUNICIPIO_CURSO",
+            columns="NIVEL_FORMACION",
+            values="TOTAL_APRENDICES",
+            fill_value=0,
+        )
+        pivot_wide.columns = [str(c) for c in pivot_wide.columns]
         pivot_wide.columns.name = None
+        pivot_wide = pivot_wide.reset_index()
         pivot_wide["TOTAL"] = pivot_wide.drop(columns=["NOMBRE_MUNICIPIO_CURSO"]).sum(axis=1)
         pivot_wide = pivot_wide.sort_values("TOTAL", ascending=True).tail(18)
 
@@ -930,11 +938,10 @@ elif modulo == "🔭 Oportunidades de mejora":
                 legend=dict(font=dict(size=9), orientation="h", y=1.08),
                 xaxis=dict(tickfont=dict(size=10), dtick=1),
                 yaxis=dict(tickfont=dict(size=10)),
-                showlegend=True,
             )
             st.plotly_chart(fig_ev, use_container_width=True)
 
-  st.markdown("---")
+    st.markdown("---")
     col_b1, col_b2 = st.columns(2)
     with col_b1:
         st.markdown("**Brechas detectadas**")
@@ -964,119 +971,6 @@ elif modulo == "🔭 Oportunidades de mejora":
         tab_data["Prom"] = (tab_data["Aprendices"] / tab_data["Fichas"].replace(0,1)).round(1)
         st.table(tab_data.reset_index(drop=True))
 
-Regla clave al pegar en GitHub: el editor web de GitHub a veces convierte tabs a espacios de forma inconsistente. Después de pegar, revisa visualmente que todas las líneas dentro del with col_b2: empiecen con 8 espacios (4 del elif + 4 del with).
-Commit changes → el error desaparece.
-
-
-      with col_b2:
-        st.markdown("**Tabla resumen por municipio**")
-        tab_data = (
-            df_f.groupby("NOMBRE_MUNICIPIO_CURSO")["TOTAL_APRENDICES"]
-            .agg(Total="sum", Fichas="count")
-            .reset_index()
-            .sort_values("Total", ascending=False)
-            .head(22)
-        )
-        tab_data.columns = ["Municipio", "Aprendices", "Fichas"]
-        tab_data["Aprendices"] = tab_data["Aprendices"].astype(int)
-        tab_data["Fichas"]     = tab_data["Fichas"].astype(int)
-        tab_data["Prom/ficha"] = (tab_data["Aprendices"] / tab_data["Fichas"].replace(0,1)).round(1)
-        st.table(tab_data.reset_index(drop=True))
-    st.markdown("### 🔭 Oportunidades de mejora")
-    st.caption("Brechas entre oferta y demanda por rubro productivo y municipio.")
-
-    EMOJIS_RUBROS = {
-        "Café": "☕", "Cacao": "🍫", "Ganadería": "🐄", "Avicultura": "🐔",
-        "Turismo": "🏕️", "Agricultura": "🌿", "Piscicultura": "🐟",
-        "Alimentos": "🍽️", "Inglés": "🇺🇸", "Emprendimiento": "💡",
-        "TIC / Excel": "💻", "Medio Ambiente": "🌳", "Artesanías": "🧶",
-        "Alturas": "🏗️", "Aguacate": "🥑",
-    }
-
-    rub_names = list(RUBROS.keys())
-    cols_rub = st.columns(min(len(rub_names), 5))
-    sel_rub = st.session_state.get("sel_rub", rub_names[0])
-    for i, rub in enumerate(rub_names):
-        with cols_rub[i % 5]:
-            emoji = EMOJIS_RUBROS.get(rub, "📌")
-            d = RUBROS[rub]
-            if st.button(
-                f"{emoji} {rub}\n{d['fichas']} fichas",
-                key=f"rb_{rub}",
-                use_container_width=True,
-                type="primary" if rub == sel_rub else "secondary",
-            ):
-                st.session_state["sel_rub"] = rub
-                st.rerun()
-
-    st.markdown("---")
-    d_rub = RUBROS.get(sel_rub, {})
-    if d_rub:
-        col_o1, col_o2 = st.columns([1.2, 0.8])
-
-        with col_o1:
-            st.markdown(f"**{EMOJIS_RUBROS.get(sel_rub, '📌')} Municipios líderes en {sel_rub}**")
-            muns_rub = sorted(d_rub["muns"].items(), key=lambda x: -x[1])
-            max_rub = muns_rub[0][1] if muns_rub else 1
-            for mun, ap in muns_rub:
-                pct = round(ap / max_rub * 100)
-                st.markdown(f"""
-<div class="pb-wrap">
-  <div class="pb-meta"><span class="pb-name">{mun}</span><span class="pb-val">{ap:,} ap</span></div>
-  <div class="pb-track"><div class="pb-fill" style="width:{pct}%;background:{C_BLUE}"></div></div>
-</div>""", unsafe_allow_html=True)
-
-            # Gráfica de barras
-            df_rub = pd.DataFrame(list(d_rub["muns"].items()), columns=["Municipio", "Aprendices"])
-            fig_rub = px.bar(
-                df_rub, x="Aprendices", y="Municipio",
-                orientation="h", title=f"Aprendices en {sel_rub} por municipio",
-                color="Aprendices", color_continuous_scale="Blues",
-            )
-            fig_rub.update_layout(
-                height=300, showlegend=False, margin=dict(t=36, b=0, l=0, r=0),
-                plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-                yaxis={"categoryorder": "total ascending"},
-            )
-            st.plotly_chart(fig_rub, use_container_width=True)
-
-        with col_o2:
-            st.markdown("**Análisis de brechas y potencial**")
-            muns_con = set(d_rub["muns"].keys())
-            muns_sin = [m for m in MUNICIPIOS if m not in muns_con
-                        and MUN_STATS.get(m, {}).get("sector") == "AGROPECUARIO"][:5]
-
-            st.markdown(f"""
-<div class="al-s"><b>✅ Municipios líderes en {sel_rub}:</b><br>
-{', '.join(list(d_rub["muns"].keys())[:3])}.<br>
-Total: {d_rub['ap']:,} aprendices en {d_rub['fichas']} fichas.</div>""", unsafe_allow_html=True)
-
-            if muns_sin:
-                st.markdown(f"""
-<div class="al-w"><b>⚠️ Municipios con potencial sin cobertura en {sel_rub}:</b><br>
-{', '.join(muns_sin)}.<br>
-Estos municipios tienen vocación agropecuaria pero no registran fichas históricas en este rubro.</div>""",
-                    unsafe_allow_html=True)
-
-            st.markdown(f"""
-<div class="al-i"><b>💡 Recomendación estratégica:</b><br>
-Abrir cursos complementarios de <b>{sel_rub}</b> en los municipios sin cobertura como primer paso. 
-Validar la demanda con la comunidad antes de invertir en nivel técnico. 
-Los municipios con tendencia creciente tienen mayor probabilidad de éxito.</div>""",
-                unsafe_allow_html=True)
-
-            # Métricas del rubro
-            st.markdown("**Indicadores del rubro**")
-            avg_ap_rub = round(d_rub["ap"] / max(d_rub["fichas"], 1), 1)
-            st.metric("Total aprendices", f'{d_rub["ap"]:,}')
-            st.metric("Total fichas",     f'{d_rub["fichas"]}')
-            st.metric("Promedio ap/ficha", avg_ap_rub)
-            st.metric("Municipios cubiertos", len(d_rub["muns"]))
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# MÓDULO 5 — MANUAL DE USUARIO
-# ══════════════════════════════════════════════════════════════════════════════
 
 elif modulo == "📖 Manual de usuario":
     st.markdown("### 📖 Manual de usuario — SN Predict v2.0")
