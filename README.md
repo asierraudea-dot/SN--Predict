@@ -1,7 +1,7 @@
 [README_sn_predict.md](https://github.com/user-attachments/files/29616845/README_sn_predict.md)
 # SN Predict v2 — Sistema Inteligente de Planificación Formativa SENA
 
-> Centro SENA Occidente de Antioquia · Predicción de demanda con ML y analítica territorial
+> Occidente de Antioquia · Predicción de demanda con ML y analítica territorial
 
 ---
 
