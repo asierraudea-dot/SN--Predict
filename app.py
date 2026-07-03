@@ -950,16 +950,20 @@ elif modulo == "🔭 Oportunidades de mejora":
             if mun_sin_rubro:
                 st.markdown(f'<div style="background:#FCEBEB;border:.5px solid #F7C1C1;border-radius:8px;padding:9px 12px;font-size:11px;color:#A32D2D;margin-bottom:7px"><b>Sin cobertura en {rubro_sel}:</b> {", ".join(mun_sin_rubro)}. Oportunidad para nuevas fichas.</div>', unsafe_allow_html=True)
 
-    with col_b2:
+      with col_b2:
         st.markdown("**Tabla resumen por municipio**")
-        resumen = pivot.pivot_table(index="NOMBRE_MUNICIPIO_CURSO", columns="NIVEL_FORMACION", values="TOTAL_APRENDICES", fill_value=0).reset_index()
-        resumen.columns.name = None
-        resumen["Total"] = resumen.drop(columns=["NOMBRE_MUNICIPIO_CURSO"]).sum(axis=1)
-        resumen = resumen.sort_values("Total", ascending=False).rename(columns={"NOMBRE_MUNICIPIO_CURSO":"Municipio","CURSO ESPECIAL":"Complementario"})
-        for col in resumen.columns:
-            if col != "Municipio":
-                resumen[col] = resumen[col].astype(int)
-        st.dataframe(resumen, use_container_width=True, hide_index=True, height=300)
+        tab_data = (
+            df_f.groupby("NOMBRE_MUNICIPIO_CURSO")["TOTAL_APRENDICES"]
+            .agg(Total="sum", Fichas="count")
+            .reset_index()
+            .sort_values("Total", ascending=False)
+            .head(22)
+        )
+        tab_data.columns = ["Municipio", "Aprendices", "Fichas"]
+        tab_data["Aprendices"] = tab_data["Aprendices"].astype(int)
+        tab_data["Fichas"]     = tab_data["Fichas"].astype(int)
+        tab_data["Prom/ficha"] = (tab_data["Aprendices"] / tab_data["Fichas"].replace(0,1)).round(1)
+        st.table(tab_data.reset_index(drop=True))
     st.markdown("### 🔭 Oportunidades de mejora")
     st.caption("Brechas entre oferta y demanda por rubro productivo y municipio.")
 
