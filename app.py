@@ -33,6 +33,7 @@ import streamlit as st
 
 # Asegurar imports locales
 sys.path.insert(0, str(Path(__file__).parent))
+from oportunidades_mejora import render_oportunidades
 from components import (
     C_AMBER, C_BLUE, C_BORDER, C_GRAY, C_GREEN, C_RED,
     badge_html, footer_html, inject_css, kpi_row_html,
