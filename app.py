@@ -789,49 +789,129 @@ if modulo == "🎯 Predictor inteligente":
                                      max_value=5000, value=auto_dur,
                                      step=4, key="pd_v3")
 
-        # ── Selector de mes visual (botones pill) ──────────────────────
-        st.markdown(
-            "<div style='font-size:12px;font-weight:600;color:#475569;"
-            "margin-bottom:6px;margin-top:4px'>📅 Mes de inicio</div>",
-            unsafe_allow_html=True)
-        MESES_INFO = {
-            1:("Ene","❄️","#64748B","#F1F5F9","Baja demanda"),
-            2:("Feb","🔥","#166534","#DCFCE7","Mes pico +18%"),
-            3:("Mar","🔥","#166534","#DCFCE7","Mes pico +18%"),
-            4:("Abr","📗","#1E40AF","#DBEAFE","Demanda estándar"),
-            5:("May","📗","#1E40AF","#DBEAFE","Demanda estándar"),
-            6:("Jun","📗","#1E40AF","#DBEAFE","Demanda estándar"),
-            7:("Jul","📗","#1E40AF","#DBEAFE","Demanda estándar"),
-            8:("Ago","📗","#1E40AF","#DBEAFE","Demanda estándar"),
-            9:("Sep","📈","#0F6E56","#D1FAE5","Segundo pico +12%"),
-           10:("Oct","📈","#0F6E56","#D1FAE5","Segundo pico +12%"),
-           11:("Nov","📗","#1E40AF","#DBEAFE","Demanda estándar"),
-           12:("Dic","❄️","#64748B","#F1F5F9","Baja demanda"),
-        }
+        # ── Selector de mes visual ─────────────────────────────────────
         p_mes = st.session_state.get("pmes_v3", 7)
-        mes_cols = st.columns(12)
+
+        MESES_INFO = {
+            1: ("Ene","❄️","baja",  "Demanda históricamente baja",  "-28%"),
+            2: ("Feb","🔥","pico1", "Mes pico — mayor demanda",     "+18%"),
+            3: ("Mar","🔥","pico1", "Mes pico — mayor demanda",     "+18%"),
+            4: ("Abr","📅","std",   "Demanda estándar",              "±0%"),
+            5: ("May","📅","std",   "Demanda estándar",              "±0%"),
+            6: ("Jun","📅","std",   "Demanda estándar",              "±0%"),
+            7: ("Jul","📅","std",   "Demanda estándar",              "±0%"),
+            8: ("Ago","📅","std",   "Demanda estándar",              "±0%"),
+            9: ("Sep","📈","pico2", "Segundo pico de demanda",      "+12%"),
+           10: ("Oct","📈","pico2", "Segundo pico de demanda",      "+12%"),
+           11: ("Nov","📅","std",   "Demanda estándar",              "±0%"),
+           12: ("Dic","❄️","baja",  "Demanda históricamente baja",  "-28%"),
+        }
+
+        # CSS colores por tipo
+        MES_BG   = {"pico1":"#DCFCE7","pico2":"#D1FAE5","std":"var(--surface-1)","baja":"#F1F5F9"}
+        MES_TC   = {"pico1":"#166534","pico2":"#0F6E56","std":"var(--text-secondary)","baja":"#64748B"}
+        MES_BAR  = {"pico1":"#16A34A","pico2":"#0F6E56","std":"#93C5FD","baja":"#94A3B8"}
+        MES_BRD  = {"pico1":"#86EFAC","pico2":"#6EE7B7","std":"var(--border)","baja":"#CBD5E1"}
+        MES_SELBG= {"pico1":"#BBF7D0","pico2":"#A7F3D0","std":"#DBEAFE","baja":"#E2E8F0"}
+        MES_SELBR= {"pico1":"#16A34A","pico2":"#0F6E56","std":"#3B82F6","baja":"#64748B"}
+        MES_SELTC= {"pico1":"#166534","pico2":"#0F6E56","std":"#1E40AF","baja":"#334155"}
+        IND_BG   = {"pico1":"#DCFCE7","pico2":"#D1FAE5","std":"var(--surface-1)","baja":"#F1F5F9"}
+        IND_BRD  = {"pico1":"#86EFAC","pico2":"#6EE7B7","std":"var(--border)","baja":"#CBD5E1"}
+        IND_TC   = {"pico1":"#166534","pico2":"#0F6E56","std":"var(--text-primary)","baja":"#334155"}
+        IND_BDGTC= {"pico1":"#166534","pico2":"#0F6E56","std":"#1E40AF","baja":"#475569"}
+        IND_BDGBG= {"pico1":"#BBF7D0","pico2":"#A7F3D0","std":"#DBEAFE","baja":"#E2E8F0"}
+
+        # Construir las 12 celdas del selector
+        mes_html = (
+            "<div style='font-size:11px;font-weight:500;color:var(--text-muted);"
+            "letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px'>"
+            "Mes de inicio de la ficha</div>"
+            "<div style='display:grid;grid-template-columns:repeat(12,1fr);gap:5px;margin-bottom:4px'>"
+        )
         for mi in range(1, 13):
-            nm, ic, tc, bg, _ = MESES_INFO[mi]
-            sel = mi == p_mes
-            border = f"2px solid {tc}" if sel else "1px solid #E2E8F0"
-            weight = "700" if sel else "400"
-            with mes_cols[mi-1]:
-                if st.button(
-                    f"{nm}",
-                    key=f"mes_btn_{mi}",
-                    use_container_width=True,
-                    help=MESES_INFO[mi][4],
-                ):
+            nm, ico, tipo, desc, imp = MESES_INFO[mi]
+            es_sel = mi == p_mes
+            if es_sel:
+                bg  = MES_SELBG[tipo]
+                brd = f"2px solid {MES_SELBR[tipo]}"
+                tc  = MES_SELTC[tipo]
+                shadow = f"box-shadow:0 0 0 3px {MES_SELBR[tipo]}29;"
+            else:
+                bg  = MES_BG[tipo]
+                brd = f"1.5px solid {MES_BRD[tipo]}"
+                tc  = MES_TC[tipo]
+                shadow = ""
+            bar_c = MES_BAR[tipo]
+            mes_html += (
+                f'<div style="display:flex;flex-direction:column;align-items:center;'
+                f'gap:3px;padding:8px 3px 7px;border-radius:10px;border:{brd};'
+                f'background:{bg};cursor:default;{shadow}">'
+                f'<span style="font-size:13px;line-height:1">{ico}</span>'
+                f'<span style="font-size:10px;font-weight:700;color:{tc};line-height:1">{nm}</span>'
+                f'<div style="height:3px;width:70%;border-radius:2px;background:{bar_c}"></div>'
+                f'</div>'
+            )
+        mes_html += "</div>"
+
+        # Indicador del mes seleccionado
+        nm_s, ico_s, tipo_s, desc_s, imp_s = MESES_INFO[p_mes]
+        mes_html += (
+            f'<div style="background:{IND_BG[tipo_s]};border:1.5px solid {IND_BRD[tipo_s]};'
+            f'border-radius:10px;padding:9px 13px;display:flex;align-items:center;gap:11px">'
+            f'<span style="font-size:20px;line-height:1;flex-shrink:0">{ico_s}</span>'
+            f'<div style="flex:1">'
+            f'<div style="font-size:12px;font-weight:600;color:{IND_TC[tipo_s]};line-height:1.3">'
+            f'{nm_s} — {desc_s}</div>'
+            f'<div style="font-size:10px;color:{IND_TC[tipo_s]};opacity:.75;margin-top:2px">'
+            f'Impacto sobre la demanda histórica del programa</div>'
+            f'</div>'
+            f'<div style="background:{IND_BDGBG[tipo_s]};color:{IND_BDGTC[tipo_s]};'
+            f'border-radius:20px;padding:4px 11px;font-size:11px;font-weight:700;flex-shrink:0">'
+            f'{imp_s}</div>'
+            f'</div>'
+        )
+
+        # Leyenda
+        mes_html += (
+            "<div style='display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;"
+            "padding-top:8px;border-top:.5px solid var(--border)'>"
+            "<div style='display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)'>"
+            "<div style='width:8px;height:8px;border-radius:50%;background:#16A34A'></div>Mes pico (+18%)</div>"
+            "<div style='display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)'>"
+            "<div style='width:8px;height:8px;border-radius:50%;background:#0F6E56'></div>Segundo pico (+12%)</div>"
+            "<div style='display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)'>"
+            "<div style='width:8px;height:8px;border-radius:50%;background:#93C5FD'></div>Estándar</div>"
+            "<div style='display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)'>"
+            "<div style='width:8px;height:8px;border-radius:50%;background:#94A3B8'></div>Baja (-28%)</div>"
+            "</div>"
+        )
+        st.markdown(mes_html, unsafe_allow_html=True)
+
+        # Botones invisibles para cambiar el mes (uno por mes)
+        mes_btn_cols = st.columns(12)
+        for mi in range(1, 13):
+            nm_b = MESES_INFO[mi][0]
+            with mes_btn_cols[mi-1]:
+                if st.button(nm_b, key=f"mes_btn_{mi}",
+                             use_container_width=True,
+                             help=f"{MESES_INFO[mi][3]} {MESES_INFO[mi][4]}"):
                     st.session_state["pmes_v3"] = mi
                     st.rerun()
-        # Indicador del mes seleccionado
-        nm_s, ic_s, tc_s, bg_s, desc_s = MESES_INFO[p_mes]
-        st.markdown(
-            f'<div style="background:{bg_s};border-left:4px solid {tc_s};'
-            f'border-radius:8px;padding:7px 12px;font-size:11px;'
-            f'color:{tc_s};font-weight:600;margin-top:4px">'
-            f'{ic_s} <b>{nm_s}</b> — {desc_s}</div>',
-            unsafe_allow_html=True)
+
+        # Ocultar los botones nativos con CSS (el visual ya es el HTML de arriba)
+        st.markdown("""
+<style>
+div[data-testid="column"] button[kind="secondary"]:has(+ div),
+div[data-testid="stVerticalBlock"] div[data-testid="stColumns"] ~ div button {
+    opacity: 0 !important;
+    height: 1px !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: auto !important;
+}
+</style>""", unsafe_allow_html=True)
+
 
         # ── Instructor filtrado por programa ──────────────────────────
         inst_prog = PROG_INST.get(p_prog[:68] if p_prog else "", [])
@@ -915,11 +995,19 @@ if modulo == "🎯 Predictor inteligente":
             bg  = "#DCFCE7" if res["alto"] else "#FEF3C7"
             tc  = "#166534" if res["alto"] else "#92400E"
             txt = "▲ Alto impacto" if res["alto"] else "▼ Impacto normal"
-            nm_r, ic_r, tc_r, bg_r, desc_r = MESES_INFO[res["mes"]]
+            _mr = MESES_INFO[res["mes"]]
+            _nm_r, _ic_r, _tipo_r, _desc_r, _imp_r = _mr
+            _IND_BG2  = {"pico1":"#DCFCE7","pico2":"#D1FAE5","std":"#EFF6FF","baja":"#F1F5F9"}
+            _IND_TC2  = {"pico1":"#166534","pico2":"#0F6E56","std":"#1E40AF","baja":"#475569"}
+            _IND_BRD2 = {"pico1":"#86EFAC","pico2":"#6EE7B7","std":"#BFDBFE","baja":"#CBD5E1"}
             mes_msg = (
-                f"<span style='background:{bg_r};color:{tc_r};"
-                f"padding:2px 8px;border-radius:10px;font-size:10px;"
-                f"font-weight:600'>{ic_r} {nm_r} — {desc_r}</span>"
+                f"<span style='background:{_IND_BG2[_tipo_r]};"
+                f"color:{_IND_TC2[_tipo_r]};"
+                f"border:1px solid {_IND_BRD2[_tipo_r]};"
+                f"padding:3px 10px;border-radius:20px;font-size:10px;"
+                f"font-weight:700;display:inline-block'>"
+                f"{_ic_r} {_nm_r} — {_desc_r} "
+                f"<b>{_imp_r}</b></span>"
             )
             st.markdown(
                 f'<div class="res-box">'
