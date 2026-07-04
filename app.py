@@ -1,5 +1,5 @@
 """
-app.py — SN Predict v3.2 AUTOCONTENIDO
+app.py — SN Predict v3.2
 =======================================
 Sistema Inteligente de Planificación y Predicción Formativa
 Occidente de Antioquia — Junio 2026
@@ -789,9 +789,7 @@ if modulo == "🎯 Predictor inteligente":
                                      max_value=5000, value=auto_dur,
                                      step=4, key="pd_v3")
 
-        # ── Selector de mes visual ─────────────────────────────────────
-        p_mes = st.session_state.get("pmes_v3", 7)
-
+        # ── Selector de mes — único control visual ────────────────────────
         MESES_INFO = {
             1: ("Ene","❄️","baja",  "Demanda históricamente baja",  "-28%"),
             2: ("Feb","🔥","pico1", "Mes pico — mayor demanda",     "+18%"),
@@ -806,111 +804,97 @@ if modulo == "🎯 Predictor inteligente":
            11: ("Nov","📅","std",   "Demanda estándar",              "±0%"),
            12: ("Dic","❄️","baja",  "Demanda históricamente baja",  "-28%"),
         }
+        _MBG = {"pico1":"#DCFCE7","pico2":"#D1FAE5","std":"#F8FAFC","baja":"#F1F5F9"}
+        _MBR = {"pico1":"#86EFAC","pico2":"#6EE7B7","std":"#E2E8F0","baja":"#CBD5E1"}
+        _MTC = {"pico1":"#166534","pico2":"#0F6E56","std":"#64748B","baja":"#94A3B8"}
+        _MBA = {"pico1":"#16A34A","pico2":"#0F6E56","std":"#BFDBFE","baja":"#CBD5E1"}
+        _SBG = {"pico1":"#BBF7D0","pico2":"#A7F3D0","std":"#DBEAFE","baja":"#E2E8F0"}
+        _SBR = {"pico1":"#16A34A","pico2":"#0F6E56","std":"#3B82F6","baja":"#64748B"}
+        _STC = {"pico1":"#166534","pico2":"#0F6E56","std":"#1E40AF","baja":"#334155"}
 
-        # CSS colores por tipo
-        MES_BG   = {"pico1":"#DCFCE7","pico2":"#D1FAE5","std":"var(--surface-1)","baja":"#F1F5F9"}
-        MES_TC   = {"pico1":"#166534","pico2":"#0F6E56","std":"var(--text-secondary)","baja":"#64748B"}
-        MES_BAR  = {"pico1":"#16A34A","pico2":"#0F6E56","std":"#93C5FD","baja":"#94A3B8"}
-        MES_BRD  = {"pico1":"#86EFAC","pico2":"#6EE7B7","std":"var(--border)","baja":"#CBD5E1"}
-        MES_SELBG= {"pico1":"#BBF7D0","pico2":"#A7F3D0","std":"#DBEAFE","baja":"#E2E8F0"}
-        MES_SELBR= {"pico1":"#16A34A","pico2":"#0F6E56","std":"#3B82F6","baja":"#64748B"}
-        MES_SELTC= {"pico1":"#166534","pico2":"#0F6E56","std":"#1E40AF","baja":"#334155"}
-        IND_BG   = {"pico1":"#DCFCE7","pico2":"#D1FAE5","std":"var(--surface-1)","baja":"#F1F5F9"}
-        IND_BRD  = {"pico1":"#86EFAC","pico2":"#6EE7B7","std":"var(--border)","baja":"#CBD5E1"}
-        IND_TC   = {"pico1":"#166534","pico2":"#0F6E56","std":"var(--text-primary)","baja":"#334155"}
-        IND_BDGTC= {"pico1":"#166534","pico2":"#0F6E56","std":"#1E40AF","baja":"#475569"}
-        IND_BDGBG= {"pico1":"#BBF7D0","pico2":"#A7F3D0","std":"#DBEAFE","baja":"#E2E8F0"}
+        # Leer mes actual del session_state
+        p_mes = st.session_state.get("pmes_v3", 7)
 
-        # Construir las 12 celdas del selector
-        mes_html = (
-            "<div style='font-size:11px;font-weight:500;color:var(--text-muted);"
-            "letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px'>"
-            "Mes de inicio de la ficha</div>"
-            "<div style='display:grid;grid-template-columns:repeat(12,1fr);gap:5px;margin-bottom:4px'>"
+        # — Selector nativo oculto (captura el valor) —
+        meses_labels = [MESES_INFO[m][0] for m in range(1,13)]
+        _sel_label = st.select_slider(
+            "📅 Mes de inicio",
+            options=meses_labels,
+            value=meses_labels[p_mes - 1],
+            key="pmes_slider",
+            label_visibility="collapsed",
+        )
+        # Actualizar session_state con la selección
+        p_mes_nuevo = meses_labels.index(_sel_label) + 1
+        if p_mes_nuevo != p_mes:
+            st.session_state["pmes_v3"] = p_mes_nuevo
+            p_mes = p_mes_nuevo
+
+        # — Cuadrícula visual HTML (decorativa, refleja la selección) —
+        _grid = (
+            "<div style='margin-top:8px'>"
+            "<div style='font-size:10px;font-weight:600;color:var(--text-muted);"
+            "letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px'>"
+            "Nivel de demanda por mes</div>"
+            "<div style='display:grid;grid-template-columns:repeat(12,1fr);gap:4px'>"
         )
         for mi in range(1, 13):
             nm, ico, tipo, desc, imp = MESES_INFO[mi]
-            es_sel = mi == p_mes
-            if es_sel:
-                bg  = MES_SELBG[tipo]
-                brd = f"2px solid {MES_SELBR[tipo]}"
-                tc  = MES_SELTC[tipo]
-                shadow = f"box-shadow:0 0 0 3px {MES_SELBR[tipo]}29;"
-            else:
-                bg  = MES_BG[tipo]
-                brd = f"1.5px solid {MES_BRD[tipo]}"
-                tc  = MES_TC[tipo]
-                shadow = ""
-            bar_c = MES_BAR[tipo]
-            mes_html += (
+            sel = mi == p_mes
+            bg  = _SBG[tipo] if sel else _MBG[tipo]
+            br  = f"2px solid {_SBR[tipo]}" if sel else f"1px solid {_MBR[tipo]}"
+            tc  = _STC[tipo] if sel else _MTC[tipo]
+            bar = _MBA[tipo]
+            sh  = f"box-shadow:0 0 0 3px {_SBR[tipo]}22;" if sel else ""
+            _grid += (
                 f'<div style="display:flex;flex-direction:column;align-items:center;'
-                f'gap:3px;padding:8px 3px 7px;border-radius:10px;border:{brd};'
-                f'background:{bg};cursor:default;{shadow}">'
-                f'<span style="font-size:13px;line-height:1">{ico}</span>'
-                f'<span style="font-size:10px;font-weight:700;color:{tc};line-height:1">{nm}</span>'
-                f'<div style="height:3px;width:70%;border-radius:2px;background:{bar_c}"></div>'
+                f'gap:2px;padding:6px 2px 5px;border-radius:8px;border:{br};'
+                f'background:{bg};{sh}" title="{desc} {imp}">'
+                f'<span style="font-size:12px;line-height:1">{ico}</span>'
+                f'<span style="font-size:9px;font-weight:700;color:{tc};line-height:1">{nm}</span>'
+                f'<div style="height:3px;width:65%;border-radius:2px;background:{bar}"></div>'
                 f'</div>'
             )
-        mes_html += "</div>"
+        _grid += "</div>"
 
         # Indicador del mes seleccionado
-        nm_s, ico_s, tipo_s, desc_s, imp_s = MESES_INFO[p_mes]
-        mes_html += (
-            f'<div style="background:{IND_BG[tipo_s]};border:1.5px solid {IND_BRD[tipo_s]};'
-            f'border-radius:10px;padding:9px 13px;display:flex;align-items:center;gap:11px">'
-            f'<span style="font-size:20px;line-height:1;flex-shrink:0">{ico_s}</span>'
-            f'<div style="flex:1">'
-            f'<div style="font-size:12px;font-weight:600;color:{IND_TC[tipo_s]};line-height:1.3">'
-            f'{nm_s} — {desc_s}</div>'
-            f'<div style="font-size:10px;color:{IND_TC[tipo_s]};opacity:.75;margin-top:2px">'
-            f'Impacto sobre la demanda histórica del programa</div>'
-            f'</div>'
-            f'<div style="background:{IND_BDGBG[tipo_s]};color:{IND_BDGTC[tipo_s]};'
-            f'border-radius:20px;padding:4px 11px;font-size:11px;font-weight:700;flex-shrink:0">'
-            f'{imp_s}</div>'
+        _nm, _ico, _tipo, _desc, _imp = MESES_INFO[p_mes]
+        _ibg  = {"pico1":"#DCFCE7","pico2":"#D1FAE5","std":"var(--surface-1)","baja":"#F1F5F9"}[_tipo]
+        _ibrd = {"pico1":"#86EFAC","pico2":"#6EE7B7","std":"var(--border)",   "baja":"#CBD5E1"}[_tipo]
+        _itc  = {"pico1":"#166534","pico2":"#0F6E56","std":"var(--text-primary)","baja":"#334155"}[_tipo]
+        _ibbtc= {"pico1":"#166534","pico2":"#0F6E56","std":"#1E40AF","baja":"#475569"}[_tipo]
+        _ibbg = {"pico1":"#BBF7D0","pico2":"#A7F3D0","std":"#DBEAFE","baja":"#E2E8F0"}[_tipo]
+        _grid += (
+            f'<div style="background:{_ibg};border:1.5px solid {_ibrd};border-radius:9px;'
+            f'padding:8px 12px;margin-top:7px;display:flex;align-items:center;gap:10px">'
+            f'<span style="font-size:18px;flex-shrink:0">{_ico}</span>'
+            f'<div style="flex:1"><div style="font-size:11px;font-weight:600;color:{_itc}">'
+            f'{_nm} — {_desc}</div>'
+            f'<div style="font-size:10px;color:{_itc};opacity:.7;margin-top:1px">'
+            f'Impacto histórico sobre la demanda del programa</div></div>'
+            f'<div style="background:{_ibbg};color:{_ibbtc};border-radius:20px;'
+            f'padding:3px 10px;font-size:11px;font-weight:700;flex-shrink:0">{_imp}</div>'
             f'</div>'
         )
-
-        # Leyenda
-        mes_html += (
-            "<div style='display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;"
-            "padding-top:8px;border-top:.5px solid var(--border)'>"
-            "<div style='display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)'>"
-            "<div style='width:8px;height:8px;border-radius:50%;background:#16A34A'></div>Mes pico (+18%)</div>"
-            "<div style='display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)'>"
-            "<div style='width:8px;height:8px;border-radius:50%;background:#0F6E56'></div>Segundo pico (+12%)</div>"
-            "<div style='display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)'>"
-            "<div style='width:8px;height:8px;border-radius:50%;background:#93C5FD'></div>Estándar</div>"
-            "<div style='display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)'>"
-            "<div style='width:8px;height:8px;border-radius:50%;background:#94A3B8'></div>Baja (-28%)</div>"
-            "</div>"
+        # Leyenda compacta
+        _grid += (
+            "<div style='display:flex;gap:12px;flex-wrap:wrap;margin-top:7px;"
+            "padding-top:7px;border-top:.5px solid var(--border)'>"
+            "<span style='display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text-muted)'>"
+            "<span style='width:7px;height:7px;border-radius:50%;background:#16A34A;display:inline-block'></span>"
+            "Mes pico (+18%)</span>"
+            "<span style='display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text-muted)'>"
+            "<span style='width:7px;height:7px;border-radius:50%;background:#0F6E56;display:inline-block'></span>"
+            "Segundo pico (+12%)</span>"
+            "<span style='display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text-muted)'>"
+            "<span style='width:7px;height:7px;border-radius:50%;background:#BFDBFE;display:inline-block'></span>"
+            "Estándar</span>"
+            "<span style='display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text-muted)'>"
+            "<span style='width:7px;height:7px;border-radius:50%;background:#CBD5E1;display:inline-block'></span>"
+            "Baja (-28%)</span>"
+            "</div></div>"
         )
-        st.markdown(mes_html, unsafe_allow_html=True)
-
-        # Botones invisibles para cambiar el mes (uno por mes)
-        mes_btn_cols = st.columns(12)
-        for mi in range(1, 13):
-            nm_b = MESES_INFO[mi][0]
-            with mes_btn_cols[mi-1]:
-                if st.button(nm_b, key=f"mes_btn_{mi}",
-                             use_container_width=True,
-                             help=f"{MESES_INFO[mi][3]} {MESES_INFO[mi][4]}"):
-                    st.session_state["pmes_v3"] = mi
-                    st.rerun()
-
-        # Ocultar los botones nativos con CSS (el visual ya es el HTML de arriba)
-        st.markdown("""
-<style>
-div[data-testid="column"] button[kind="secondary"]:has(+ div),
-div[data-testid="stVerticalBlock"] div[data-testid="stColumns"] ~ div button {
-    opacity: 0 !important;
-    height: 1px !important;
-    padding: 0 !important;
-    min-height: 0 !important;
-    overflow: hidden !important;
-    pointer-events: auto !important;
-}
-</style>""", unsafe_allow_html=True)
+        st.markdown(_grid, unsafe_allow_html=True)
 
 
         # ── Instructor filtrado por programa ──────────────────────────
