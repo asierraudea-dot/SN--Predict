@@ -38,6 +38,8 @@ _RB = '{"Café":{"fichas":63,"ap":1391,"muns":{"ANZÁ":322,"EBÉJICO":177,"CAICE
 _MN = '{"CURSO ESPECIAL":[{"mun":"SANTAFÉ DE ANTIOQUIA","ap":15937,"fichas":572,"prom":27.9},{"mun":"DABEIBA","ap":5792,"fichas":278,"prom":20.8},{"mun":"SAN JERÓNIMO","ap":2796,"fichas":119,"prom":23.5},{"mun":"CAÑASGORDAS","ap":2660,"fichas":121,"prom":22.0},{"mun":"SOPETRÁN","ap":2380,"fichas":107,"prom":22.2},{"mun":"EBÉJICO","ap":2344,"fichas":110,"prom":21.3},{"mun":"FRONTINO","ap":2306,"fichas":106,"prom":21.8},{"mun":"URAMITA","ap":2256,"fichas":100,"prom":22.6},{"mun":"CAICEDO","ap":1734,"fichas":70,"prom":24.8},{"mun":"LIBORINA","ap":1641,"fichas":75,"prom":21.9},{"mun":"BURITICA","ap":1416,"fichas":76,"prom":18.6},{"mun":"GIRALDO","ap":1391,"fichas":66,"prom":21.1},{"mun":"ANZÁ","ap":1386,"fichas":66,"prom":21.0},{"mun":"MEDELLÍN","ap":1071,"fichas":45,"prom":23.8},{"mun":"HELICONIA","ap":988,"fichas":49,"prom":20.2},{"mun":"SABANALARGA","ap":905,"fichas":36,"prom":25.1},{"mun":"PEQUE","ap":774,"fichas":33,"prom":23.5},{"mun":"ABRIAQUÍ","ap":625,"fichas":30,"prom":20.8},{"mun":"OLAYA","ap":608,"fichas":27,"prom":22.5},{"mun":"ARMENIA","ap":569,"fichas":25,"prom":22.8},{"mun":"LA CEJA","ap":40,"fichas":1,"prom":40.0},{"mun":"ITAGUÍ","ap":10,"fichas":1,"prom":10.0}],"TÉCNICO":[{"mun":"SANTAFÉ DE ANTIOQUIA","ap":1867,"fichas":60,"prom":31.1},{"mun":"FRONTINO","ap":1336,"fichas":52,"prom":25.7},{"mun":"DABEIBA","ap":1082,"fichas":42,"prom":25.8},{"mun":"EBÉJICO","ap":596,"fichas":23,"prom":25.9},{"mun":"LIBORINA","ap":572,"fichas":23,"prom":24.9},{"mun":"GIRALDO","ap":509,"fichas":21,"prom":24.2},{"mun":"SOPETRÁN","ap":485,"fichas":20,"prom":24.2},{"mun":"CAÑASGORDAS","ap":483,"fichas":21,"prom":23.0},{"mun":"SAN JERÓNIMO","ap":369,"fichas":16,"prom":23.1},{"mun":"MEDELLÍN","ap":318,"fichas":12,"prom":26.5},{"mun":"URAMITA","ap":288,"fichas":12,"prom":24.0},{"mun":"OLAYA","ap":226,"fichas":8,"prom":28.2},{"mun":"SABANALARGA","ap":213,"fichas":7,"prom":30.4},{"mun":"CAICEDO","ap":212,"fichas":10,"prom":21.2},{"mun":"PEQUE","ap":199,"fichas":7,"prom":28.4},{"mun":"BURITICA","ap":196,"fichas":8,"prom":24.5},{"mun":"ANZÁ","ap":166,"fichas":6,"prom":27.7},{"mun":"ABRIAQUÍ","ap":121,"fichas":6,"prom":20.2},{"mun":"ARMENIA","ap":62,"fichas":2,"prom":31.0},{"mun":"HELICONIA","ap":17,"fichas":1,"prom":17.0}],"TECNÓLOGO":[{"mun":"SANTAFÉ DE ANTIOQUIA","ap":1567,"fichas":69,"prom":22.7}]}'
 _PT = '{"CURSO ESPECIAL":[{"mun":"SANTAFÉ DE ANTIOQUIA","prog":"ENGLISH DOES WORK - LEVEL 1","ap":3091},{"mun":"DABEIBA","prog":"COMPORTAMIENTO EMPRENDEDOR","ap":393},{"mun":"SOPETRÁN","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":328},{"mun":"CAÑASGORDAS","prog":"COMPORTAMIENTO EMPRENDEDOR","ap":326},{"mun":"SAN JERÓNIMO","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":293},{"mun":"FRONTINO","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":248},{"mun":"ANZÁ","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":210},{"mun":"EBÉJICO","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":202},{"mun":"URAMITA","prog":"GENERACION DE IDEAS PARA UN NEGOCIO INNOVADOR","ap":190},{"mun":"MEDELLÍN","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":185},{"mun":"HELICONIA","prog":"HIGIENE Y MANIPULACION DE ALIMENTOS.","ap":183},{"mun":"SABANALARGA","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":180},{"mun":"OLAYA","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":143},{"mun":"LIBORINA","prog":"MANIPULACION HIGIENICA DE ALIMENTOS.","ap":141},{"mun":"CAICEDO","prog":"FORMULACION Y EVALUACION DE PROYECTOS","ap":121}],"TÉCNICO":[{"mun":"SANTAFÉ DE ANTIOQUIA","prog":"SERVICIO DE RECEPCION HOTELERA","ap":477},{"mun":"FRONTINO","prog":"ASISTENCIA ADMINISTRATIVA .","ap":333},{"mun":"MEDELLÍN","prog":"PROMOTORIA EN MANEJO AMBIENTAL","ap":266},{"mun":"EBÉJICO","prog":"PROGRAMACION DE SOFTWARE .","ap":237},{"mun":"SAN JERÓNIMO","prog":"SISTEMAS AGROPECUARIOS ECOLOGICOS.","ap":225},{"mun":"LIBORINA","prog":"ASISTENCIA ADMINISTRATIVA .","ap":215},{"mun":"CAÑASGORDAS","prog":"OPERACION TURISTICA LOCAL","ap":181},{"mun":"DABEIBA","prog":"PRODUCCION AGROPECUARIA","ap":154},{"mun":"PEQUE","prog":"CONSERVACION DE RECURSOS NATURALES","ap":154},{"mun":"ANZÁ","prog":"PRODUCCION DE CAFE","ap":120},{"mun":"SOPETRÁN","prog":"PROGRAMACION DE SOFTWARE .","ap":108},{"mun":"GIRALDO","prog":"CONSERVACION DE RECURSOS NATURALES","ap":107},{"mun":"ABRIAQUÍ","prog":"CONSERVACION DE RECURSOS NATURALES","ap":98},{"mun":"SABANALARGA","prog":"ASISTENCIA ADMINISTRATIVA .","ap":83},{"mun":"URAMITA","prog":"CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERA","ap":77}],"TECNÓLOGO":[{"mun":"SANTAFÉ DE ANTIOQUIA","prog":"GESTION AGROEMPRESARIAL","ap":303}]}'
 _TA = '{"ABRIAQUÍ":{"2023":278,"2024":361,"2025":107},"ANZÁ":{"2023":595,"2024":761,"2025":196},"ARMENIA":{"2023":163,"2024":437,"2025":31},"BURITICA":{"2023":576,"2024":835,"2025":201},"CAICEDO":{"2023":597,"2024":1193,"2025":156},"CAÑASGORDAS":{"2023":713,"2024":2026,"2025":404},"DABEIBA":{"2023":1411,"2024":4807,"2025":656},"EBÉJICO":{"2023":1181,"2024":1313,"2025":446},"FRONTINO":{"2023":1538,"2024":1721,"2025":383},"GIRALDO":{"2023":426,"2024":1190,"2025":284},"HELICONIA":{"2023":199,"2024":806},"ITAGUÍ":{"2024":10},"LA CEJA":{"2023":40},"LIBORINA":{"2023":922,"2024":1069,"2025":222},"MEDELLÍN":{"2023":485,"2024":715,"2025":189},"OLAYA":{"2023":395,"2024":274,"2025":165},"PEQUE":{"2023":462,"2024":415,"2025":96},"SABANALARGA":{"2023":469,"2024":545,"2025":104},"SAN JERÓNIMO":{"2023":1144,"2024":1838,"2025":183},"SANTAFÉ DE ANTIOQUIA":{"2023":8554,"2024":9089,"2025":3429},"SOPETRÁN":{"2023":938,"2024":1681,"2025":246},"URAMITA":{"2023":844,"2024":1408,"2025":292}}'
+_PI = '{"MANIPULACION HIGIENICA DE ALIMENTOS.":[{"n":"ADRIANA MARIA AGUIRRE LOPEZ","fichas":122,"prom":27.8,"total":3386,"max_ap":72,"meses":4},{"n":"ADRIANA MARIA AGUIRRE","fichas":1,"prom":24.0,"total":24,"max_ap":24,"meses":24},{"n":"LUISA FERNANDA PELAEZ TAMAYO","fichas":1,"prom":31.0,"total":31,"max_ap":31,"meses":25}],"ELABORACION DE HELADOS Y POSTRES LACTEOS":[{"n":"ADRIANA MARIA AGUIRRE LOPEZ","fichas":14,"prom":24.9,"total":348,"max_ap":35,"meses":5},{"n":"ADRIANA MARIA AGUIRRE","fichas":1,"prom":28.0,"total":28,"max_ap":28,"meses":19}],"COMPORTAMIENTO EMPRENDEDOR":[{"n":"JAIME ANDRES MIRA BURITICA","fichas":19,"prom":20.7,"total":394,"max_ap":26,"meses":4},{"n":"SANDRA ELIANA GOMEZ JIMENEZ","fichas":10,"prom":18.0,"total":180,"max_ap":28,"meses":8},{"n":"AURA CECILIA CAMARGO MUÑOZ","fichas":8,"prom":28.1,"total":225,"max_ap":39,"meses":4},{"n":"MARCO ANTONIO VIERA ARROYO","fichas":8,"prom":17.2,"total":138,"max_ap":22,"meses":11},{"n":"HECTOR ENRIQUE ANGULO PASTRANA","fichas":7,"prom":20.4,"total":143,"max_ap":26,"meses":4},{"n":"FLOR ASTRID TUBERQUIA USUGA","fichas":7,"prom":24.7,"total":173,"max_ap":28,"meses":9},{"n":"SANDRA PATRICIA BERMUDEZ OROZCO","fichas":7,"prom":26.6,"total":186,"max_ap":31,"meses":9},{"n":"JOHN JENRY SILVA LOPEZ","fichas":6,"prom":22.0,"total":132,"max_ap":23,"meses":8},{"n":"WALTER CHARRY HOLGUIN","fichas":6,"prom":23.7,"total":142,"max_ap":27,"meses":9},{"n":"JORGE IVAN PINO MACHADO","fichas":6,"prom":25.3,"total":152,"max_ap":31,"meses":9}],"GENERACION DE IDEAS PARA UN NEGOCIO INNOVADOR":[{"n":"SANDRA ELIANA GOMEZ JIMENEZ","fichas":11,"prom":16.8,"total":185,"max_ap":21,"meses":1},{"n":"JORGE IVAN PINO MACHADO","fichas":10,"prom":23.2,"total":232,"max_ap":31,"meses":1},{"n":"FLOR ASTRID TUBERQUIA USUGA","fichas":9,"prom":22.8,"total":205,"max_ap":28,"meses":1},{"n":"MARCO ANTONIO VIERA ARROYO","fichas":9,"prom":19.3,"total":174,"max_ap":26,"meses":1},{"n":"HECTOR ENRIQUE ANGULO PASTRANA","fichas":7,"prom":22.7,"total":159,"max_ap":31,"meses":4},{"n":"AURA CECILIA CAMARGO MUÑOZ","fichas":7,"prom":28.9,"total":202,"max_ap":39,"meses":8},{"n":"SANDRA PATRICIA BERMUDEZ OROZCO","fichas":6,"prom":22.8,"total":137,"max_ap":25,"meses":8},{"n":"WALTER CHARRY HOLGUIN","fichas":6,"prom":25.0,"total":150,"max_ap":27,"meses":7},{"n":"CARLOS ENRRIQUE JULIO MARQUEZ","fichas":5,"prom":24.6,"total":123,"max_ap":27,"meses":6},{"n":"JOHN JENRY SILVA LOPEZ","fichas":3,"prom":24.0,"total":72,"max_ap":24,"meses":10}],"CONSERVACION DE RECURSOS NATURALES":[{"n":"LUIS ALFREDO ALVAREZ CARMONA","fichas":6,"prom":25.3,"total":152,"max_ap":27,"meses":25},{"n":"MARIA CLARA YEPES GOMEZ","fichas":6,"prom":30.0,"total":180,"max_ap":37,"meses":25},{"n":"JOSE RAMON VALLE DIAZ","fichas":4,"prom":21.8,"total":87,"max_ap":31,"meses":37},{"n":"LEANDRO VARGAS METAUTE","fichas":4,"prom":29.0,"total":116,"max_ap":41,"meses":13},{"n":"CAROLINA ANDREA PAREDES DURAN","fichas":4,"prom":23.5,"total":94,"max_ap":25,"meses":25},{"n":"LUIS ALFREDO ALVAREZ CARDONA","fichas":4,"prom":16.5,"total":66,"max_ap":21,"meses":12},{"n":"KAREN YULIETH RESTREPO ZAPATA","fichas":3,"prom":24.0,"total":72,"max_ap":28,"meses":1},{"n":"DIEGO FERNANDO ALVARADO PEREZ","fichas":3,"prom":26.0,"total":78,"max_ap":30,"meses":25},{"n":"JOHANA CATALINA CARVAJAL ESPINOSA","fichas":2,"prom":26.0,"total":52,"max_ap":27,"meses":13},{"n":"LINA MARIA GAMARRA PINEDA","fichas":2,"prom":30.0,"total":60,"max_ap":35,"meses":15}],"GESTION DE PROYECTOS COMUNITARIOS":[{"n":"FERNEY EUGENIO RUIZ URREGO","fichas":11,"prom":19.5,"total":215,"max_ap":27,"meses":1},{"n":"JAIRO ALEXANDER ROJAS LEDEZMA","fichas":4,"prom":15.2,"total":61,"max_ap":16,"meses":18},{"n":"LILIANA GARCIA FLOREZ","fichas":4,"prom":7.5,"total":30,"max_ap":10,"meses":18},{"n":"AURA CECILIA CAMARGO MUÑOZ","fichas":3,"prom":14.0,"total":42,"max_ap":20,"meses":18},{"n":"MARCO ANTONIO VIERA ARROYO","fichas":3,"prom":21.7,"total":65,"max_ap":29,"meses":23},{"n":"HECTOR IVAN PATIÑO TIRIA","fichas":3,"prom":17.0,"total":51,"max_ap":21,"meses":18},{"n":"JORGE LUIS CARRIZOSA ACOSTA","fichas":3,"prom":25.7,"total":77,"max_ap":33,"meses":19},{"n":"MARIA EUCARIS ECHEVERRI BEDOYA","fichas":3,"prom":17.0,"total":51,"max_ap":22,"meses":0},{"n":"JULLY ANDREA RIOS RIVERA","fichas":2,"prom":22.5,"total":45,"max_ap":23,"meses":18},{"n":"JAIRO ALEXANDER ROJAS","fichas":2,"prom":7.5,"total":15,"max_ap":15,"meses":0}],"INSEMINACION ARTIFICIAL DE HEMBRAS BOVINAS APLICANDO PROTOCOLO CONVE":[{"n":"JHON ALEXANDER LEZCANO OQUENDO","fichas":6,"prom":23.0,"total":138,"max_ap":28,"meses":5},{"n":"CARLOS JULIO RUBIO ESCOBAR","fichas":5,"prom":24.4,"total":122,"max_ap":32,"meses":21}],"EMPRENDEDOR EN PROPAGACION DE MATERIAL VEGETAL Y ESTABLECIMIENTO DE ":[{"n":"JUAN DIEGO TOBON ACEVEDO","fichas":3,"prom":25.3,"total":76,"max_ap":30,"meses":18},{"n":"HECTOR IVAN PATIÑO TIRIA","fichas":2,"prom":20.5,"total":41,"max_ap":25,"meses":25},{"n":"YAZMINA ROSA VALENCIA LOPEZ","fichas":2,"prom":19.0,"total":38,"max_ap":25,"meses":13},{"n":"GILDARDO ANTONIO HURTADO RUEDA","fichas":1,"prom":16.0,"total":16,"max_ap":16,"meses":0}],"CRÍA Y LEVANTE DE POLLOS DE ENGORDE CON LA IMPLEMENTACIÓN DE MAÍZ Y ":[{"n":"SARA MARIA BORJA CIFUENTES","fichas":3,"prom":17.0,"total":51,"max_ap":18,"meses":4}],"MANEJO RACIONAL DE PLAGUICIDAS":[{"n":"JULLY ANDREA RIOS RIVERA","fichas":5,"prom":19.6,"total":98,"max_ap":22,"meses":4},{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":3,"prom":17.3,"total":52,"max_ap":25,"meses":6},{"n":"JAIME ENRIQUE ZAPATA GUZMAN","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":11},{"n":"ORLANDO QUEJADA ROVIRA","fichas":1,"prom":13.0,"total":13,"max_ap":13,"meses":0},{"n":"SARA MARIA BORJA CIFUENTES","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":9}],"APLICACION DE BUENAS PRACTICAS GANADERAS  EN BOVINOS DE LECHE":[{"n":"CARLOS IGNACIO URREGO SALAS","fichas":2,"prom":19.0,"total":38,"max_ap":21,"meses":1},{"n":"JORGE IVAN PINO MACHADO","fichas":2,"prom":27.5,"total":55,"max_ap":29,"meses":25},{"n":"SARA MARIA BORJA CIFUENTES","fichas":2,"prom":14.5,"total":29,"max_ap":20,"meses":0},{"n":"ORLANDO QUEJADA ROVIRA","fichas":1,"prom":12.0,"total":12,"max_ap":12,"meses":0},{"n":"SARA MARIA BORJA CIFUERTES","fichas":1,"prom":18.0,"total":18,"max_ap":18,"meses":0}],"MANEJO DE LA NUTRICION EN CULTIVOS AGRICOLAS":[{"n":"SARA MARIA BORJA CIFUENTES","fichas":8,"prom":17.9,"total":143,"max_ap":26,"meses":5},{"n":"JULIO CESAR LONDOÑO HERNANDEZ","fichas":3,"prom":16.7,"total":50,"max_ap":20,"meses":6},{"n":"JULLY ANDREA RIOS RIVERA","fichas":2,"prom":21.5,"total":43,"max_ap":22,"meses":5},{"n":"JOSE MAURICIO BERRIO MENA","fichas":2,"prom":20.5,"total":41,"max_ap":26,"meses":8},{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":1,"prom":16.0,"total":16,"max_ap":16,"meses":0},{"n":"SARA MARIA BORJAS CIFUENTES","fichas":1,"prom":17.0,"total":17,"max_ap":17,"meses":0},{"n":"YAIR ANTONIO MADERA MENDOZA","fichas":1,"prom":16.0,"total":16,"max_ap":16,"meses":0},{"n":"YAZMINA ROSA VALENCIA LOPEZ","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":25}],"PRODUCCION AGROPECUARIA ECOLOGICA PARA LA SOBERANIA ALIMENTARIA":[{"n":"MAGDA LORENA RAMIREZ GUTIERREZ","fichas":14,"prom":22.1,"total":309,"max_ap":32,"meses":1},{"n":"MARIA EUCARIS ECHEVERRI BEDOYA","fichas":10,"prom":22.9,"total":229,"max_ap":29,"meses":1},{"n":"JHON HENRY SILVA LOPEZ","fichas":5,"prom":18.0,"total":90,"max_ap":24,"meses":22},{"n":"LILIANA GARCIA FLOREZ","fichas":4,"prom":25.8,"total":103,"max_ap":31,"meses":20},{"n":"JOHN JENRY SILVA LOPEZ","fichas":1,"prom":24.0,"total":24,"max_ap":24,"meses":12},{"n":"JHON ALEXANDER LEZCANO OQUENDO","fichas":1,"prom":46.0,"total":46,"max_ap":46,"meses":20},{"n":"JAIRO ALEXANDER ROJAS LEDEZMA","fichas":1,"prom":26.0,"total":26,"max_ap":26,"meses":24},{"n":"JULLY ANDREA RIOS RIVERA","fichas":1,"prom":26.0,"total":26,"max_ap":26,"meses":21},{"n":"MARIA EUCARIS ECHAVERRI BEDOYA","fichas":1,"prom":11.0,"total":11,"max_ap":11,"meses":25},{"n":"RICARDO VELEZ ZULUAGA","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":25}],"EMPRENDIMIENTO EN PRODUCCION  DE FRUTALES SEMIPERENNES":[{"n":"YAZMINA ROSA VALENCIA LOPEZ","fichas":2,"prom":25.0,"total":50,"max_ap":26,"meses":9},{"n":"HECTOR IVAN PATIÑO TIRIA","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":22},{"n":"JUAN DIEGO TOBON ACEVEDO","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":0}],"HIGIENE Y MANIPULACIÓN DE ALIMENTOS":[{"n":"ADRIANA MARIA AGUIRRE LOPEZ","fichas":52,"prom":25.8,"total":1339,"max_ap":40,"meses":0},{"n":"LUISA FERNANDA PELAEZ TAMAYO","fichas":30,"prom":23.5,"total":704,"max_ap":30,"meses":4},{"n":"LUISA FERNANDA PELEZ TAMAYO","fichas":5,"prom":30.4,"total":152,"max_ap":34,"meses":22}],"APLICACION DEL PROGRAMA DE BIOSEGURIDAD EN EMPRESAS AVICOLAS.":[{"n":"ALEJANDRA MARIA CANO VASQUEZ","fichas":3,"prom":16.7,"total":50,"max_ap":19,"meses":10}],"CRIAR GALLINAS PONEDORAS CON ALIMENTACIÓN ALTERNA PARA PRODUCIR HUEV":[{"n":"ALEJANDRA MARIA CANO VASQUEZ","fichas":18,"prom":18.6,"total":334,"max_ap":25,"meses":4},{"n":"CARLOS JULIO RUBIO ESCOBAR","fichas":8,"prom":26.4,"total":211,"max_ap":30,"meses":5},{"n":"JORGE IVAN PINO MACHADO","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":1}],"EMPRENDEDOR EN PROCESAMIENTO ARTESANAL  DE DERIVADOS  FRUTAS Y HORTA":[{"n":"CARLOS ENRRIQUE JULIO MARQUEZ","fichas":2,"prom":24.5,"total":49,"max_ap":25,"meses":24},{"n":"CARLOS ENRIQUE JULIO MARQUEZ","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":21},{"n":"JAIRO ALEXANDER ROJAS LEDEZMA","fichas":1,"prom":24.0,"total":24,"max_ap":24,"meses":23}],"IMPLEMENTACION DE PRACTICAS DE MANEJO DEL HUEVO":[{"n":"CARLOS JULIO RUBIO ESCOBAR","fichas":12,"prom":25.9,"total":311,"max_ap":30,"meses":6}],"PRODUCCION AGROPECUARIA":[{"n":"SARA MARIA BETANCUR CARDONA","fichas":5,"prom":21.4,"total":107,"max_ap":47,"meses":6},{"n":"CAROLINA ANDREA PAREDES DURAN","fichas":4,"prom":24.5,"total":98,"max_ap":32,"meses":25},{"n":"JOHANA CATALINA CARVAJAL ESPINOSA","fichas":2,"prom":25.0,"total":50,"max_ap":29,"meses":1},{"n":"CESAR AUGUSTO ROBLEDO GARCIA","fichas":2,"prom":28.5,"total":57,"max_ap":34,"meses":17},{"n":"MARIA CLARA YEPES GOMEZ","fichas":2,"prom":31.0,"total":62,"max_ap":32,"meses":13},{"n":"CESAR AGUSTO ROBLEDO GARCIA","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":34}],"PRACTICAS DE CALIDAD PARA EL BENEFICIO DEL CAFE":[{"n":"JULIO CESAR LONDOÑO HERNANDEZ","fichas":11,"prom":16.8,"total":185,"max_ap":20,"meses":6},{"n":"JAIME ENRIQUE ZAPATA GUZMAN","fichas":4,"prom":22.5,"total":90,"max_ap":26,"meses":7},{"n":"EDWIN JAIME LOAIZA HERNANDEZ","fichas":3,"prom":25.7,"total":77,"max_ap":37,"meses":0},{"n":"CINDY MARINA CASTAÑO MARTINEZ","fichas":2,"prom":32.0,"total":64,"max_ap":43,"meses":0}],"PROGRAMACION DE SOFTWARE .":[{"n":"ENNIO WADITH MENDOZA MONTES","fichas":6,"prom":27.2,"total":163,"max_ap":36,"meses":1},{"n":"JORGE MARIO PATIÑO MARIN","fichas":6,"prom":24.3,"total":146,"max_ap":25,"meses":13},{"n":"JHON JAIRO ALBA NORIEGA","fichas":6,"prom":24.8,"total":149,"max_ap":29,"meses":13},{"n":"JUAN PABLO SALDARRIAGA GARZON","fichas":4,"prom":20.8,"total":83,"max_ap":27,"meses":25},{"n":"FRANK DAVID CALDERON BENITEZ","fichas":2,"prom":28.0,"total":56,"max_ap":31,"meses":10},{"n":"JUANA VALENTINA JIMENEZ FERNANDEZ","fichas":2,"prom":27.5,"total":55,"max_ap":29,"meses":13},{"n":"GIOVANNY BUSTAMANTE MALDONADO","fichas":1,"prom":24.0,"total":24,"max_ap":24,"meses":37}],"COCTELERIA TROPICAL":[{"n":"GIOVANY CASTRO MOLINA","fichas":5,"prom":21.0,"total":105,"max_ap":22,"meses":6},{"n":"GIOVANY CASTOR MOLINA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":18},{"n":"GOVANY CASTRO MOLINA","fichas":1,"prom":24.0,"total":24,"max_ap":24,"meses":10}],"PATRONAJE DE PRENDAS DE ROPA EXTERIOR FEMENINA":[{"n":"GLORIA MILENA FLOREZ MARTINEZ","fichas":11,"prom":17.5,"total":193,"max_ap":24,"meses":20}],"APLICACION DEL PLAN SANITARIO EN GRANJAS DE PRODUCCION DE HUEVO":[{"n":"JHON ALEXANDER LEZCANO OQUENDO","fichas":10,"prom":20.8,"total":208,"max_ap":30,"meses":6}],"CARACTERIZACION DE ELEMENTOS DEL MARKETING":[{"n":"JHON CRISTIAN PALACIO GOMEZ","fichas":6,"prom":20.0,"total":120,"max_ap":22,"meses":4}],"PRODUCCION DE CAFE":[{"n":"JIMENA ALEJANDRA RODRIGUEZ TAMAYO","fichas":6,"prom":25.7,"total":154,"max_ap":35,"meses":12}],"EMPRENDIMIENTO EN LA PRODUCCION DE ESPECIES DULCES ACUICOLAS":[{"n":"JOHN JENRY SILVA LOPEZ","fichas":5,"prom":17.4,"total":87,"max_ap":25,"meses":1},{"n":"RICARDO VELEZ ZULUAGA","fichas":2,"prom":18.5,"total":37,"max_ap":22,"meses":1}],"CATACION DE CAFE NIVEL 1":[{"n":"JORGE LUIS CARRIZOSA ACOSTA","fichas":3,"prom":26.3,"total":79,"max_ap":30,"meses":6},{"n":"EDUAR URIEL GOMEZ ORTIZ","fichas":1,"prom":10.0,"total":10,"max_ap":10,"meses":25}],"EMPRENDEDOR EN PROCESAMIENTO DE PRODUCTOS DERIVADOS DEL CAFE":[{"n":"JORGE LUIS CARRIZOSA ACOSTA","fichas":10,"prom":27.8,"total":278,"max_ap":35,"meses":1}],"APLICACION DE LAS BUENAS PRACTICAS AGRICOLAS":[{"n":"JULIO CESAR LONDOÑO HERNANDEZ","fichas":13,"prom":23.2,"total":301,"max_ap":85,"meses":1},{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":7,"prom":18.3,"total":128,"max_ap":27,"meses":1},{"n":"SARA MARIA BORJA CIFUENTES","fichas":6,"prom":24.8,"total":149,"max_ap":66,"meses":1},{"n":"JUAN DIEGO TOBON ACEVEDO","fichas":4,"prom":26.8,"total":107,"max_ap":30,"meses":21},{"n":"ANGELICO MENA CELODIO","fichas":3,"prom":35.7,"total":107,"max_ap":74,"meses":0},{"n":"JULLY ANDREA RIOS RIVERA","fichas":3,"prom":14.0,"total":42,"max_ap":15,"meses":12},{"n":"CINDY MARINA CASTAÑO MARTINEZ","fichas":1,"prom":64.0,"total":64,"max_ap":64,"meses":0},{"n":"CAÑASGORDAS","fichas":1,"prom":19.0,"total":19,"max_ap":19,"meses":0},{"n":"JULIO CESAAR LONDOÑO HERNANDEZ","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":0},{"n":"GILDARDO ANTONIO HURTADO RUEDA","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":5}],"INGLES BASICO - NIVEL 1":[{"n":"JESUS DAVID TRUJILLO BERMEO","fichas":16,"prom":25.6,"total":410,"max_ap":44,"meses":1},{"n":"LAURA DANIELA VILLAMIZAR CACERES","fichas":6,"prom":24.8,"total":149,"max_ap":34,"meses":6},{"n":"YIRA ENITH MORENO PALACIOS","fichas":4,"prom":29.2,"total":117,"max_ap":36,"meses":1},{"n":"CRISTIAN MAURICIO VARON PEREZ","fichas":2,"prom":24.5,"total":49,"max_ap":32,"meses":19},{"n":"CLAUDIA LINARES","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":22},{"n":"CLAUDIA PATRICIA LINARES CORREA","fichas":1,"prom":11.0,"total":11,"max_ap":11,"meses":22},{"n":"JUAN ESTEBAN ISAZA ZAPATA","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":20},{"n":"JUAN ESTEBAN MEJIA CARVAJAL","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":24},{"n":"JUAN ESTEBAN IZASA ZAPATA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":20},{"n":"LAURA DANIELA VILLAMIZAR","fichas":1,"prom":35.0,"total":35,"max_ap":35,"meses":19}],"EMPRENDIMIENTO EN APICULTURA":[{"n":"RICARDO VELEZ ZULUAGA","fichas":11,"prom":22.5,"total":248,"max_ap":29,"meses":1},{"n":"GUSTAVO ADOLFO VILLEGAS HENAO","fichas":2,"prom":25.0,"total":50,"max_ap":25,"meses":11},{"n":"RICARDO VÉLEZ ZULUAGA","fichas":1,"prom":28.0,"total":28,"max_ap":28,"meses":25}],"HIGIENE Y MANIPULACION DE ALIMENTOS.":[{"n":"SINDY JULIETH MENA PRIETO","fichas":30,"prom":17.7,"total":530,"max_ap":24,"meses":3},{"n":"CARLOS ENRRIQUE JULIO MARQUEZ","fichas":1,"prom":16.0,"total":16,"max_ap":16,"meses":1},{"n":"ESNEIDER RIOS AREIZA","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":1},{"n":"GUSTAVO ADOLFO VEGA CANO","fichas":1,"prom":18.0,"total":18,"max_ap":18,"meses":7}],"EMPRENDIMIENTO EN PRODUCCION DE CULTIVOS TRANSITORIOS":[{"n":"YAZMINA ROSA VALENCIA LOPEZ","fichas":3,"prom":27.0,"total":81,"max_ap":27,"meses":6},{"n":"JULLY ANDREA RIOS RIVERA","fichas":2,"prom":17.5,"total":35,"max_ap":18,"meses":24},{"n":"ANDREA RIOS RIVERA","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":20},{"n":"GILDARDO ANTONIO HURTADO RUEDA","fichas":1,"prom":8.0,"total":8,"max_ap":8,"meses":0},{"n":"LILIANA GARCIA FLOREZ","fichas":1,"prom":32.0,"total":32,"max_ap":32,"meses":25}],"INFORMATICA: MICROSOFT WORD, EXCEL E INTERNET":[{"n":"GUILLERMO DE JESUS TUBERQUIA AVENDAÑO","fichas":10,"prom":20.0,"total":200,"max_ap":22,"meses":6},{"n":"BAIRON AGUILAR GUTIERREZ","fichas":5,"prom":26.4,"total":132,"max_ap":42,"meses":4},{"n":"ARLES ASNEY VALOYES OBREGON","fichas":2,"prom":20.0,"total":40,"max_ap":20,"meses":6},{"n":"FRANK DAVID CALDERON BENITEZ","fichas":2,"prom":24.5,"total":49,"max_ap":28,"meses":10},{"n":"DAVINSON ALVAREZ MOSQUERA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":19},{"n":"JHON JAIRO ALBA NORIEGA","fichas":1,"prom":30.0,"total":30,"max_ap":30,"meses":1},{"n":"LEONARDO PELAEZ RUBIO","fichas":1,"prom":34.0,"total":34,"max_ap":34,"meses":7}],"MANEJO BASICO DE LA HERRAMIENTA DE HOJAS DE CALCULO EXCEL":[{"n":"ARLES ASNEY VALOYES OBREGON","fichas":48,"prom":18.1,"total":867,"max_ap":28,"meses":1},{"n":"BAIRON AGUILAR GUTIERREZ","fichas":4,"prom":22.8,"total":91,"max_ap":25,"meses":7},{"n":"GUILLERMO DE JESUS TUBERQUIA AVENDAÑO","fichas":3,"prom":20.0,"total":60,"max_ap":20,"meses":8},{"n":"ARELY EMILSEN ARROYAVE QUINTERO","fichas":1,"prom":26.0,"total":26,"max_ap":26,"meses":5},{"n":"ARLES ASNEY BALOYES OBREGON","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":25},{"n":"ARLES ASNEY VALOYES ABRERON","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":11},{"n":"DAVINSON ALVAREZ MOSQUERA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":19},{"n":"GIOVANNY BUSTAMANTE MALDONADO","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":4},{"n":"LEONARDO PELAEZ RUBIO","fichas":1,"prom":31.0,"total":31,"max_ap":31,"meses":9},{"n":"OSCAR ENRIQUE PARRA MORENO","fichas":1,"prom":14.0,"total":14,"max_ap":14,"meses":20}],"APLICACION DE  BUENAS PRACTICAS GANADERAS EN LA PRODUCCION DE BOVINO":[{"n":"CARLOS JULIO RUBIO ESCOBAR","fichas":10,"prom":27.5,"total":275,"max_ap":37,"meses":4},{"n":"SARA MARIA BETANCUR CARDONA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":12}],"ELABORACION DE ACCESORIOS TEJIDOS EN MOSTACILLAS":[{"n":"GLORIA MILENA FLOREZ MARTINEZ","fichas":5,"prom":29.2,"total":146,"max_ap":37,"meses":5}],"ATENCION AL CLIENTE POR MEDIOS TECNOLOGICOS":[{"n":"ERICA ALEXANDRA HINCAPIE ORTIZ","fichas":3,"prom":33.3,"total":100,"max_ap":55,"meses":4},{"n":"JACQUELINE MONTEALEGRE MORALES","fichas":2,"prom":34.0,"total":68,"max_ap":44,"meses":1},{"n":"LUIS ALFONSO MUÑOZ PERTUZ","fichas":2,"prom":21.5,"total":43,"max_ap":22,"meses":4}],"MONITOREO DE PLAGAS EN SISTEMAS PRODUCTIVOS AGRICOLAS":[{"n":"JULLY ANDREA RIOS RIVERA","fichas":5,"prom":15.0,"total":75,"max_ap":15,"meses":9},{"n":"JUAN DIEGO TOBON ACEVEDO","fichas":1,"prom":24.0,"total":24,"max_ap":24,"meses":12}],"COCINA NAVIDEÑA":[{"n":"GIOVANY CASTRO MOLINA","fichas":4,"prom":23.8,"total":95,"max_ap":30,"meses":4},{"n":"JHONATAN ANGEL VALENCIA","fichas":2,"prom":20.5,"total":41,"max_ap":21,"meses":4},{"n":"LUCILA ANDREA CARDONA AGUDELO","fichas":2,"prom":22.5,"total":45,"max_ap":25,"meses":4},{"n":"JUAN DIEGO MARIN ORTIZ","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":18}],"PELUQUERIA.":[{"n":"NOELBA DEL CARMEN GONZALEZ TORO","fichas":2,"prom":31.0,"total":62,"max_ap":31,"meses":4},{"n":"YOLANDA JOSEFINA ACOSTA ANDRADE","fichas":2,"prom":27.0,"total":54,"max_ap":31,"meses":19},{"n":"MAXIMA MORENO MENDOZA","fichas":1,"prom":17.0,"total":17,"max_ap":17,"meses":41},{"n":"RUTH GIRALDO DIAZ","fichas":1,"prom":13.0,"total":13,"max_ap":13,"meses":31}],"TENDENCIAS EN DECORACION PARA MANICURA Y PEDICURA":[{"n":"NOELBA DEL CARMEN GONZALEZ TORO","fichas":9,"prom":23.2,"total":209,"max_ap":34,"meses":4},{"n":"YOLANDA JOSEFINA ACOSTA ANDRADE","fichas":1,"prom":12.0,"total":12,"max_ap":12,"meses":22}],"ASISTENCIA ADMINISTRATIVA .":[{"n":"JHON JAIRO VANEGAS GALVIS","fichas":8,"prom":24.8,"total":198,"max_ap":32,"meses":1},{"n":"NELIDA DEL CARMEN LOPEZ HERRERA","fichas":8,"prom":29.6,"total":237,"max_ap":39,"meses":1},{"n":"EDINZON ANDRES GOMEZ MENA","fichas":5,"prom":26.0,"total":130,"max_ap":31,"meses":25},{"n":"LEONARDO PELAEZ RUBIO","fichas":5,"prom":24.6,"total":123,"max_ap":35,"meses":16},{"n":"DIANA MARIA POLANIA PERDOMO","fichas":4,"prom":34.5,"total":138,"max_ap":40,"meses":12},{"n":"OSWALDO RUIZ RESTREPO","fichas":3,"prom":27.7,"total":83,"max_ap":33,"meses":23},{"n":"ARELY EMILSE ARROYAVE QUINTERO","fichas":2,"prom":34.0,"total":68,"max_ap":34,"meses":20},{"n":"YEIMIT JIMENEZ SEVERICHE","fichas":2,"prom":29.0,"total":58,"max_ap":29,"meses":13},{"n":"FREDY ENRIQUE RUIZ FLOREZ","fichas":2,"prom":20.0,"total":40,"max_ap":20,"meses":28},{"n":"ERICA ALEXANDRA HINCAPIE ORTIZ","fichas":2,"prom":21.0,"total":42,"max_ap":21,"meses":29}],"APLICACION DE FUNCIONES Y COMBINACIONES MULTIPLES EN EXCEL PARA SOLU":[{"n":"ARLES ASNEY VALOYES OBREGON","fichas":9,"prom":15.6,"total":140,"max_ap":33,"meses":3},{"n":"BAIRON AGUILAR GUTIERREZ","fichas":2,"prom":24.5,"total":49,"max_ap":27,"meses":3}],"EXCEL INTERMEDIO":[{"n":"ARLES ASNEY VALOYES OBREGON","fichas":9,"prom":21.7,"total":195,"max_ap":23,"meses":4},{"n":"BAIRON AGUILAR GUTIERREZ","fichas":3,"prom":20.3,"total":61,"max_ap":21,"meses":11}],"ELABORACIÓN DE PANES ARTESANALES":[{"n":"ADRIANA MARIA AGUIRRE LOPEZ","fichas":7,"prom":30.1,"total":211,"max_ap":41,"meses":4},{"n":"BRYDYZ ALFONSO MAZZY RUIZ","fichas":5,"prom":26.2,"total":131,"max_ap":31,"meses":9}],"INSTALACION DE SISTEMAS ELECTRICOS RESIDENCIALES Y COMERCIALES":[{"n":"JORGE ENRIQUE SANCHEZ GRANADA","fichas":4,"prom":23.2,"total":93,"max_ap":30,"meses":4},{"n":"DIEGO MEJIA GALINDO","fichas":2,"prom":13.0,"total":26,"max_ap":18,"meses":40},{"n":"EDWIN HERRERA AGUDELO","fichas":2,"prom":15.0,"total":30,"max_ap":15,"meses":10},{"n":"JOSE ALONSO DUQUE VARELA","fichas":2,"prom":29.0,"total":58,"max_ap":29,"meses":23}],"DECORACION DE OBJETOS ARTESANALES EN ARTE COUNTRY":[{"n":"EDGARDO MANUEL PERTUZ MENDOZA","fichas":8,"prom":23.9,"total":191,"max_ap":29,"meses":17},{"n":"EDGARDO PERUZ MENDOZA","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":20}],"ELABORACIÓN DE ARTÍCULOS DECORATIVOS Y UTILITARIOS APLICANDO TÉCNICA":[{"n":"EDGARDO MANUEL PERTUZ MENDOZA","fichas":5,"prom":25.2,"total":126,"max_ap":31,"meses":17}],"EMPRENDIMIENTO EN PRODUCCION DE CAFE":[{"n":"GILDARDO ANTONIO HURTADO RUEDA","fichas":3,"prom":20.7,"total":62,"max_ap":26,"meses":11},{"n":"LILIANA GACIA LOPEZ","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":22}],"TECNICAS DE PREPARACION DE BEBIDAS A BASE DE CAFE":[{"n":"GIOVANY CASTRO MOLINA","fichas":3,"prom":21.7,"total":65,"max_ap":25,"meses":4}],"ELECTRICIDAD BÁSICA":[{"n":"JOSE ALONSO DUQUE VARELA","fichas":5,"prom":14.8,"total":74,"max_ap":22,"meses":18},{"n":"EDWIN HERRERA AGUDELO","fichas":2,"prom":14.5,"total":29,"max_ap":15,"meses":11},{"n":"JORGE ENRIQUE SANCHEZ GRANADA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":9},{"n":"JORGE ENRIQUE SNACHEZ GRANADA","fichas":1,"prom":13.0,"total":13,"max_ap":13,"meses":18}],"RECONOCIMIENTO Y REGISTRO DE ESPECIES PARA EL AVITURISMO":[{"n":"LINA MARIA GAMARRA PINEDA","fichas":9,"prom":20.9,"total":188,"max_ap":35,"meses":3}],"ACONDICIONAMIENTO DE ANDAMIOS PARA TRABAJO EN ALTURAS":[{"n":"MARIBEL GALEANO ROJAS","fichas":6,"prom":7.3,"total":44,"max_ap":8,"meses":0},{"n":"SEBASTIAN GUARIN FONSECA","fichas":6,"prom":7.5,"total":45,"max_ap":9,"meses":1}],"JEFES DE AREA PARA TRABAJO EN ALTURAS":[{"n":"SEBASTIAN GUARIN FONSECA","fichas":23,"prom":8.3,"total":192,"max_ap":10,"meses":1},{"n":"MARIBEL GALEANO ROJAS","fichas":15,"prom":7.3,"total":110,"max_ap":8,"meses":0},{"n":"SEB","fichas":1,"prom":7.0,"total":7,"max_ap":7,"meses":5}],"TRABAJADOR AUTORIZADO PARA TRABAJO EN ALTURAS":[{"n":"SEBASTIAN GUARIN FONSECA","fichas":16,"prom":7.4,"total":119,"max_ap":9,"meses":0},{"n":"MARIBEL GALEANO ROJAS","fichas":13,"prom":7.2,"total":93,"max_ap":8,"meses":1},{"n":"MARIBEL GALEANO  ROJAS","fichas":2,"prom":7.0,"total":14,"max_ap":7,"meses":6}],"CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS.":[{"n":"MARIA NATALIA FERNANDEZ GAVIRIA","fichas":8,"prom":28.5,"total":228,"max_ap":37,"meses":13},{"n":"YEIMIT JIMENEZ SEVERICHE","fichas":7,"prom":25.3,"total":177,"max_ap":34,"meses":13},{"n":"JAVIER GOMEZ LOZANO","fichas":2,"prom":25.0,"total":50,"max_ap":25,"meses":30},{"n":"NELIDA DEL CARMEN LOPEZ HERRERA","fichas":2,"prom":31.0,"total":62,"max_ap":31,"meses":13}],"PRIMEROS  AUXILIOS":[{"n":"YENI MARCELA SILVA SEPULVEDA","fichas":19,"prom":24.9,"total":473,"max_ap":33,"meses":1},{"n":"CARMEN LLANET PEREZ ISAZA","fichas":1,"prom":40.0,"total":40,"max_ap":40,"meses":18},{"n":"EDIT JHOJANA GRACIANO BENITEZ","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":1}],"INGLES BASICO - NIVEL 2":[{"n":"JESUS DAVID TRUJILLO BERMEO","fichas":9,"prom":23.6,"total":212,"max_ap":30,"meses":4},{"n":"LAURA DANIELA VILLAMIZAR CACERES","fichas":5,"prom":35.6,"total":178,"max_ap":54,"meses":3},{"n":"CLAUDIA PATRICIA LINARES CORREA","fichas":3,"prom":16.7,"total":50,"max_ap":20,"meses":19},{"n":"EDWIN FERNEY ORTIZ CARDONA","fichas":3,"prom":24.7,"total":74,"max_ap":29,"meses":6},{"n":"JUAN ESTEBAN ISAZA ZAPATA","fichas":2,"prom":24.5,"total":49,"max_ap":27,"meses":18},{"n":"CRIS","fichas":1,"prom":32.0,"total":32,"max_ap":32,"meses":20},{"n":"CRISTIAN MAURICIO VARON PEREZ","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":18},{"n":"JUAN ESTEBAN MEJIA CARVAJAL","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":25},{"n":"YIRA ENITH MORENO PALACIOS","fichas":1,"prom":31.0,"total":31,"max_ap":31,"meses":6}],"INGLES BASICO - NIVEL 3":[{"n":"JESUS DAVID TRUJILLO BERMEO","fichas":10,"prom":30.1,"total":301,"max_ap":46,"meses":4},{"n":"EDWIN FERNEY ORTIZ CARDONA","fichas":4,"prom":27.5,"total":110,"max_ap":39,"meses":3},{"n":"CRISTIAN MAURICIO VARON PEREZ","fichas":3,"prom":20.0,"total":60,"max_ap":21,"meses":17},{"n":"CLAUDIA PATRICIA LINARES CORREA","fichas":3,"prom":27.7,"total":83,"max_ap":52,"meses":21},{"n":"YIRA ENITH MORENO PALACIOS","fichas":3,"prom":25.3,"total":76,"max_ap":29,"meses":4},{"n":"JUAN ESTEBAN MEJIA CARVAJAL","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":25}],"FORMULACION Y EVALUACION DE PROYECTOS":[{"n":"JOSE MAURICIO BERRIO MENA","fichas":5,"prom":22.4,"total":112,"max_ap":26,"meses":1},{"n":"EDWIN JAIME LOAIZA HERNANDEZ","fichas":2,"prom":70.5,"total":141,"max_ap":121,"meses":0},{"n":"JAIME ANDRES MIRA BURITICA","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":4}],"INTERPRETACIÓN DE PLANOS ARQUITECTÓNICOS":[{"n":"ELKIN MARTINEZ MORA","fichas":4,"prom":23.0,"total":92,"max_ap":32,"meses":7}],"CREACION DE  FUNCIONES Y GRAFICOS USANDO MICROSOFT EXCEL":[{"n":"ARLES ASNEY VALOYES OBREGON","fichas":2,"prom":25.5,"total":51,"max_ap":27,"meses":24},{"n":"FRANK DAVID CALDERON BENITEZ","fichas":1,"prom":31.0,"total":31,"max_ap":31,"meses":9}],"TÉCNICAS DE PINTURA EN TELA":[{"n":"GLORIA MILENA FLOREZ MARTINEZ","fichas":12,"prom":24.8,"total":298,"max_ap":30,"meses":6},{"n":"EDGARDO MANUEL PERTUZ MENDOZA","fichas":2,"prom":25.5,"total":51,"max_ap":27,"meses":19},{"n":"KELY YHOANA SALINAS DIAZ","fichas":1,"prom":33.0,"total":33,"max_ap":33,"meses":0}],"EMPRENDEDOR EN ESTABLECIMIENTO Y COMERCIALIZACION DE CULTIVOS PERENN":[{"n":"HECTOR IVAN PATIÑO TIRIA","fichas":4,"prom":22.8,"total":91,"max_ap":25,"meses":11},{"n":"JORGE IVAN PINO MACHADO","fichas":1,"prom":26.0,"total":26,"max_ap":26,"meses":13}],"FORTALECIMIENTO ORGANIZACIONAL DE UNIDADES PRODUCTIVAS":[{"n":"HERNEY ARTURO GUTIERREZ URREGO","fichas":3,"prom":15.7,"total":47,"max_ap":16,"meses":7},{"n":"FERNEY EUGENIO RUIZ URREGO","fichas":2,"prom":18.0,"total":36,"max_ap":19,"meses":8},{"n":"HERNEY ARTURO GUTIERREZ URRGO","fichas":2,"prom":17.5,"total":35,"max_ap":20,"meses":6}],"COCINA INTERNACIONAL":[{"n":"JUAN DIEGO MARIN ORTIZ","fichas":13,"prom":26.8,"total":348,"max_ap":46,"meses":10},{"n":"JHONATAN ANGEL VALENCIA","fichas":3,"prom":22.3,"total":67,"max_ap":26,"meses":7}],"ELABORACION  DE CONSERVAS DE  FRUTAS Y HORTALIZAS":[{"n":"JUAN DIEGO MARIN ORTIZ","fichas":3,"prom":25.0,"total":75,"max_ap":28,"meses":11},{"n":"ADRIANA MARIA AGUIRRE LOPEZ","fichas":2,"prom":26.5,"total":53,"max_ap":29,"meses":13},{"n":"YAIR ANTONIO MADERA MENDOZA","fichas":1,"prom":12.0,"total":12,"max_ap":12,"meses":0}],"ELABORACION ARTESANAL DE PRODUCTOS DE PANIFICACION.":[{"n":"JUAN DIEGO MARIN ORTIZ","fichas":3,"prom":27.0,"total":81,"max_ap":31,"meses":10},{"n":"BRYDYZ ALFONSO MAZZY RUIZ","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":0}],"COCINA BÁSICA NIVEL 1":[{"n":"JUAN DIEGO MARIN ORTIZ","fichas":5,"prom":21.8,"total":109,"max_ap":26,"meses":20}],"COCINA COLOMBIANA":[{"n":"JUAN DIEGO MARIN ORTIZ","fichas":7,"prom":24.1,"total":169,"max_ap":28,"meses":19},{"n":"JHONATAN ANGEL VALENCIA","fichas":5,"prom":22.4,"total":112,"max_ap":35,"meses":0},{"n":"LUCILA ANDREA CARDONA AGUDELO","fichas":3,"prom":22.0,"total":66,"max_ap":23,"meses":5},{"n":"GIOVANY CASTRO MOLINA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":7}],"CUALIDADES FISICAS EN EL ENTRENAMIENTO DEPORTIVO":[{"n":"JUAN FERNANDO RODRIGUEZ TERAN","fichas":3,"prom":18.7,"total":56,"max_ap":20,"meses":4}],"BÁSICO DE CONTABILIDAD COSTOS Y PRESUPUESTOS":[{"n":"JULIO CESAR RODRIGUEZ QUIROZ","fichas":6,"prom":31.7,"total":190,"max_ap":40,"meses":7},{"n":"AURA CECILIA CAMARGO MUÑOZ","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":3}],"BÁSICO EN AGRICULTURA ECOLOGICA":[{"n":"JOSE MAURICIO BERRIO MENA","fichas":5,"prom":17.0,"total":85,"max_ap":19,"meses":9},{"n":"LILIANA MARCELA ALVAREZ SALAZAR","fichas":1,"prom":16.0,"total":16,"max_ap":16,"meses":11}],"BUENAS PRACTICAS AGRICOLAS.":[{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":5,"prom":19.4,"total":97,"max_ap":24,"meses":4},{"n":"JUAN DIEGO TOBON ACEVEDO","fichas":3,"prom":15.0,"total":45,"max_ap":15,"meses":1},{"n":"JOSE MAURICIO BERRIO MENA","fichas":2,"prom":17.5,"total":35,"max_ap":20,"meses":4},{"n":"SARA MARIA BORJA CIFUENTES","fichas":2,"prom":18.5,"total":37,"max_ap":20,"meses":1},{"n":"LILIANA MARCELA ALVAREZ SALAZAR","fichas":1,"prom":30.0,"total":30,"max_ap":30,"meses":12}],"CULTIVOS AGRICOLAS":[{"n":"ADRIANA ARDILA GALLO","fichas":2,"prom":16.0,"total":32,"max_ap":20,"meses":37},{"n":"LEANDRO VARGAS METAUTE","fichas":2,"prom":16.0,"total":32,"max_ap":16,"meses":13},{"n":"LILIANA MARCELA ALVAREZ SALAZAR","fichas":2,"prom":15.0,"total":30,"max_ap":20,"meses":10},{"n":"LUIS ALFREDO ALVAREZ CARONA","fichas":2,"prom":14.5,"total":29,"max_ap":18,"meses":37}],"SERVICIOS DE BARISMO":[{"n":"EDUAR URIEL GOMEZ ORTIZ","fichas":2,"prom":28.0,"total":56,"max_ap":28,"meses":23},{"n":"MAARIO ALBERTO ZAPATA ECHAVARRIA","fichas":1,"prom":26.0,"total":26,"max_ap":26,"meses":36}],"ACCIONES PARA LA CONSERVACION, PROTECCION Y RESTAURACION DE LOS SIST":[{"n":"ROBINSON DARIO MUÑOZ PIEDRAHITA","fichas":2,"prom":15.0,"total":30,"max_ap":16,"meses":5},{"n":"ROBINSON DARIO MUNOZ PIEDRAHITA","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":5}],"IMPLEMENTACION DE PROCESOS PARA LA TRANSICION AGROECOLOGICA.":[{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":2,"prom":18.0,"total":36,"max_ap":21,"meses":7},{"n":"JULIO CESAR LONDOÑO HERNANDEZ","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":0}],"TECNICAS PARA EL ESTABLECIMIENTO Y MANEJO DE LA AGRICULTURA URBANA":[{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":4,"prom":20.2,"total":81,"max_ap":25,"meses":5}],"IMPLEMENTACION DE SISTEMAS SOSTENIBLES DE PRODUCCION FORRAJERA PARA ":[{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":1,"prom":26.0,"total":26,"max_ap":26,"meses":0},{"n":"CAÑASGORDAS","fichas":1,"prom":13.0,"total":13,"max_ap":13,"meses":0},{"n":"OSCAR OMAR CONTRERAS AVILA","fichas":1,"prom":6.0,"total":6,"max_ap":6,"meses":0}],"FORTALECIMIENTO EN GESTION ORGANIZACIONAL":[{"n":"BERTA TULIA PASTRANA MADERA","fichas":5,"prom":15.6,"total":78,"max_ap":17,"meses":12},{"n":"DARIO ALEXIS MADRIGAL MURILLO","fichas":1,"prom":19.0,"total":19,"max_ap":19,"meses":11},{"n":"SANDRA ELIANA GOMEZ JIMENEZ","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":5},{"n":"WALTER CHARRY HOLGUIN","fichas":1,"prom":25.0,"total":25,"max_ap":25,"meses":4}],"FORMALIZACION EMPRESARIAL PARA UNIDADES PRODUCTIVAS":[{"n":"BERTA TULIA PASTRANA MADERA","fichas":16,"prom":17.0,"total":272,"max_ap":25,"meses":4}],"ELABORACIÓN DE ARTÍCULOS DECORATIVOS Y UTILITARIOS CON MATERIALES RE":[{"n":"EDGARDO MANUEL PERTUZ MENDOZA","fichas":15,"prom":23.9,"total":359,"max_ap":31,"meses":19},{"n":"GLORIA MILENA FLOREZ MARTINEZ","fichas":1,"prom":34.0,"total":34,"max_ap":34,"meses":10}],"TECNICAS PARA LA PREPARACION DE BEBIDAS A BASE DE CAFE":[{"n":"EDUAR URIEL GOMEZ ORTIZ","fichas":5,"prom":17.4,"total":87,"max_ap":32,"meses":19},{"n":"GIOVANY CASTRO MOLINA","fichas":2,"prom":20.0,"total":40,"max_ap":20,"meses":5}],"MANEJAR PLAN SANITARIO EN ESPECIES MENORES CUMPLIENDO CON MANUAL DE ":[{"n":"SARA MARIA BETANCUR CARDONA","fichas":2,"prom":25.0,"total":50,"max_ap":26,"meses":12},{"n":"EDWARD ABILIO LUNA DIAZ","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":23}],"CONSTRUCCION DE EDIFICACIONES":[{"n":"VICTOR HUGO CUARTAS GALEANO","fichas":6,"prom":27.8,"total":167,"max_ap":36,"meses":10},{"n":"ARMANDO JOSE MELENDEZ  CAMARGO","fichas":2,"prom":31.0,"total":62,"max_ap":31,"meses":4},{"n":"ELKIN MARTINEZ MORA","fichas":2,"prom":19.0,"total":38,"max_ap":19,"meses":10}],"EMPRENDIMIENTO EN PRODUCCION DE CACAO":[{"n":"GILDARDO ANTONIO HURTADO RUEDA","fichas":6,"prom":26.7,"total":160,"max_ap":29,"meses":1}],"MULTIPLICACION Y PROPAGACION DE MATERIAL VEGETAL":[{"n":"JOSE MAURICIO BERRIO MENA","fichas":9,"prom":17.4,"total":157,"max_ap":24,"meses":5},{"n":"JULIO CESAR LONDOÑO HERNANDEZ","fichas":4,"prom":15.0,"total":60,"max_ap":15,"meses":1},{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":3,"prom":16.7,"total":50,"max_ap":18,"meses":1},{"n":"GILDARDO ANTONIO HURTADO RUEDA","fichas":3,"prom":18.3,"total":55,"max_ap":20,"meses":1},{"n":"JUAN DIEGO TOBON ACEVEDO","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":25}],"PODA DE ESPECIES VEGETALES":[{"n":"SARA MARIA BORJA CIFUENTES","fichas":4,"prom":17.5,"total":70,"max_ap":21,"meses":7},{"n":"GILDARDO ANTONIO HURTADO RUEDA","fichas":3,"prom":14.3,"total":43,"max_ap":17,"meses":1},{"n":"JAIME ENRIQUE ZAPATA GUZMAN","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":0}],"COSTOS POR ORDENES DE PRODUCCION EN LAS MIPYMES":[{"n":"HERNEY ARTURO GUTIERREZ URREGO","fichas":3,"prom":19.3,"total":58,"max_ap":23,"meses":4}],"FORTALECIMIENTO EN LA APLICACION DE  PRACTICAS SANITARIAS EN BOVINOS":[{"n":"JHON ALEXANDER LEZCANO OQUENDO","fichas":8,"prom":20.0,"total":160,"max_ap":31,"meses":7},{"n":"RICARDO VELEZ ZULUAGA","fichas":1,"prom":34.0,"total":34,"max_ap":34,"meses":17}],"ESTRATEGIAS DE COMUNICACION INTEGRADA DE MARKETING":[{"n":"JHON CRISTIAN PALACIO GOMEZ","fichas":3,"prom":20.0,"total":60,"max_ap":24,"meses":5}],"ASADOS DE CARNE":[{"n":"JHONATAN ANGEL VALENCIA","fichas":4,"prom":21.5,"total":86,"max_ap":26,"meses":6}],"OPERACION TURISTICA LOCAL":[{"n":"VICTOR HUGO BETANCUR RODRIGUEZ","fichas":7,"prom":30.1,"total":211,"max_ap":44,"meses":1},{"n":"LIDA PATRICIA MURIEL ROJAS","fichas":4,"prom":19.8,"total":79,"max_ap":26,"meses":37},{"n":"NELLY AMPARO CUARTAS HENAO","fichas":1,"prom":12.0,"total":12,"max_ap":12,"meses":37}],"ELABORACION DE BIOABONOS SOLIDOS":[{"n":"JOSE MAURICIO BERRIO MENA","fichas":2,"prom":19.0,"total":38,"max_ap":21,"meses":8},{"n":"LILIANA MARCELA ALVAREZ SALAZAR","fichas":1,"prom":18.0,"total":18,"max_ap":18,"meses":6},{"n":"SARA MARIA BORJA CIFUENTES","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":6}],"BÁSICO MERCADEO Y SERVICIO AL CLIENTE":[{"n":"SANDRA PATRICIA BERMUDEZ OROZCO","fichas":3,"prom":31.3,"total":94,"max_ap":44,"meses":4},{"n":"NELLY AMPARO CUARTAS HENAO","fichas":3,"prom":19.3,"total":58,"max_ap":21,"meses":11},{"n":"MARCO ANTONIO VIERA ARROYO","fichas":1,"prom":49.0,"total":49,"max_ap":49,"meses":5},{"n":"GUSTAVO ADOLFO VILLEGAS HENAO","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":3}],"HIGIENE Y MANIPULACION DE ALIMENTOS":[{"n":"CARLOS ENRRIQUE JULIO MARQUEZ","fichas":2,"prom":24.0,"total":48,"max_ap":26,"meses":4},{"n":"SINDY JULIETH MENA PRIETO","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":3}],"AGROINDUSTRIA ALIMENTARIA":[{"n":"ESNEIDER RIOS AREIZA","fichas":11,"prom":23.7,"total":261,"max_ap":31,"meses":13},{"n":"OSCAR OMAR ORTIZ GALVIS","fichas":6,"prom":28.3,"total":170,"max_ap":34,"meses":13},{"n":"ADRIANA MARIA AGUIRRE LOPEZ","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":38},{"n":"BRYDYZ ALFONSO MAZZY RUIZ","fichas":1,"prom":32.0,"total":32,"max_ap":32,"meses":38},{"n":"SHIRLEY GISELLE CHAUSTRE CHACON","fichas":1,"prom":26.0,"total":26,"max_ap":26,"meses":1}],"ESTRUCTURACION DE MODELOS DE NEGOCIOS VERDES":[{"n":"MAGDA LORENA RAMIREZ GUTIERREZ","fichas":4,"prom":21.2,"total":85,"max_ap":26,"meses":6},{"n":"ANGELICO MENA CELODIO","fichas":1,"prom":34.0,"total":34,"max_ap":34,"meses":0},{"n":"JORGE IVAN PINO MACHADO","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":6}],"EMPRENDEDOR EN DESARROLLO DE ACTIVIDADES TURISTICAS EN ESPACIOS NATU":[{"n":"AURA CECILIA CAMARGO MUÑOZ","fichas":4,"prom":23.0,"total":92,"max_ap":31,"meses":18}],"EMPRENDIMIENTO DE UNIDADES PRODUCTIVAS":[{"n":"FLOR ASTRID TUBERQUIA USUGA","fichas":4,"prom":24.0,"total":96,"max_ap":25,"meses":5},{"n":"BERTA TULIA PASTRANA MADERA","fichas":3,"prom":15.0,"total":45,"max_ap":15,"meses":4},{"n":"AURA CECILIA CAMARGO MUÑOZ","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":4},{"n":"JAVIER GOMEZ LOZANO","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":4},{"n":"JOHN JENRY SILVA LOPEZ","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":5},{"n":"WALTER CHARRY HOLGUIN","fichas":1,"prom":25.0,"total":25,"max_ap":25,"meses":5}],"CONSTRUCCION DE PAVIMENTO CON PLACA HUELLA PARA VIAS TERCIARIAS 1":[{"n":"CAMILO ALVAREZ ACEVEDO","fichas":3,"prom":26.3,"total":79,"max_ap":32,"meses":7},{"n":"VICTOR JULIO GUERRA HERNANDEZ","fichas":2,"prom":23.0,"total":46,"max_ap":24,"meses":5}],"CONSTRUCCION DE PAVIMENTO CON PLACA HUELLA PARA VIAS TERCIARIAS 2":[{"n":"CAMILO ALVAREZ ACEVEDO","fichas":3,"prom":28.3,"total":85,"max_ap":31,"meses":7},{"n":"VICTOR JULIO GUERRA HERNANDEZ","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":12}],"CONSTRUCCION DE PAVIMENTO CON PLACA HUELLA PARA VIAS TERCIARIAS 3":[{"n":"CAMILO ALVAREZ ACEVEDO","fichas":2,"prom":25.0,"total":50,"max_ap":28,"meses":6},{"n":"VICTOR JULIO GUERRA HERNANDEZ","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":7}],"CONSTRUCCION DE PAVIMENTO CON PLACA HUELLA PARA VIAS TERCIARIAS 4":[{"n":"CAMILO ALVAREZ ACEVEDO","fichas":2,"prom":21.5,"total":43,"max_ap":23,"meses":6},{"n":"VICTOR JULIO GUERRA HERNANDEZ","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":7}],"APLICACION DE PRACTICAS DE ALIMENTACION EN BOVINOS":[{"n":"CARLOS JULIO RUBIO ESCOBAR","fichas":3,"prom":28.0,"total":84,"max_ap":32,"meses":11},{"n":"GUSTAVO ADOLFO VILLEGAS HENAO","fichas":2,"prom":23.5,"total":47,"max_ap":25,"meses":7}],"ORGANIZACION COMUNITARIA SOSTENIBLE":[{"n":"DARIO ALEXIS MADRIGAL MURILLO","fichas":2,"prom":18.5,"total":37,"max_ap":20,"meses":11},{"n":"DARO ALEXIS MADRIGAL MURILLO","fichas":1,"prom":24.0,"total":24,"max_ap":24,"meses":11}],"PROMOTORIA EN MANEJO AMBIENTAL":[{"n":"JOSE RAMON VALLE DIAZ","fichas":10,"prom":25.1,"total":251,"max_ap":30,"meses":1},{"n":"DIEGO FERNANDO ALVARADO PEREZ","fichas":9,"prom":22.9,"total":206,"max_ap":31,"meses":1},{"n":"DIEGO FERNANDO ALVARADO PÉREZ","fichas":2,"prom":25.0,"total":50,"max_ap":25,"meses":25},{"n":"KAREN YULIETH RESTREPO ZAPATA","fichas":2,"prom":26.0,"total":52,"max_ap":26,"meses":13}],"SERVICIOS COMERCIALES Y FINANCIEROS":[{"n":"ERICA ALEXANDRA HINCAPIE ORTIZ","fichas":2,"prom":24.5,"total":49,"max_ap":34,"meses":16},{"n":"JAVIER GOMEZ LOZANO","fichas":2,"prom":24.0,"total":48,"max_ap":25,"meses":9},{"n":"LINA MARIA GUERRA VANEGAS","fichas":2,"prom":29.5,"total":59,"max_ap":30,"meses":24}],"CONSTRUCCIONES LIVIANAS INDUSTRIALIZADAS EN SECO":[{"n":"ERWIN WBEIMAR DUQUE OROZCO","fichas":2,"prom":14.0,"total":28,"max_ap":23,"meses":31},{"n":"NATTY DAYANA ACEVEDO CARDENAS","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":42}],"CONTROL FITOSANITARIO EN EL CULTIVO DE CACAO":[{"n":"GILDARDO ANTONIO HURTADO RUEDA","fichas":2,"prom":23.5,"total":47,"max_ap":25,"meses":5},{"n":"SARA MARIA BORJAS CIFUENTES","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":0}],"DISEÑO, LIQUIDACION Y PAGO DE NOMINA.":[{"n":"GLORIA PATRICIA PEREZ SAAVEDRA","fichas":4,"prom":27.2,"total":109,"max_ap":44,"meses":5},{"n":"JULIO CESAR RODRIGUEZ QUIROZ","fichas":2,"prom":20.5,"total":41,"max_ap":21,"meses":10},{"n":"HECTOR ENRIQUE ANGULO PASTRANA","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":4}],"ASESORIA COMERCIAL":[{"n":"LUIS ALFONSO MUÑOZ PERTUZ","fichas":3,"prom":31.7,"total":95,"max_ap":34,"meses":1},{"n":"JACQUELINE MONTEALEGRE MORALES","fichas":2,"prom":22.0,"total":44,"max_ap":33,"meses":16},{"n":"KATERIN VANESSA MUÑOZ VERONA","fichas":2,"prom":11.0,"total":22,"max_ap":11,"meses":28}],"GESTION DE MERCADO, COMERCIALIZACION Y VENTAS - BASADO EN EL MODELO ":[{"n":"JAIME ANDRES MIRA BURITICA","fichas":4,"prom":20.5,"total":82,"max_ap":21,"meses":5},{"n":"JACQUELINE MONTEALEGRE MORALES","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":18}],"MANEJO SANITARIO EN GRANJAS PORCINAS":[{"n":"JHON ALEXANDER LEZCANO OQUENDO","fichas":3,"prom":21.0,"total":63,"max_ap":25,"meses":1}],"EMPRENDIMIENTO EN PRODUCCION DE HUEVO":[{"n":"JHON ALEXANDER LEZCANO OQUENDO","fichas":2,"prom":18.5,"total":37,"max_ap":21,"meses":25},{"n":"MAGDA LORENA RAMIREZ GUTIERREZ","fichas":1,"prom":16.0,"total":16,"max_ap":16,"meses":25}],"FORTALECIMIENTO EN LA APLICACION DE PRACTICAS  SANITARIAS  EN PRODUC":[{"n":"JHON ALEXANDER LEZCANO OQUENDO","fichas":3,"prom":20.3,"total":61,"max_ap":27,"meses":1}],"EMPRENDIMIENTO EN PRODUCCION DE FRUTALES PERENNES":[{"n":"HECTOR IVAN PATIÑO TIRIA","fichas":1,"prom":25.0,"total":25,"max_ap":25,"meses":20},{"n":"JUAN DIEGO TOBON ACEVEDO","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":0},{"n":"YAZMINA ROSA VALENCIA LOPEZ","fichas":1,"prom":26.0,"total":26,"max_ap":26,"meses":12}],"SERVICIO AL CLIENTE":[{"n":"NELLY AMPARO CUARTAS HENAO","fichas":6,"prom":24.3,"total":146,"max_ap":32,"meses":4},{"n":"JACQUELINE MONTEALEGRE MORALES","fichas":3,"prom":20.0,"total":60,"max_ap":22,"meses":19},{"n":"NORMA LUZ PEREZ RESTREPO","fichas":2,"prom":22.0,"total":44,"max_ap":23,"meses":9},{"n":"MARCO ANTONIO VIERA ARROYO","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":4}],"COMERCIALIZACION DE PRODUCTOS Y SERVICIOS TURISTICOS":[{"n":"NELLY AMPARO CUARTAS HENAO","fichas":5,"prom":19.8,"total":99,"max_ap":35,"meses":7}],"DISEÑO DE  RECORRIDOS TURISTICOS EN ESPACIOS RURALES":[{"n":"NELLY AMPARO CUARTAS HENAO","fichas":5,"prom":24.6,"total":123,"max_ap":32,"meses":7}],"OPERACION DE ALOJAMIENTOS RURALES":[{"n":"NELLY AMPARO CUARTAS HENAO","fichas":4,"prom":16.5,"total":66,"max_ap":27,"meses":10}],"ESTABLECIMIENTO DE CULTIVOS EN AGRICULTURA URBANA":[{"n":"ORLANDO QUEJADA ROVIRA","fichas":2,"prom":14.0,"total":28,"max_ap":20,"meses":0},{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":0},{"n":"ORLANDO","fichas":1,"prom":18.0,"total":18,"max_ap":18,"meses":0},{"n":"YAIR ANTONIO MADERA MENDOZA","fichas":1,"prom":28.0,"total":28,"max_ap":28,"meses":0}],"SISTEMAS.":[{"n":"JHON JAIRO ALBA NORIEGA","fichas":6,"prom":27.7,"total":166,"max_ap":34,"meses":25},{"n":"ENNIO WADITHMENDOZA MONTES","fichas":2,"prom":30.0,"total":60,"max_ap":30,"meses":25},{"n":"JORGE MARIO PATIÑO MARIN","fichas":2,"prom":28.0,"total":56,"max_ap":28,"meses":25},{"n":"OSCAR ENRIQUE PARRA MORENO","fichas":2,"prom":31.5,"total":63,"max_ap":32,"meses":20},{"n":"JUAN PABLO SALDARRIAGA GARZON","fichas":1,"prom":34.0,"total":34,"max_ap":34,"meses":38},{"n":"LUIS RAFAEL ORREGO GONZALEZ","fichas":1,"prom":19.0,"total":19,"max_ap":19,"meses":37}],"MANEJO DE SISTEMAS DE INFORMACION EN LA PRODUCCION PECUARIA.":[{"n":"RICARDO VELEZ ZULUAGA","fichas":2,"prom":23.0,"total":46,"max_ap":25,"meses":6},{"n":"DUBAN DARIO RENDON ARANGO","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":0}],"IMPLEMENTACION DEL SISTEMA DE GESTION DE LA SEGURIDAD Y SALUD EN EL ":[{"n":"YENI MARCELA SILVA SEPULVEDA","fichas":3,"prom":20.7,"total":62,"max_ap":22,"meses":5}],"ASISTENCIA EN ORGANIZACION DE ARCHIVOS .":[{"n":"YUDY ISALENA SUESCUN BEDOYA","fichas":2,"prom":32.0,"total":64,"max_ap":32,"meses":4},{"n":"LEONARDO PELAEZ RUBIO","fichas":1,"prom":14.0,"total":14,"max_ap":14,"meses":36}],"MUESTREO DE SUELOS AGRICOLAS":[{"n":"CESAR AUGUSTO ROBLEDO GARCIA","fichas":3,"prom":28.7,"total":86,"max_ap":39,"meses":22},{"n":"JAIME ENRIQUE ZAPATA GUZMAN","fichas":1,"prom":21.0,"total":21,"max_ap":21,"meses":0}],"COCINA.":[{"n":"JHONATAN ANGEL VALENCIA","fichas":8,"prom":22.9,"total":183,"max_ap":31,"meses":5}],"FUNDAMENTOS EN HIDROTERAPIA APLICADA A LA ESTETICA":[{"n":"YOLANDA JOSEFINA ACOSTA ANDRADE","fichas":7,"prom":18.1,"total":127,"max_ap":24,"meses":18}],"CREACIÓN DE BASES DE DATOS CON MICROSOFT ACCESS":[{"n":"BAIRON AGUILAR GUTIERREZ","fichas":4,"prom":23.0,"total":92,"max_ap":28,"meses":6}],"PRACTICAS DE MANEJO SANITARIO EN BOVINOS":[{"n":"CARLOS JULIO RUBIO ESCOBAR","fichas":3,"prom":29.3,"total":88,"max_ap":33,"meses":22},{"n":"SARA MARIA BETANCUR CARDONA","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":4}],"INSEMINACIÓN A CELO DETECTADO":[{"n":"CARLOS JULIO RUBIO ESCOBAR","fichas":6,"prom":27.8,"total":167,"max_ap":33,"meses":6},{"n":"SARA MARIA BETANCUR CARDONA","fichas":2,"prom":17.5,"total":35,"max_ap":21,"meses":12},{"n":"EDWARD ABILIO LUNA DIAZ","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":23}],"SISTEMAS TELEINFORMÁTICOS":[{"n":"ENNIO WADITH MENDOZA MONTES","fichas":2,"prom":34.0,"total":68,"max_ap":36,"meses":13},{"n":"JORGE MARIO PATIÑO MARIN","fichas":2,"prom":34.0,"total":68,"max_ap":35,"meses":13},{"n":"JUANA VALENTINA JIMENEZ FERNANDEZ","fichas":2,"prom":17.0,"total":34,"max_ap":19,"meses":13}],"ELABORACION DE COMPLEMENTOS EN BISUTERIA CON TECNICA DE ENSARTADO":[{"n":"GLORIA MILENA FLOREZ MARTINEZ","fichas":9,"prom":22.8,"total":205,"max_ap":30,"meses":17},{"n":"KELY YHOANA SALINAS DIAZ","fichas":2,"prom":23.5,"total":47,"max_ap":25,"meses":0}],"MERCADEO Y VENTAS":[{"n":"JACQUELINE MONTEALEGRE MORALES","fichas":2,"prom":21.0,"total":42,"max_ap":22,"meses":6},{"n":"SANDRA PATRICIA BERMUDEZ OROZCO","fichas":2,"prom":22.5,"total":45,"max_ap":25,"meses":5}],"RECURSOS HUMANOS .":[{"n":"LEONARDO PELAEZ RUBIO","fichas":4,"prom":26.2,"total":105,"max_ap":35,"meses":7},{"n":"ARELY EMILSEN ARROYAVE QUINTERO","fichas":2,"prom":27.0,"total":54,"max_ap":30,"meses":9}],"INSEMINACIÓN A TIEMPO FIJO":[{"n":"SARA MARIA BETANCUR CARDONA","fichas":7,"prom":17.9,"total":125,"max_ap":23,"meses":9}],"COCINA SALUDABLE":[{"n":"JHONATAN ANGEL VALENCIA","fichas":2,"prom":20.5,"total":41,"max_ap":25,"meses":5},{"n":"GIOVANY CASTRO MOLINA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":21}],"ELABORACION DE ADORNOS Y MUÑECOS NAVIDEÑOS":[{"n":"GLORIA MILENA FLOREZ MARTINEZ","fichas":4,"prom":25.5,"total":102,"max_ap":29,"meses":4}],"IMPLEMENTACION DE CULTIVOS EN LA AGRICULTURA URBANA":[{"n":"MARIA EUCARIS ECHEVERRI BEDOYA","fichas":2,"prom":21.5,"total":43,"max_ap":23,"meses":19},{"n":"JULIO CESAR LONDOÑO HERNANDEZ","fichas":1,"prom":15.0,"total":15,"max_ap":15,"meses":1},{"n":"MARIA EUCARIS ECHAVERRI BEDOYA","fichas":1,"prom":17.0,"total":17,"max_ap":17,"meses":25},{"n":"ORLANDO QUEJADA ROVIRA","fichas":1,"prom":13.0,"total":13,"max_ap":13,"meses":0}],"GESTION DEL DESARROLLO DEL TALENTO HUMANO":[{"n":"JACQUELINE MONTEALEGRE MORALES","fichas":3,"prom":16.0,"total":48,"max_ap":22,"meses":18},{"n":"ERICA ALEXANDRA HINCAPIE ORTIZ","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":7}],"SISTEMAS AGROPECUARIOS ECOLOGICOS.":[{"n":"JOHANA CATALINA CARVAJAL ESPINOSA","fichas":8,"prom":24.6,"total":197,"max_ap":31,"meses":13},{"n":"LUIS ALFREDO ALVAREZ CARDONA","fichas":1,"prom":28.0,"total":28,"max_ap":28,"meses":37}],"COCINA PERUANA":[{"n":"JUAN DIEGO MARIN ORTIZ","fichas":6,"prom":23.7,"total":142,"max_ap":35,"meses":18}],"BIOSEGURIDAD APLICADA A LA ESTETICA Y BELLEZA":[{"n":"NOELBA DEL CARMEN GONZALEZ TORO","fichas":2,"prom":28.5,"total":57,"max_ap":30,"meses":6},{"n":"YOLANDA JOSEFINA ACOSTA ANDRADE","fichas":2,"prom":16.5,"total":33,"max_ap":17,"meses":17}],"MANIPULACIÓN DE ALIMENTOS":[{"n":"ADRIANA ISABEL LUJAN GARCIA","fichas":5,"prom":25.6,"total":128,"max_ap":36,"meses":6}],"GESTION CONTABLE Y DE INFORMACION FINANCIERA":[{"n":"LUZ YENITH ZAPATA MARIN","fichas":3,"prom":20.3,"total":61,"max_ap":25,"meses":34},{"n":"ADRIANA MARIA PARRA CASAS","fichas":1,"prom":16.0,"total":16,"max_ap":16,"meses":30},{"n":"GLORIA PATRICIA PEREZ SAAVEDRA","fichas":1,"prom":30.0,"total":30,"max_ap":30,"meses":0},{"n":"JAVIER GOMEZ LOZANO","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":52}],"VENTA DE PRODUCTOS EN LINEA":[{"n":"ANA MARIA GONZALEZ ARIAS","fichas":3,"prom":40.3,"total":121,"max_ap":54,"meses":18},{"n":"ADRIANA MARIÑO","fichas":2,"prom":47.0,"total":94,"max_ap":49,"meses":6}],"ANALISIS Y DESARROLLO DE SOFTWARE.":[{"n":"ADRIANA MARIÑO","fichas":4,"prom":36.2,"total":145,"max_ap":42,"meses":31},{"n":"GIOVANNY BUSTAMANTE MALDONADO","fichas":3,"prom":24.0,"total":72,"max_ap":30,"meses":4}],"GESTIÓN DE MERCADOS":[{"n":"ADRIANA MARIÑO","fichas":4,"prom":17.5,"total":70,"max_ap":26,"meses":44},{"n":"GUSTAVO ANDRES VALENCIA MUÑOZ","fichas":2,"prom":16.0,"total":32,"max_ap":17,"meses":28},{"n":"LUIS ALFONSO MUÑOZ PERTUZ","fichas":1,"prom":14.0,"total":14,"max_ap":14,"meses":34}],"SERVICIO DE RECEPCION HOTELERA":[{"n":"MARIÑO CEPEDA JANETH ADRIANA","fichas":8,"prom":38.4,"total":307,"max_ap":41,"meses":24},{"n":"ANA MARIA GONZALEZ ARIAS","fichas":3,"prom":56.7,"total":170,"max_ap":70,"meses":10}],"GESTION AGROEMPRESARIAL":[{"n":"ANA MARIA GONZALEZ ARIAS","fichas":6,"prom":38.8,"total":233,"max_ap":46,"meses":16},{"n":"LINA MARIA GUERRA VANEGAS","fichas":2,"prom":12.5,"total":25,"max_ap":13,"meses":30},{"n":"ADRIANA MARIÑO","fichas":1,"prom":45.0,"total":45,"max_ap":45,"meses":4}],"LEVANTAMIENTOS TOPOGRAFICOS Y GEORREFERENCIACION":[{"n":"ANA MARIA SANTAMARIA GARCIA","fichas":3,"prom":21.3,"total":64,"max_ap":23,"meses":16}],"GESTIÓN ADMINISTRATIVA":[{"n":"YUDY ISALENA SUESCUN BEDOYA","fichas":4,"prom":22.0,"total":88,"max_ap":31,"meses":4},{"n":"LUZ AMALIA VALENCIA CASTRO","fichas":2,"prom":23.0,"total":46,"max_ap":23,"meses":28},{"n":"ARELY EMILSEN ARROYAVE QUINTERO","fichas":1,"prom":19.0,"total":19,"max_ap":19,"meses":37},{"n":"LILIANA RUIZ BERGAÑO","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":36},{"n":"JACQUELINE MONTEALEGRE MORALES","fichas":1,"prom":27.0,"total":27,"max_ap":27,"meses":15}],"INGLES PRE INTERMEDIO- NIVEL 2":[{"n":"JESUS DAVID TRUJILLO BERMEO","fichas":2,"prom":24.0,"total":48,"max_ap":26,"meses":8},{"n":"LAURA DANIELA VILLAMIZAR CACERES","fichas":2,"prom":23.0,"total":46,"max_ap":26,"meses":7},{"n":"JUAN ESTEBAN ISAZA ZAPATA","fichas":2,"prom":29.5,"total":59,"max_ap":32,"meses":18},{"n":"CRISTIAN MAURICIO BARON PEREZ","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":18},{"n":"YIRA ENITH MORENO PALACIOS","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":8}],"INGLES BASICO - NIVEL 4":[{"n":"JESUS DAVID TRUJILLO BERMEO","fichas":3,"prom":31.0,"total":93,"max_ap":45,"meses":10},{"n":"CRISTIAN MAURICIO VARON PEREZ","fichas":2,"prom":21.5,"total":43,"max_ap":23,"meses":19},{"n":"YIRA ENITH MORENO PALACIOS","fichas":2,"prom":21.0,"total":42,"max_ap":22,"meses":4},{"n":"LAURA DANIEL VILLAMIZAR CACERES","fichas":1,"prom":23.0,"total":23,"max_ap":23,"meses":7}],"INGLES PRE INTERMEDIO - NIVEL 1":[{"n":"JESUS DAVID TRUJILLO BERMEO","fichas":3,"prom":23.7,"total":71,"max_ap":28,"meses":9},{"n":"LAURA DANIELA VILLAMIZAR CACERES","fichas":2,"prom":23.0,"total":46,"max_ap":26,"meses":7},{"n":"CRISTIAN MAURICIO VARON PEREZ","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":19},{"n":"YIRA ENITH MORENO PALACIOS","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":8}],"ELABORACION DE PRODUCTOS DE REPOSTERIA.":[{"n":"DIOMAR YONEDI QUINTERO BETANCUR","fichas":4,"prom":22.2,"total":89,"max_ap":25,"meses":6}],"GESTIÓN EMPRESARIAL":[{"n":"JHEINSON ARMANDO TOBON CORREA","fichas":3,"prom":25.0,"total":75,"max_ap":30,"meses":7},{"n":"EDMUNDO ARTURO GOMEZ SANCHEZ","fichas":2,"prom":24.5,"total":49,"max_ap":28,"meses":28},{"n":"FERNANDO ENRIQUE HERNANDEZ VERTEL","fichas":1,"prom":29.0,"total":29,"max_ap":29,"meses":16}],"DESARROLLO DE HABILIDADES SENSORIALES EN CAFE":[{"n":"HAFID IGNACIO VELEZ ACOSTA","fichas":3,"prom":15.7,"total":47,"max_ap":16,"meses":1},{"n":"EDUAR URIEL GOMEZ ORTIZ","fichas":1,"prom":30.0,"total":30,"max_ap":30,"meses":24},{"n":"JORGE LUIS CARRIZOSA ACOSTA","fichas":1,"prom":20.0,"total":20,"max_ap":20,"meses":1}],"SERVICIO DE RESTAURANTE Y BAR":[{"n":"GIOVANY CASTRO MOLINA","fichas":6,"prom":18.5,"total":111,"max_ap":30,"meses":4}],"COCINA ITALIANA":[{"n":"JHONATAN ANGEL VALENCIA","fichas":2,"prom":21.5,"total":43,"max_ap":23,"meses":8},{"n":"JUAN DIEGO MARIN ORTIZ","fichas":2,"prom":20.0,"total":40,"max_ap":25,"meses":23}],"COORDINADOR DE TRABAJO\xa0EN ALTURAS":[{"n":"MARIBEL GALEANO ROJAS","fichas":3,"prom":9.0,"total":27,"max_ap":10,"meses":4},{"n":"SEBASTIAN GUARIN FONSECA","fichas":2,"prom":8.5,"total":17,"max_ap":9,"meses":8}],"REENTRENAMIENTO EN TRABAJO EN ALTURAS PARA TRABAJADOR AUTORIZADO":[{"n":"MARIBEL GALEANO ROJAS","fichas":11,"prom":7.1,"total":78,"max_ap":8,"meses":1},{"n":"SEBASTIAN GUARIN FONSECA","fichas":6,"prom":7.2,"total":43,"max_ap":8,"meses":4}],"DESARROLLO PUBLICITARIO":[{"n":"MARIÑO CEPEDA JANETH ADRIANA","fichas":6,"prom":24.7,"total":148,"max_ap":36,"meses":22},{"n":"GUSTAVO ANDRES VALENCIA MUÑOZ","fichas":1,"prom":7.0,"total":7,"max_ap":7,"meses":15}],"CONSTRUCCION EN EDIFICACIONES.":[{"n":"NATTY DAYANA ACEVEDO CARDENAS","fichas":4,"prom":19.8,"total":79,"max_ap":28,"meses":7}],"PLANEACION DE ESTRATEGIAS PEDAGOGICAS Y TECNICAS DIDACTICAS PARA LA ":[{"n":"RUBEN DARIO GARCIA CASTRO","fichas":3,"prom":23.7,"total":71,"max_ap":31,"meses":5},{"n":"NAYARIT CASTRO MARTINEZ","fichas":1,"prom":22.0,"total":22,"max_ap":22,"meses":18}],"ENGLISH DOES WORK - LEVEL 1":[{"n":"TOL GRANJA","fichas":53,"prom":58.3,"total":3091,"max_ap":320,"meses":0}],"ENGLISH DOES WORK - LEVEL 2":[{"n":"TOL GRANJA","fichas":11,"prom":41.3,"total":454,"max_ap":80,"meses":5}],"ENGLISH DOES WORK - LEVEL 3":[{"n":"TOL GRANJA","fichas":10,"prom":42.5,"total":425,"max_ap":80,"meses":5}],"ENGLISH DOES WORK - LEVEL 4":[{"n":"TOL GRANJA","fichas":4,"prom":45.5,"total":182,"max_ap":80,"meses":5}],"ENGLISH DOES WORK - LEVEL 5":[{"n":"TOL GRANJA","fichas":3,"prom":50.7,"total":152,"max_ap":80,"meses":5}],"ENGLISH DOES WORK - LEVEL 6":[{"n":"TOL GRANJA","fichas":3,"prom":65.7,"total":197,"max_ap":80,"meses":8}],"ACEITES ESENCIALES: EXTRACCION, USOS Y APLICACIONES":[{"n":"TOL GRANJA","fichas":11,"prom":52.3,"total":575,"max_ap":320,"meses":1}],"ADITIVOS: ANALISIS Y CONTROL DE CALIDAD EN LA INDUSTRIA ALIMENTARIA":[{"n":"TOL GRANJA","fichas":5,"prom":10.2,"total":51,"max_ap":17,"meses":17}],"AUDITORIA INTERNA DE CALIDAD - NTC ISO 9001":[{"n":"TOL GRANJA","fichas":15,"prom":16.0,"total":240,"max_ap":22,"meses":18}],"BUENAS PRACTICAS EN LA MANIPULACION DE LA CARNE":[{"n":"TOL GRANJA","fichas":13,"prom":36.4,"total":473,"max_ap":320,"meses":0}],"CALIDAD: GESTION DEL MEJORAMIENTO CONTINUO..":[{"n":"TOL GRANJA","fichas":9,"prom":46.0,"total":414,"max_ap":160,"meses":1}],"COCINA INTERNACIONAL.":[{"n":"TOL GRANJA","fichas":14,"prom":36.8,"total":515,"max_ap":320,"meses":1}],"CONSERVACION DE FRUTAS Y VERDURAS":[{"n":"TOL GRANJA","fichas":4,"prom":8.2,"total":33,"max_ap":9,"meses":23}],"ESTRATEGIAS PARA EL MEJORAMIENTO DE LA COMPRENSION LECTORA":[{"n":"TOL GRANJA","fichas":4,"prom":9.0,"total":36,"max_ap":18,"meses":22}],"ESTRUCTURA DE LA INFORMACION DOCUMENTADA -NTCISO 9001:2015":[{"n":"TOL GRANJA","fichas":4,"prom":64.5,"total":258,"max_ap":160,"meses":0}],"GASTRONOMIA COLOMBIANA":[{"n":"TOL GRANJA","fichas":13,"prom":25.8,"total":336,"max_ap":240,"meses":0}],"GUIANZA EN RECORRIDOS POR LA NATURALEZA.":[{"n":"TOL GRANJA","fichas":4,"prom":15.2,"total":61,"max_ap":20,"meses":26}],"HABITOS SALUDABLES A PARTIR DE LA ALIMENTACION Y LA ACTIVIDAD FISICA":[{"n":"TOL GRANJA","fichas":4,"prom":20.0,"total":80,"max_ap":25,"meses":18}],"PASTELERIA.":[{"n":"TOL GRANJA","fichas":6,"prom":29.3,"total":176,"max_ap":78,"meses":17}],"PLANIFICACION DE UN SISTEMA DE GESTION DE LA CALIDAD - NTC ISO 9001":[{"n":"TOL GRANJA","fichas":5,"prom":14.4,"total":72,"max_ap":25,"meses":18}],"COMUNICACION ASERTIVA Y EFECTIVA EN EQUIPOS DE TRABAJO":[{"n":"JULIAN DAVID GOMEZ RESTREPO","fichas":2,"prom":17.5,"total":35,"max_ap":19,"meses":1},{"n":"KELLY JOHANA MARIN ZAPATA","fichas":1,"prom":18.0,"total":18,"max_ap":18,"meses":1},{"n":"NORMA LUZ PEREZ RESTREPO","fichas":1,"prom":24.0,"total":24,"max_ap":24,"meses":5}],"IMPLEMENTACION DE PRACTICAS AMBIENTALES EN GRANJAS AVICOLAS":[{"n":"ALEJANDRA MARIA CANO VASQUEZ","fichas":5,"prom":15.0,"total":75,"max_ap":15,"meses":1}],"EMPRENDEDOR EN LA PRODUCCION DE PLATANO Y BANANO":[{"n":"YAZMINA ROSA VALENCIA LOPEZ","fichas":2,"prom":15.5,"total":31,"max_ap":16,"meses":0},{"n":"MARIA EUCARIS ECHEVERRI BEDOYA","fichas":1,"prom":16.0,"total":16,"max_ap":16,"meses":1}],"GENERACION DE IDEAS INNOVADORAS CON DESIGN THINKING":[{"n":"JOHN FREDY RODRIGUEZ CASTELLAR","fichas":2,"prom":16.5,"total":33,"max_ap":17,"meses":1},{"n":"MARCO ANTONIO VIERA ARROYO","fichas":1,"prom":17.0,"total":17,"max_ap":17,"meses":1}],"ATENCION AL CLIENTE EN LOS PROCESOS ADMINISTRATIVOS":[{"n":"BERTA TULIA PASTRANA MADERA","fichas":3,"prom":15.0,"total":45,"max_ap":15,"meses":0}],"EMPRENDEDOR EN MANTENIMIENTO Y COMERCIALIZACION DE CULTIVOS PERENNES":[{"n":"HECTOR IVAN PATIÑO TIRIA","fichas":3,"prom":15.0,"total":45,"max_ap":15,"meses":1}]}'
+_RF = '[{"n":"TOL GRANJA","fichas":209,"prom":40.2,"total":8397,"max_ap":320,"programas":30,"municipios":1},{"n":"ADRIANA MARIA AGUIRRE LOPEZ","fichas":200,"prom":27.8,"total":5564,"max_ap":100,"programas":8,"municipios":20},{"n":"ARLES ASNEY VALOYES OBREGON","fichas":72,"prom":18.6,"total":1339,"max_ap":33,"programas":6,"municipios":13},{"n":"GLORIA MILENA FLOREZ MARTINEZ","fichas":55,"prom":23.9,"total":1314,"max_ap":55,"programas":16,"municipios":17},{"n":"SEBASTIAN GUARIN FONSECA","fichas":55,"prom":7.9,"total":435,"max_ap":10,"programas":7,"municipios":6},{"n":"CARLOS JULIO RUBIO ESCOBAR","fichas":50,"prom":26.5,"total":1327,"max_ap":37,"programas":10,"municipios":13},{"n":"JUAN DIEGO MARIN ORTIZ","fichas":49,"prom":26.6,"total":1304,"max_ap":100,"programas":14,"municipios":8},{"n":"MARIBEL GALEANO ROJAS","fichas":48,"prom":7.3,"total":352,"max_ap":10,"programas":5,"municipios":3},{"n":"JESUS DAVID TRUJILLO BERMEO","fichas":43,"prom":26.4,"total":1135,"max_ap":46,"programas":6,"municipios":7},{"n":"JHON ALEXANDER LEZCANO OQUENDO","fichas":36,"prom":21.4,"total":769,"max_ap":46,"programas":10,"municipios":12},{"n":"JULIO CESAR LONDOÑO HERNANDEZ","fichas":33,"prom":19.0,"total":626,"max_ap":85,"programas":6,"municipios":6},{"n":"LUISA FERNANDA PELAEZ TAMAYO","fichas":33,"prom":23.5,"total":775,"max_ap":31,"programas":3,"municipios":7},{"n":"SARA MARIA BORJA CIFUENTES","fichas":32,"prom":18.5,"total":592,"max_ap":66,"programas":12,"municipios":6},{"n":"SINDY JULIETH MENA PRIETO","fichas":32,"prom":17.7,"total":567,"max_ap":24,"programas":3,"municipios":6},{"n":"EDGARDO MANUEL PERTUZ MENDOZA","fichas":32,"prom":26.1,"total":836,"max_ap":93,"programas":6,"municipios":11},{"n":"ALEJANDRO OMAR CONTRERAS AVILA","fichas":31,"prom":31.5,"total":978,"max_ap":415,"programas":12,"municipios":7},{"n":"JHONATAN ANGEL VALENCIA","fichas":29,"prom":25.1,"total":728,"max_ap":101,"programas":10,"municipios":7},{"n":"JORGE IVAN PINO MACHADO","fichas":29,"prom":24.1,"total":700,"max_ap":31,"programas":13,"municipios":13},{"n":"BERTA TULIA PASTRANA MADERA","fichas":28,"prom":30.7,"total":859,"max_ap":419,"programas":5,"municipios":3},{"n":"ALEJANDRA MARIA CANO VASQUEZ","fichas":28,"prom":18.0,"total":504,"max_ap":25,"programas":5,"municipios":6}]'
 
 # =============================================================================
 # PÁGINA
@@ -448,6 +450,8 @@ MUN_PROGS = json.loads(_MP)
 MUN_NIV_D  = json.loads(_MN)
 PROG_TOP_D = json.loads(_PT)
 TEND_ANUAL_D = json.loads(_TA)
+PROG_INST    = json.loads(_PI)
+RESP_FULL    = json.loads(_RF)
 
 SECTORES   = sorted(SEC_PROG.keys())
 MUNICIPIOS = sorted(MUN_STATS.keys())
@@ -659,15 +663,25 @@ def tabla_html(headers: list, rows: list) -> str:
 # =============================================================================
 if modulo == "🎯 Predictor inteligente":
 
-    st.markdown('<div class="sh" style="display:flex;align-items:center;gap:10px">🎯 Predictor inteligente</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sh">🎯 Predictor inteligente</div>', unsafe_allow_html=True)
     st.markdown(
-        '<div class="sd">Sector → filtra programas · ⭐ = mayor demanda · '
-        'Programa → auto-rellena datos · Mapa de calor + Historial instructores</div>',
+        '<div class="sd">Sector → filtra programas · ⭐ mayor demanda · '
+        'Programa → auto-rellena · Top 10 instructores · Filtro de mes visual</div>',
         unsafe_allow_html=True,
     )
 
+    # ── Botón limpiar / nueva consulta ────────────────────────────────────
+    col_tit, col_clear = st.columns([5, 1])
+    with col_clear:
+        if st.button("🗑️ Nueva consulta", key="btn_clear_v3", use_container_width=True):
+            for k in ["pred_v3","v3s","v3p","kw_v3","ps_v3","pp_v3","pn_v3",
+                      "pd_v3","pmes_v3","pi_v3","pm_v3"]:
+                st.session_state.pop(k, None)
+            st.rerun()
+
+    # ── Búsqueda por palabra clave ────────────────────────────────────────
     kw = st.text_input(
-        "🔍 Búsqueda por palabra clave",
+        "🔍 Búsqueda rápida por palabra clave",
         placeholder="café, ganadería, alturas, inglés, emprendimiento, excel…",
         key="kw_v3",
     )
@@ -678,9 +692,9 @@ if modulo == "🎯 Predictor inteligente":
                 if not isinstance(p, dict):
                     continue
                 prog_n = p.get("prog", p.get("NOMBRE_PROGRAMA_FORMACION", ""))
-                nivel  = p.get("nivel", p.get("NIVEL_FORMACION", "CURSO ESPECIAL"))
-                dur    = p.get("dur",   p.get("DURACION_PROGRAMA", 48))
-                prom   = p.get("prom",  p.get("TOTAL_APRENDICES", 0))
+                nivel  = p.get("nivel", "CURSO ESPECIAL")
+                dur    = p.get("dur", 48)
+                prom   = p.get("prom", 0)
                 meses  = p.get("meses", 0)
                 estr   = p.get("estrella", False)
                 if prog_n:
@@ -692,8 +706,8 @@ if modulo == "🎯 Predictor inteligente":
             cks = st.columns(min(len(mts), 3))
             for idx_b, (prog, sec, niv, dur, prom, mes, estr) in enumerate(mts):
                 with cks[idx_b % 3]:
-                    ico  = "⭐" if estr else ("⚠️" if mes > 12 else "📌")
-                    lbl_k = f"{ico} {prog[:28]} | {niv} · {prom} ap/f"
+                    ico   = "⭐" if estr else ("⚠️" if mes > 12 else "📌")
+                    lbl_k = f"{ico} {prog[:28]} | {niv[:10]} · {prom} ap/f"
                     if st.button(lbl_k, key=f"kw{idx_b}", use_container_width=True):
                         st.session_state["v3s"] = sec
                         st.session_state["v3p"] = prog
@@ -701,16 +715,20 @@ if modulo == "🎯 Predictor inteligente":
         else:
             st.caption(f"Sin resultados para «{kw}». Prueba: café, ganadería, inglés…")
 
+    # ── Layout: formulario | resultados ──────────────────────────────────
     col_f, col_r = st.columns([1.05, 0.95], gap="large")
 
     with col_f:
-        st.markdown('<div class="card"><div class="card-h">⚙️ Parámetros de la ficha</div>', unsafe_allow_html=True)
+        st.markdown('<div class="card"><div class="card-h">⚙️ Parámetros de la ficha</div>',
+                    unsafe_allow_html=True)
+
         ca, cb = st.columns(2)
         with ca:
             idx_s = 0
             if st.session_state.get("v3s") in SECTORES:
                 idx_s = SECTORES.index(st.session_state["v3s"])
-            p_sec = st.selectbox("📊 Sector productivo", SECTORES, index=idx_s, key="ps_v3")
+            p_sec = st.selectbox("📊 Sector productivo", SECTORES,
+                                  index=idx_s, key="ps_v3")
             if p_sec != st.session_state.get("v3s"):
                 st.session_state["v3s"] = p_sec
                 st.session_state.pop("v3p", None)
@@ -734,22 +752,24 @@ if modulo == "🎯 Predictor inteligente":
 
         pm_meta = next((p for p in progs_s if p.get("prog") == p_prog), {})
         if pm_meta:
-            m  = pm_meta.get("meses", 0)
-            ul = pm_meta.get("ultima", "—")
-            es = pm_meta.get("estrella", False)
+            m_v = pm_meta.get("meses", 0)
+            ul  = pm_meta.get("ultima", "—")
+            es  = pm_meta.get("estrella", False)
             if es:
                 st.markdown(
                     f'<div class="al-w">⭐ <b>Programa estrella</b> en {p_sec} — '
                     f'{pm_meta.get("fichas",0)} fichas · prom. {pm_meta.get("prom",0)} ap/f · '
                     f'última oferta: {ul}</div>', unsafe_allow_html=True)
-            elif m > 12:
+            elif m_v > 12:
                 st.markdown(
-                    f'<div class="al-r">⚠️ Sin ofertar hace <b>{m} meses</b> (última: {ul}). '
-                    f'Verificar demanda antes de abrir.</div>', unsafe_allow_html=True)
-            elif m > 6:
+                    f'<div class="al-r">⚠️ Sin ofertar hace <b>{m_v} meses</b> '
+                    f'(última: {ul}). Verificar demanda antes de abrir.</div>',
+                    unsafe_allow_html=True)
+            elif m_v > 6:
                 st.markdown(
-                    f'<div class="al-w">🕐 Sin ofertar hace {m} meses (última: {ul}). '
-                    f'Reactivación recomendada.</div>', unsafe_allow_html=True)
+                    f'<div class="al-w">🕐 Sin ofertar hace {m_v} meses '
+                    f'(última: {ul}). Reactivación recomendada.</div>',
+                    unsafe_allow_html=True)
             else:
                 st.markdown(
                     f'<div class="al-s">✅ Programa activo · última oferta: {ul} · '
@@ -762,148 +782,275 @@ if modulo == "🎯 Predictor inteligente":
         idx_niv  = niveles.index(auto_niv) if auto_niv in niveles else 0
         cc, cd = st.columns(2)
         with cc:
-            p_niv = st.selectbox("🎓 Nivel de formación", niveles, index=idx_niv, key="pn_v3")
+            p_niv = st.selectbox("🎓 Nivel de formación", niveles,
+                                  index=idx_niv, key="pn_v3")
         with cd:
-            p_dur = st.number_input(
-                "⏱ Duración (horas)", min_value=4, max_value=5000,
-                value=auto_dur, step=4, key="pd_v3")
-        p_mes = st.slider("📅 Mes de inicio", 1, 12, 7, key="pmes_v3",
-                          help="Feb–Mar y Sep–Oct: mayor demanda histórica")
-        mes_lbl = ("🔥 Mes pico (+18%)" if p_mes in MM else
-                   "📈 Segundo pico (+12%)" if p_mes in MA else
-                   "❄️ Mes bajo (-28%)" if p_mes in ML else "")
-        st.caption(f"📅 Mes seleccionado: **{MESES_L[p_mes]}**  {mes_lbl}")
+            p_dur = st.number_input("⏱ Duración (horas)", min_value=4,
+                                     max_value=5000, value=auto_dur,
+                                     step=4, key="pd_v3")
 
-        inst_opts = ["— Sin preferencia (prom. 24.5) —"] + [
-            f"{r['n']} — {r['prom']} ap/f ({r['fichas']} fichas)" for r in (RESP or [])
-        ]
-        p_inst = st.selectbox("👤 Instructor", range(len(inst_opts)),
-                               format_func=lambda i: inst_opts[i], key="pi_v3")
-        hist_i = RESP[p_inst - 1]["prom"] if p_inst > 0 and RESP else 24.5
+        # ── Selector de mes visual (botones pill) ──────────────────────
+        st.markdown(
+            "<div style='font-size:12px;font-weight:600;color:#475569;"
+            "margin-bottom:6px;margin-top:4px'>📅 Mes de inicio</div>",
+            unsafe_allow_html=True)
+        MESES_INFO = {
+            1:("Ene","❄️","#64748B","#F1F5F9","Baja demanda"),
+            2:("Feb","🔥","#166534","#DCFCE7","Mes pico +18%"),
+            3:("Mar","🔥","#166534","#DCFCE7","Mes pico +18%"),
+            4:("Abr","📗","#1E40AF","#DBEAFE","Demanda estándar"),
+            5:("May","📗","#1E40AF","#DBEAFE","Demanda estándar"),
+            6:("Jun","📗","#1E40AF","#DBEAFE","Demanda estándar"),
+            7:("Jul","📗","#1E40AF","#DBEAFE","Demanda estándar"),
+            8:("Ago","📗","#1E40AF","#DBEAFE","Demanda estándar"),
+            9:("Sep","📈","#0F6E56","#D1FAE5","Segundo pico +12%"),
+           10:("Oct","📈","#0F6E56","#D1FAE5","Segundo pico +12%"),
+           11:("Nov","📗","#1E40AF","#DBEAFE","Demanda estándar"),
+           12:("Dic","❄️","#64748B","#F1F5F9","Baja demanda"),
+        }
+        p_mes = st.session_state.get("pmes_v3", 7)
+        mes_cols = st.columns(12)
+        for mi in range(1, 13):
+            nm, ic, tc, bg, _ = MESES_INFO[mi]
+            sel = mi == p_mes
+            border = f"2px solid {tc}" if sel else "1px solid #E2E8F0"
+            weight = "700" if sel else "400"
+            with mes_cols[mi-1]:
+                if st.button(
+                    f"{nm}",
+                    key=f"mes_btn_{mi}",
+                    use_container_width=True,
+                    help=MESES_INFO[mi][4],
+                ):
+                    st.session_state["pmes_v3"] = mi
+                    st.rerun()
+        # Indicador del mes seleccionado
+        nm_s, ic_s, tc_s, bg_s, desc_s = MESES_INFO[p_mes]
+        st.markdown(
+            f'<div style="background:{bg_s};border-left:4px solid {tc_s};'
+            f'border-radius:8px;padding:7px 12px;font-size:11px;'
+            f'color:{tc_s};font-weight:600;margin-top:4px">'
+            f'{ic_s} <b>{nm_s}</b> — {desc_s}</div>',
+            unsafe_allow_html=True)
+
+        # ── Instructor filtrado por programa ──────────────────────────
+        inst_prog = PROG_INST.get(p_prog[:68] if p_prog else "", [])
+        if inst_prog:
+            inst_opts = ["— Sin preferencia (prom. global 24.5) —"] + [
+                f"{r['n']} — {r['prom']} ap/f ({r['fichas']} fichas en este programa)"
+                for r in inst_prog
+            ]
+            inst_source = inst_prog
+        else:
+            inst_opts = ["— Sin preferencia (prom. global 24.5) —"] + [
+                f"{r['n']} — {r['prom']} ap/f ({r['fichas']} fichas)"
+                for r in (RESP_FULL or [])
+            ]
+            inst_source = RESP_FULL or []
+        p_inst = st.selectbox(
+            "👤 Instructor" + (" (filtrado por este programa)" if inst_prog else ""),
+            range(len(inst_opts)),
+            format_func=lambda i: inst_opts[i],
+            key="pi_v3",
+        )
+        hist_i = inst_source[p_inst-1]["prom"] if p_inst > 0 and inst_source else 24.5
+
         st.markdown('</div>', unsafe_allow_html=True)
-        btn = st.button("🚀 Generar predicción y evaluación",
-                        type="primary", use_container_width=True, key="btn_v3")
 
+        bcol1, bcol2 = st.columns([3,1])
+        with bcol1:
+            btn = st.button("🚀 Generar predicción y evaluación",
+                            type="primary", use_container_width=True, key="btn_v3")
+        with bcol2:
+            if st.button("🔄 Limpiar", key="btn_clear2_v3", use_container_width=True):
+                for k in ["pred_v3","v3s","v3p"]:
+                    st.session_state.pop(k, None)
+                st.rerun()
+
+        # ── Municipios históricos del programa ────────────────────────
         if p_prog:
             muns_p = PROG_MUN.get(p_prog[:68], [])
             if muns_p:
-                with st.expander(f"🗺️ Municipios con oferta histórica ({len(muns_p)})", expanded=False):
+                with st.expander(
+                    f"🗺️ Municipios con oferta histórica de este programa ({len(muns_p)})",
+                    expanded=False):
                     mx = muns_p[0]["ap"]
                     for mp in muns_p:
                         pct = round(mp["ap"] / max(mx, 1) * 100)
                         ico = "⭐ " if mp["prom"] >= 26 else ""
                         st.markdown(
-                            f'<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">'
-                            f'<span style="font-size:11px;font-weight:500;color:#0F172A;width:190px">'
-                            f'{ico}{mp["mun"]}</span>'
-                            f'<div style="flex:1;height:5px;background:#E2E8F0;border-radius:2px;overflow:hidden">'
-                            f'<div style="width:{pct}%;height:100%;background:#1E40AF;border-radius:2px"></div></div>'
-                            f'<span style="font-size:10px;color:#64748B;width:95px;text-align:right">'
+                            f'<div style="display:flex;align-items:center;'
+                            f'gap:8px;margin-bottom:4px">'
+                            f'<span style="font-size:11px;font-weight:500;'
+                            f'color:#0F172A;width:190px">{ico}{mp["mun"]}</span>'
+                            f'<div style="flex:1;height:5px;background:#E2E8F0;'
+                            f'border-radius:2px;overflow:hidden">'
+                            f'<div style="width:{pct}%;height:100%;'
+                            f'background:#1E40AF;border-radius:2px"></div></div>'
+                            f'<span style="font-size:10px;color:#64748B;'
+                            f'width:100px;text-align:right">'
                             f'{mp["ap"]:,} ap · {mp["prom"]}/f</span></div>',
                             unsafe_allow_html=True)
 
+    # ── COLUMNA RESULTADOS ────────────────────────────────────────────────
     with col_r:
         if btn and p_prog:
-            f_n  = {"CURSO ESPECIAL":1.0,"TÉCNICO":0.95,"TECNÓLOGO":0.85}.get(p_niv, 1.0)
-            f_m  = 1.18 if p_mes in MM else (1.12 if p_mes in MA else (0.72 if p_mes in ML else 1.0))
+            f_n  = {"CURSO ESPECIAL":1.0,"TÉCNICO":0.95,"TECNÓLOGO":0.85}.get(p_niv,1.0)
+            f_m  = 1.18 if p_mes in MM else (1.12 if p_mes in MA else
+                   (0.72 if p_mes in ML else 1.0))
             f_d  = 0.82 if p_dur > 1000 else (0.90 if p_dur > 400 else 1.0)
             f_u  = MF.get(p_mun, 0.95)
             f_i  = hist_i / 24.5
-            pred = max(4, min(round(24.5 * f_n * f_m * f_d * f_u * f_i), 90))
-            viab = min(97, round(28 + pred * 2.6))
+            pred = max(4, min(round(24.5*f_n*f_m*f_d*f_u*f_i), 90))
+            viab = min(97, round(28 + pred*2.6))
             alto = pred > 25
-            vc   = "#0F6E56" if viab >= 70 else ("#B45309" if viab >= 45 else "#991B1B")
+            vc   = "#0F6E56" if viab>=70 else ("#B45309" if viab>=45 else "#991B1B")
             st.session_state["pred_v3"] = dict(
                 pred=pred, viab=viab, alto=alto, vc=vc,
-                mun=p_mun, mes=p_mes, niv=p_niv, prog=p_prog, hist=hist_i)
+                mun=p_mun, mes=p_mes, niv=p_niv,
+                prog=p_prog, hist=hist_i)
 
         res = st.session_state.get("pred_v3")
         if res:
             bg  = "#DCFCE7" if res["alto"] else "#FEF3C7"
             tc  = "#166534" if res["alto"] else "#92400E"
             txt = "▲ Alto impacto" if res["alto"] else "▼ Impacto normal"
+            nm_r, ic_r, tc_r, bg_r, desc_r = MESES_INFO[res["mes"]]
             mes_msg = (
-                "<span style='color:#0F6E56;font-weight:500'>🔥 Feb–Mar: mayor demanda (+18%).</span>"
-                if res["mes"] in MM else
-                "<span style='color:#0F6E56'>📈 Sep–Oct: segundo pico (+12%).</span>"
-                if res["mes"] in MA else
-                "<span style='color:#B45309'>❄️ Dic–Ene: demanda baja (-28%).</span>"
-                if res["mes"] in ML else
-                "Condiciones estándar de demanda histórica."
+                f"<span style='background:{bg_r};color:{tc_r};"
+                f"padding:2px 8px;border-radius:10px;font-size:10px;"
+                f"font-weight:600'>{ic_r} {nm_r} — {desc_r}</span>"
             )
             st.markdown(
                 f'<div class="res-box">'
-                f'<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:9px">'
-                f'<div><div class="res-n">{res["pred"]}</div><div class="res-l">Aprendices predichos</div></div>'
-                f'<span style="background:{bg};color:{tc};font-size:11px;font-weight:700;'
-                f'padding:4px 12px;border-radius:20px">{txt}</span></div>'
+                f'<div style="display:flex;justify-content:space-between;'
+                f'align-items:flex-start;margin-bottom:9px">'
+                f'<div><div class="res-n">{res["pred"]}</div>'
+                f'<div class="res-l">Aprendices predichos</div></div>'
+                f'<span style="background:{bg};color:{tc};font-size:11px;'
+                f'font-weight:700;padding:4px 12px;border-radius:20px">'
+                f'{txt}</span></div>'
                 f'<div style="font-size:10px;color:#3B82F6;display:flex;'
                 f'justify-content:space-between;margin-bottom:2px">'
                 f'<span>Viabilidad de apertura</span>'
                 f'<span style="font-weight:700">{res["viab"]}%</span></div>'
                 f'<div class="vt">'
-                f'<div class="vf" style="width:{res["viab"]}%;background:{res["vc"]}"></div></div>'
-                f'<div style="display:flex;justify-content:space-between;font-size:9px;color:#93C5FD">'
+                f'<div class="vf" style="width:{res["viab"]}%;'
+                f'background:{res["vc"]}"></div></div>'
+                f'<div style="display:flex;justify-content:space-between;'
+                f'font-size:9px;color:#93C5FD">'
                 f'<span>Baja</span><span>Media</span><span>Alta</span></div>'
-                f'<div style="margin-top:9px;font-size:11px;color:#334155;line-height:1.6">'
-                f'<b>{res["mun"]}</b> · {MESES_L[res["mes"]]} · {res["niv"]}<br>{mes_msg}</div>'
-                f'</div>',
+                f'<div style="margin-top:9px;font-size:11px;'
+                f'color:#334155;line-height:1.8">'
+                f'<b>{res["mun"]}</b> · {res["niv"]}<br>'
+                f'{mes_msg}</div></div>',
                 unsafe_allow_html=True)
+
             sugs = []
-            if res["mes"] not in MM + MA:
+            if res["mes"] not in MM+MA:
                 sugs.append("📅 Mover inicio a **feb–mar o sep–oct** puede aumentar asistencia +15%.")
             if res["hist"] < 22:
                 sugs.append("👤 Instructor con **historial >26 ap/ficha** mejora la predicción ~20%.")
             if res["niv"] == "CURSO ESPECIAL" and p_dur > 400:
                 sugs.append("⏱ Para Curso Especial, duración **<80 h** tiene mejor convocatoria.")
             if pm_meta.get("meses", 0) > 12:
-                sugs.append("⚠️ Programa **>12 meses** sin ofertar — difusión previa necesaria.")
+                sugs.append("⚠️ Programa **>12 meses** sin ofertar — campaña de difusión necesaria.")
             if not sugs:
                 sugs.append("✅ Parámetros óptimos para este contexto.")
             with st.expander("💡 Sugerencias de optimización", expanded=True):
-                for s in sugs:
-                    st.markdown(s)
+                for sg in sugs:
+                    st.markdown(sg)
 
+        # ── TOP 10 instructores del programa seleccionado ──────────────
+        if p_prog:
+            inst_prog_data = PROG_INST.get(p_prog[:68], [])
+            if inst_prog_data:
+                st.markdown("")
+                st.markdown(
+                    f"**👥 Top {min(10,len(inst_prog_data))} instructores — "
+                    f"*{p_prog[:40]}{'…' if len(p_prog)>40 else ''}***")
+                mx_ip = inst_prog_data[0]["prom"] if inst_prog_data else 1
+                for rk, r in enumerate(inst_prog_data[:10], 1):
+                    cr = ("#0F6E56" if r["prom"]>=26 else
+                          ("#1E40AF" if r["prom"]>=20 else "#B45309"))
+                    pct = round(r["prom"]/max(mx_ip,1)*100)
+                    medal = "🥇" if rk==1 else ("🥈" if rk==2 else
+                            ("🥉" if rk==3 else f"#{rk}"))
+                    st.markdown(
+                        f'<div style="display:flex;align-items:center;gap:7px;'
+                        f'padding:6px 8px;background:#fff;border:.5px solid #E2E8F0;'
+                        f'border-radius:8px;margin-bottom:4px">'
+                        f'<span style="font-size:13px;min-width:22px">{medal}</span>'
+                        f'<div style="flex:1;min-width:0">'
+                        f'<div style="font-size:11px;font-weight:600;color:#0F172A;'
+                        f'white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'
+                        f'{r["n"][:32]}</div>'
+                        f'<div style="height:4px;background:#F1F5F9;border-radius:2px;'
+                        f'overflow:hidden;margin-top:3px">'
+                        f'<div style="width:{pct}%;height:100%;background:{cr};'
+                        f'border-radius:2px"></div></div></div>'
+                        f'<div style="text-align:right;flex-shrink:0">'
+                        f'<div style="font-size:13px;font-weight:700;color:{cr}">'
+                        f'{r["prom"]}</div>'
+                        f'<div style="font-size:9px;color:#94A3B8">'
+                        f'{r["fichas"]}f · max {r["max_ap"]}</div></div></div>',
+                        unsafe_allow_html=True)
+                st.caption("🟢 ≥26 ap/f alto · 🔵 20–25 normal · 🟡 <20 bajo")
+            else:
+                # Historial global si no hay filtro por programa
+                if RESP_FULL:
+                    st.markdown("")
+                    st.markdown("**👥 Instructores con mayor historial global**")
+                    mx_r = max(r["prom"] for r in RESP_FULL)
+                    ci1, ci2 = st.columns(2)
+                    for i, r in enumerate(RESP_FULL[:14]):
+                        col_i = ci1 if i < 7 else ci2
+                        cr = ("#0F6E56" if r["prom"]>=26 else
+                              ("#1E40AF" if r["prom"]>=20 else "#B45309"))
+                        with col_i:
+                            st.markdown(
+                                barra(r["n"][:24], r["prom"], mx_r, cr, 150),
+                                unsafe_allow_html=True)
+                    st.caption("🟢 ≥26 alto · 🔵 20–25 normal · 🟡 <20 bajo")
+
+        # ── Programas estrella del sector ──────────────────────────────
         if progs_s:
             st.markdown("")
-            st.markdown(f"**⭐ Programas de {p_sec} por demanda histórica**")
-            mx_p = max((p.get("prom", 0) for p in progs_s), default=1)
+            st.markdown(f"**⭐ Programas de {p_sec} — por demanda histórica**")
+            mx_p = max((p.get("prom",0) for p in progs_s), default=1)
             for p in progs_s[:8]:
-                pct = round(p.get("prom",0) / max(mx_p,1) * 100)
-                m_p = p.get("meses", 0)
-                es_p= p.get("estrella", False)
-                c_b = "#F59E0B" if es_p else ("#991B1B" if m_p>12 else ("#B45309" if m_p>6 else "#1E40AF"))
-                ico = "⭐" if es_p else ("⚠️" if m_p>12 else ("🕐" if m_p>6 else "✅"))
-                bdr = "border-left:3px solid #F59E0B;padding-left:8px;" if es_p else ""
+                pct  = round(p.get("prom",0)/max(mx_p,1)*100)
+                m_p  = p.get("meses",0)
+                es_p = p.get("estrella",False)
+                c_b  = ("#F59E0B" if es_p else
+                        ("#991B1B" if m_p>12 else
+                        ("#B45309" if m_p>6 else "#1E40AF")))
+                ico  = "⭐" if es_p else ("⚠️" if m_p>12 else
+                       ("🕐" if m_p>6 else "✅"))
+                bdr  = ("border-left:3px solid #F59E0B;padding-left:8px;"
+                        if es_p else "")
                 st.markdown(
                     f'<div style="margin-bottom:5px;{bdr}">'
-                    f'<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px">'
-                    f'<span style="color:#334155;overflow:hidden;text-overflow:ellipsis;'
-                    f'white-space:nowrap;max-width:75%">{ico} {p["prog"][:54]}</span>'
+                    f'<div style="display:flex;justify-content:space-between;'
+                    f'font-size:11px;margin-bottom:2px">'
+                    f'<span style="color:#334155;overflow:hidden;'
+                    f'text-overflow:ellipsis;white-space:nowrap;max-width:75%">'
+                    f'{ico} {p["prog"][:52]}</span>'
                     f'<span style="font-weight:700;color:{c_b}">{p["prom"]}</span></div>'
                     f'<div style="height:4px;background:#E2E8F0;border-radius:2px;overflow:hidden">'
-                    f'<div style="width:{pct}%;height:100%;background:{c_b};border-radius:2px"></div></div>'
-                    f'</div>', unsafe_allow_html=True)
+                    f'<div style="width:{pct}%;height:100%;background:{c_b};'
+                    f'border-radius:2px"></div></div></div>',
+                    unsafe_allow_html=True)
 
-        if RESP:
-            st.markdown("")
-            st.markdown("**👥 Historial de instructores**")
-            mx_r = max(r["prom"] for r in RESP)
-            ci1, ci2 = st.columns(2)
-            for i, r in enumerate(RESP[:14]):
-                col_i = ci1 if i < 7 else ci2
-                cr = "#0F6E56" if r["prom"]>=26 else ("#1E40AF" if r["prom"]>=20 else "#B45309")
-                with col_i:
-                    st.markdown(barra(r["n"][:24], r["prom"], mx_r, cr, 155), unsafe_allow_html=True)
-            st.caption("🟢 ≥26 alto · 🔵 20–25 normal · 🟡 <20 bajo")
-
+    # ── Mapa de calor ─────────────────────────────────────────────────────
     st.markdown("---")
     col_mp, col_tp = st.columns([2.2, 0.8])
     with col_mp:
         modo_mp = st.radio("Mapa de calor por:",
                            ["Total aprendices","N.º fichas","Prom/ficha"],
                            horizontal=True, key="mmp_v3")
-        sc_mp = {"Total aprendices":"ap","N.º fichas":"fichas","Prom/ficha":"prom"}[modo_mp]
+        sc_mp = {"Total aprendices":"ap","N.º fichas":"fichas",
+                 "Prom/ficha":"prom"}[modo_mp]
         df_mp = pd.DataFrame([{
             "Municipio":k,"Lat":v["lat"],"Lon":v["lng"],
             "ap":v["ap"],"fichas":v["fichas"],"prom":v["prom"],
@@ -912,7 +1059,8 @@ if modulo == "🎯 Predictor inteligente":
         fig_mp = px.scatter_mapbox(
             df_mp, lat="Lat", lon="Lon", size=sc_mp, color=sc_mp,
             hover_name="Municipio",
-            hover_data={"ap":":.0f","fichas":":.0f","prom":":.1f","Sector":True,"Lat":False,"Lon":False},
+            hover_data={"ap":":.0f","fichas":":.0f","prom":":.1f",
+                        "Sector":True,"Lat":False,"Lon":False},
             color_continuous_scale="YlOrRd", size_max=48, zoom=7.6,
             mapbox_style="carto-positron")
         fig_mp.update_layout(height=380, margin=dict(t=0,b=0,l=0,r=0),
@@ -920,24 +1068,27 @@ if modulo == "🎯 Predictor inteligente":
                 title=dict(text=modo_mp[:14],side="right")))
         st.plotly_chart(fig_mp, use_container_width=True)
     with col_tp:
-        st.markdown("**Top municipios**")
-        tops = sorted(MUN_STATS.items(), key=lambda x: -x[1]["ap"])[:10]
+        st.markdown("**🏆 Top 10 municipios**")
+        tops = sorted(MUN_STATS.items(), key=lambda x:-x[1]["ap"])[:10]
         mx_t = tops[0][1]["ap"]
         for mn, v in tops:
-            t  = v.get("tend",0)
-            tb = f"▲{t}%" if t>0 else (f"▼{abs(t)}%" if t<0 else "→")
-            tc = "#0F6E56" if t>0 else ("#991B1B" if t<0 else "#94A3B8")
-            pct= round(v["ap"]/mx_t*100)
+            t   = v.get("tend",0)
+            tb  = f"▲{t}%" if t>0 else (f"▼{abs(t)}%" if t<0 else "→")
+            tc  = "#0F6E56" if t>0 else ("#991B1B" if t<0 else "#94A3B8")
+            pct = round(v["ap"]/mx_t*100)
             st.markdown(
                 f'<div style="margin-bottom:7px">'
-                f'<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px">'
+                f'<div style="display:flex;justify-content:space-between;'
+                f'font-size:11px;margin-bottom:2px">'
                 f'<span style="color:#0F172A;font-weight:500">{mn[:20]}</span>'
                 f'<span style="color:{tc};font-size:10px;font-weight:600">{tb}</span></div>'
                 f'<div style="height:5px;background:#E2E8F0;border-radius:2px;overflow:hidden">'
-                f'<div style="width:{pct}%;height:100%;background:#1E40AF;border-radius:2px"></div></div>'
+                f'<div style="width:{pct}%;height:100%;background:#1E40AF;'
+                f'border-radius:2px"></div></div>'
                 f'<div style="font-size:9px;color:#94A3B8;margin-top:1px">'
                 f'{v["ap"]:,} ap · {v["prom"]}/f</div></div>',
                 unsafe_allow_html=True)
+
 
 # =============================================================================
 # MÓDULO 2 — DEMANDA POR NIVEL
