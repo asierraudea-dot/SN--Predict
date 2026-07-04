@@ -40,7 +40,7 @@ _RB = '{"Café":{"fichas":63,"ap":1391,"muns":{"ANZÁ":322,"EBÉJICO":177,"CAICE
 # PÁGINA
 # =============================================================================
 st.set_page_config(
-    page_title="SN Predict — Occidente",
+    page_title="SN Predict — SENA Occidente",
     page_icon="🎓", layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -173,12 +173,25 @@ with st.sidebar:
     if st.button("▶  Tour rápido"):
         st.session_state["tour"] = 0
         st.session_state["show_tour"] = True
-    _ml = (_HERE / "models" / "pipeline_y1_regresion.pkl").exists() or           (_HERE.parent / "models" / "pipeline_y1_regresion.pkl").exists()
-    st.success("Modelo ML activo ✅") if _ml else st.info("Modo heurístico ℹ️")
-    if TIENE:
-        st.success(f"{len(_df):,} fichas cargadas 📊")
-    else:
-        st.warning("Datos embebidos ⚠️")
+    _ml = (
+        (_HERE / "models" / "pipeline_y1_regresion.pkl").exists() or
+        (_HERE.parent / "models" / "pipeline_y1_regresion.pkl").exists()
+    )
+    _ml_txt  = "Modelo ML activo ✅" if _ml else "Modo heurístico ℹ️"
+    _ml_clr  = "#DCFCE7" if _ml else "#DBEAFE"
+    _ml_tc   = "#166534" if _ml else "#1E40AF"
+    _dat_txt = f"{len(_df):,} fichas cargadas 📊" if TIENE else "Datos embebidos ⚠️"
+    _dat_clr = "#DCFCE7" if TIENE else "#FEF3C7"
+    _dat_tc  = "#166534" if TIENE else "#92400E"
+    st.markdown(
+        f"<div style='background:{_ml_clr};color:{_ml_tc};border-radius:6px;"
+        f"padding:5px 10px;font-size:11px;font-weight:600;margin-bottom:5px'>"
+        f"{_ml_txt}</div>"
+        f"<div style='background:{_dat_clr};color:{_dat_tc};border-radius:6px;"
+        f"padding:5px 10px;font-size:11px;font-weight:600'>"
+        f"{_dat_txt}</div>",
+        unsafe_allow_html=True,
+    )
     st.markdown(
         "<p style='font-size:10px;color:#475569;text-align:center;margin-top:12px'>"
         "SN Predict © 2026 · SENA Centro Occidente</p>",
@@ -873,11 +886,16 @@ elif modulo == "🔭 Oportunidades de mejora":
         tdm=sorted(df_f["NOMBRE_MUNICIPIO_CURSO"].dropna().unique().tolist())
         ct2=df_f[df_f["NIVEL_FORMACION"]=="TECNÓLOGO"]["NOMBRE_MUNICIPIO_CURSO"].dropna().unique().tolist()
         st2=[m for m in tdm if m not in ct2]
-        if ct2: st.success(f"Con Tecnólogo ({len(ct2)}): {', '.join(ct2[:5])}{'…' if len(ct2)>5 else ''}.")
-        if st2: st.warning(f"Sin Tecnólogo ({len(st2)}): {', '.join(st2[:6])}{'…' if len(st2)>6 else ''}. Candidatos a escalar.")
+        if ct2:
+            muns_t = ', '.join(ct2[:5]) + ('…' if len(ct2) > 5 else '')
+            st.success(f"Con Tecnólogo ({len(ct2)}): {muns_t}.")
+        if st2:
+            muns_s = ', '.join(st2[:6]) + ('…' if len(st2) > 6 else '')
+            st.warning(f"Sin Tecnólogo ({len(st2)}): {muns_s}. Candidatos a escalar.")
         if rub_s!="Todos los rubros":
             sr=[m for m in MUNICIPIOS if m not in tdm][:5]
-            if sr: st.error(f"Sin cobertura en {rub_s}: {', '.join(sr)}. Oportunidad para nuevas fichas.")
+            if sr:
+                st.error(f"Sin cobertura en {rub_s}: {', '.join(sr)}. Oportunidad para nuevas fichas.")
     with cd2:
         st.markdown("**Resumen por municipio**")
         tab=(df_f.groupby("NOMBRE_MUNICIPIO_CURSO")["TOTAL_APRENDICES"]
