@@ -47,56 +47,375 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-[data-testid="stAppViewContainer"]{background:#F0F4F8}
-[data-testid="stSidebar"]{background:#0D1B2A!important}
-[data-testid="stSidebar"] .stMarkdown p,
-[data-testid="stSidebar"] label,
-[data-testid="stSidebar"] span{color:#CBD5E1!important}
-[data-testid="stSidebar"] .stButton>button{
-    background:#1E40AF!important;color:#fff!important;
-    border:none!important;border-radius:7px!important;width:100%!important}
-[data-testid="stSidebar"] hr{border-color:rgba(255,255,255,.12)!important}
-.block-container{padding:1.25rem 2rem!important}
-div[data-testid="metric-container"]{
-    background:#fff;border:.5px solid #E2E8F0;border-radius:10px;
-    padding:14px 18px!important;box-shadow:0 1px 4px rgba(0,0,0,.05)}
-div[data-testid="metric-container"] label{font-size:11px!important;color:#64748B!important}
-div[data-testid="metric-container"] [data-testid="metric-value"]{
-    font-size:23px!important;font-weight:700!important;color:#0F172A!important}
-.stTabs [data-baseweb="tab-list"]{background:#E8EDF5;border-radius:9px;padding:3px}
-.stTabs [data-baseweb="tab"]{border-radius:7px;font-size:12px;color:#475569}
-.stTabs [aria-selected="true"]{background:#fff!important;color:#1E3A8A!important;
-    font-weight:600!important;box-shadow:0 1px 3px rgba(0,0,0,.08)!important}
-.stExpander{background:#fff!important;border:.5px solid #E2E8F0!important;border-radius:10px!important}
-.card{background:#fff;border:.5px solid #E2E8F0;border-radius:12px;
-    padding:1.1rem 1.25rem;box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:.85rem}
-.card-h{font-size:12px;font-weight:600;color:#0F172A;margin-bottom:10px}
-.sh{font-size:19px;font-weight:700;color:#0F172A;margin-bottom:3px}
-.sd{font-size:12px;color:#64748B;margin-bottom:1rem}
-.res-box{background:linear-gradient(135deg,#EFF6FF,#F0FDF4);border:.5px solid #BFDBFE;
-    border-radius:12px;padding:1.1rem;box-shadow:0 2px 8px rgba(30,64,175,.07)}
-.res-n{font-size:44px;font-weight:700;color:#1E40AF;line-height:1}
-.res-l{font-size:11px;color:#3B82F6;margin-top:3px}
-.vt{height:8px;background:#E2E8F0;border-radius:4px;overflow:hidden;margin:5px 0}
-.vf{height:100%;border-radius:4px;transition:width .4s}
-.bdg{display:inline-flex;align-items:center;gap:3px;font-size:10px;
-    font-weight:600;padding:3px 9px;border-radius:20px}
-.bs{background:#DCFCE7;color:#166534}
-.bw{background:#FEF3C7;color:#92400E}
-.bd{background:#FEE2E2;color:#991B1B}
-.bi{background:#DBEAFE;color:#1E40AF}
-.bg{background:#F1F5F9;color:#475569}
-.al-s{background:#DCFCE7;border:.5px solid #86EFAC;border-radius:8px;
-    padding:8px 12px;font-size:11px;color:#166534;margin-bottom:6px}
-.al-w{background:#FEF3C7;border:.5px solid #FCD34D;border-radius:8px;
-    padding:8px 12px;font-size:11px;color:#92400E;margin-bottom:6px}
-.al-r{background:#FEE2E2;border:.5px solid #FCA5A5;border-radius:8px;
-    padding:8px 12px;font-size:11px;color:#991B1B;margin-bottom:6px}
-.al-i{background:#DBEAFE;border:.5px solid #93C5FD;border-radius:8px;
-    padding:8px 12px;font-size:11px;color:#1E40AF;margin-bottom:6px}
-.rt{border-radius:8px;padding:9px 13px;margin-bottom:5px;font-size:11px;line-height:1.5}
-.foot{text-align:center;font-size:11px;color:#94A3B8;padding:.75rem 0;
-    border-top:.5px solid #E2E8F0;margin-top:1.5rem}
+/* ── BASE ────────────────────────────────────────────────── */
+html, body, [data-testid="stAppViewContainer"] {
+    background: #F4F6FA;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+.block-container {
+    padding: 1.5rem 2.2rem 1rem !important;
+    max-width: 1280px;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0F2044 0%, #0D1B2A 100%) !important;
+    border-right: 1px solid rgba(255,255,255,0.06) !important;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.25) !important;
+}
+/* Texto genérico del sidebar */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] div {
+    color: #CBD5E1 !important;
+}
+/* Radio buttons — texto visible */
+[data-testid="stSidebar"] .stRadio label,
+[data-testid="stSidebar"] .stRadio span,
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] {
+    color: #E2E8F0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+}
+/* Radio seleccionado */
+[data-testid="stSidebar"] .stRadio [aria-checked="true"] + div,
+[data-testid="stSidebar"] .stRadio [aria-checked="true"] span {
+    color: #60A5FA !important;
+    font-weight: 600 !important;
+}
+/* Selectbox en sidebar */
+[data-testid="stSidebar"] .stSelectbox label,
+[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] div {
+    color: #94A3B8 !important;
+    font-size: 12px !important;
+}
+[data-testid="stSidebar"] div[data-baseweb="select"] {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 7px !important;
+}
+/* Botón del sidebar */
+[data-testid="stSidebar"] .stButton > button {
+    background: linear-gradient(135deg, #1E40AF, #2563EB) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+    box-shadow: 0 2px 8px rgba(30,64,175,0.35) !important;
+    transition: all .18s !important;
+}
+[data-testid="stSidebar"] .stButton > button:hover {
+    background: linear-gradient(135deg, #1D4ED8, #3B82F6) !important;
+    box-shadow: 0 4px 14px rgba(30,64,175,0.5) !important;
+    transform: translateY(-1px) !important;
+}
+/* Divider */
+[data-testid="stSidebar"] hr {
+    border-color: rgba(255,255,255,0.10) !important;
+    margin: 10px 0 !important;
+}
+/* Icono radio */
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] {
+    gap: 2px !important;
+}
+[data-testid="stSidebar"] .stRadio label {
+    padding: 6px 8px !important;
+    border-radius: 7px !important;
+    transition: background .15s !important;
+}
+[data-testid="stSidebar"] .stRadio label:hover {
+    background: rgba(255,255,255,0.07) !important;
+}
+
+/* ── MÉTRICAS ────────────────────────────────────────────── */
+div[data-testid="metric-container"] {
+    background: #fff !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    padding: 14px 18px !important;
+    box-shadow: 0 2px 8px rgba(15,23,42,0.06) !important;
+    transition: box-shadow .2s !important;
+}
+div[data-testid="metric-container"]:hover {
+    box-shadow: 0 4px 16px rgba(15,23,42,0.10) !important;
+}
+div[data-testid="metric-container"] label {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #64748B !important;
+    text-transform: uppercase !important;
+    letter-spacing: .04em !important;
+}
+div[data-testid="metric-container"] [data-testid="metric-value"] {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+}
+div[data-testid="metric-container"] [data-testid="metric-delta"] {
+    font-size: 11px !important;
+}
+
+/* ── TABS ────────────────────────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+    background: #E8EDF5;
+    border-radius: 10px;
+    padding: 4px;
+    gap: 2px;
+}
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #475569;
+    padding: 6px 14px;
+}
+.stTabs [aria-selected="true"] {
+    background: #fff !important;
+    color: #1E40AF !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10) !important;
+}
+
+/* ── EXPANDER ────────────────────────────────────────────── */
+.stExpander {
+    background: #fff !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important;
+    margin-bottom: .5rem !important;
+}
+.stExpander summary {
+    font-weight: 600 !important;
+    color: #0F172A !important;
+}
+
+/* ── CARDS ───────────────────────────────────────────────── */
+.card {
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 1.15rem 1.3rem;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.05);
+    margin-bottom: .9rem;
+}
+.card-h {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    letter-spacing: .01em;
+}
+
+/* ── BOTONES PRINCIPALES ─────────────────────────────────── */
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #1E40AF, #2563EB) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 9px !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 3px 10px rgba(30,64,175,0.30) !important;
+    transition: all .18s !important;
+    letter-spacing: .02em !important;
+}
+.stButton > button[kind="primary"]:hover {
+    background: linear-gradient(135deg, #1D4ED8, #3B82F6) !important;
+    box-shadow: 0 5px 18px rgba(30,64,175,0.45) !important;
+    transform: translateY(-1px) !important;
+}
+.stButton > button[kind="secondary"] {
+    background: #fff !important;
+    border: 1.5px solid #E2E8F0 !important;
+    border-radius: 8px !important;
+    color: #475569 !important;
+    font-weight: 600 !important;
+    transition: all .15s !important;
+}
+.stButton > button[kind="secondary"]:hover {
+    border-color: #1E40AF !important;
+    color: #1E40AF !important;
+    background: #EFF6FF !important;
+}
+
+/* ── SELECTBOX / INPUTS ──────────────────────────────────── */
+div[data-baseweb="select"] {
+    border-radius: 8px !important;
+}
+div[data-baseweb="select"] div {
+    border-radius: 8px !important;
+    font-size: 13px !important;
+}
+.stTextInput input {
+    border-radius: 8px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    font-size: 13px !important;
+    padding: 8px 12px !important;
+    transition: border-color .15s !important;
+}
+.stTextInput input:focus {
+    border-color: #1E40AF !important;
+    box-shadow: 0 0 0 3px rgba(30,64,175,0.12) !important;
+}
+.stNumberInput input {
+    border-radius: 8px !important;
+    font-size: 13px !important;
+}
+
+/* ── SLIDER ──────────────────────────────────────────────── */
+.stSlider [data-baseweb="slider"] div[role="slider"] {
+    background: #1E40AF !important;
+    border-color: #1E40AF !important;
+}
+.stSlider [data-baseweb="slider"] div[data-testid="stThumbValue"] {
+    background: #1E40AF !important;
+    color: #fff !important;
+    font-size: 11px !important;
+}
+
+/* ── MULTISELECT ─────────────────────────────────────────── */
+.stMultiSelect span[data-baseweb="tag"] {
+    background: #DBEAFE !important;
+    color: #1E40AF !important;
+    border-radius: 5px !important;
+    font-size: 11px !important;
+}
+
+/* ── SUCCESS / INFO / WARNING / ERROR ────────────────────── */
+.stSuccess {
+    background: #F0FDF4 !important;
+    border: 1px solid #BBF7D0 !important;
+    border-radius: 8px !important;
+    color: #166534 !important;
+}
+.stInfo {
+    background: #EFF6FF !important;
+    border: 1px solid #BFDBFE !important;
+    border-radius: 8px !important;
+    color: #1E40AF !important;
+}
+.stWarning {
+    background: #FFFBEB !important;
+    border: 1px solid #FDE68A !important;
+    border-radius: 8px !important;
+    color: #92400E !important;
+}
+
+/* ── ENCABEZADOS ─────────────────────────────────────────── */
+.sh {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 4px;
+    letter-spacing: -.01em;
+}
+.sd {
+    font-size: 12px;
+    color: #64748B;
+    margin-bottom: 1.1rem;
+    font-weight: 400;
+}
+
+/* ── RESULT BOX ──────────────────────────────────────────── */
+.res-box {
+    background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%);
+    border: 1px solid #BFDBFE;
+    border-radius: 14px;
+    padding: 1.15rem;
+    box-shadow: 0 4px 16px rgba(30,64,175,0.09);
+}
+.res-n {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1E40AF;
+    line-height: 1;
+    letter-spacing: -.02em;
+}
+.res-l { font-size: 11px; color: #3B82F6; margin-top: 3px; font-weight: 500; }
+.vt { height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden; margin: 6px 0; }
+.vf { height: 100%; border-radius: 4px; transition: width .5s cubic-bezier(.4,0,.2,1); }
+
+/* ── BADGES ──────────────────────────────────────────────── */
+.bdg {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+    letter-spacing: .01em;
+}
+.bs { background: #DCFCE7; color: #166534; }
+.bw { background: #FEF3C7; color: #92400E; }
+.bd { background: #FEE2E2; color: #991B1B; }
+.bi { background: #DBEAFE; color: #1E40AF; }
+.bg { background: #F1F5F9; color: #475569; }
+
+/* ── ALERTAS ─────────────────────────────────────────────── */
+.al-s {
+    background: #F0FDF4; border: 1px solid #BBF7D0;
+    border-left: 4px solid #22C55E; border-radius: 8px;
+    padding: 9px 13px; font-size: 11px; color: #166534;
+    margin-bottom: 7px; line-height: 1.5;
+}
+.al-w {
+    background: #FFFBEB; border: 1px solid #FDE68A;
+    border-left: 4px solid #F59E0B; border-radius: 8px;
+    padding: 9px 13px; font-size: 11px; color: #92400E;
+    margin-bottom: 7px; line-height: 1.5;
+}
+.al-r {
+    background: #FEF2F2; border: 1px solid #FECACA;
+    border-left: 4px solid #EF4444; border-radius: 8px;
+    padding: 9px 13px; font-size: 11px; color: #991B1B;
+    margin-bottom: 7px; line-height: 1.5;
+}
+.al-i {
+    background: #EFF6FF; border: 1px solid #BFDBFE;
+    border-left: 4px solid #3B82F6; border-radius: 8px;
+    padding: 9px 13px; font-size: 11px; color: #1E40AF;
+    margin-bottom: 7px; line-height: 1.5;
+}
+
+/* ── RUTA FORMATIVA ──────────────────────────────────────── */
+.rt {
+    border-radius: 9px;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.foot {
+    text-align: center;
+    font-size: 11px;
+    color: #94A3B8;
+    padding: .85rem 0;
+    border-top: 1px solid #E2E8F0;
+    margin-top: 2rem;
+    font-weight: 400;
+}
+
+/* ── TABLA ───────────────────────────────────────────────── */
+.stDataFrame {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* ── SCROLLBAR ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -144,13 +463,17 @@ MF = {
 # =============================================================================
 with st.sidebar:
     st.markdown(
-        "<div style='padding:14px 2px 18px;border-bottom:1px solid rgba(255,255,255,.1)'>"
-        "<div style='display:flex;align-items:center;gap:10px'>"
-        "<div style='width:40px;height:40px;background:#1E40AF;border-radius:10px;"
-        "display:flex;align-items:center;justify-content:center;font-size:20px'>🎓</div>"
-        "<div><div style='font-size:16px;font-weight:700;color:#F8FAFC'>SN Predict</div>"
-        "<div style='font-size:11px;color:#94A3B8'>SENA Occidente · v3.2</div></div>"
-        "</div></div>",
+        "<div style='padding:16px 4px 20px;border-bottom:1px solid rgba(255,255,255,.10)'>"
+        "<div style='display:flex;align-items:center;gap:12px'>"
+        "<div style='width:44px;height:44px;"
+        "background:linear-gradient(135deg,#1E40AF,#2563EB);"
+        "border-radius:12px;display:flex;align-items:center;"
+        "justify-content:center;font-size:22px;"
+        "box-shadow:0 4px 12px rgba(30,64,175,0.4);flex-shrink:0'>🎓</div>"
+        "<div>"
+        "<div style='font-size:17px;font-weight:800;color:#F8FAFC;letter-spacing:-.01em'>SN Predict</div>"
+        "<div style='font-size:11px;color:#93C5FD;font-weight:500'>SENA Occidente · v3.2</div>"
+        "</div></div></div>",
         unsafe_allow_html=True,
     )
     st.write("")
@@ -330,7 +653,7 @@ def tabla_html(headers: list, rows: list) -> str:
 # =============================================================================
 if modulo == "🎯 Predictor inteligente":
 
-    st.markdown('<div class="sh">🎯 Predictor inteligente</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sh" style="display:flex;align-items:center;gap:10px">🎯 Predictor inteligente</div>', unsafe_allow_html=True)
     st.markdown(
         '<div class="sd">Sector → filtra programas · ⭐ = mayor demanda · '
         'Programa → auto-rellena datos · Mapa de calor + Historial instructores</div>',
@@ -343,22 +666,34 @@ if modulo == "🎯 Predictor inteligente":
         key="kw_v3",
     )
     if kw and len(kw) >= 2:
-        todos_p = [
-            (p["prog"], sec, p["nivel"], p["dur"], p["prom"], p["meses"], p.get("estrella", False))
-            for sec, progs in SEC_PROG.items() for p in progs
-        ]
-        mts = [(p,s,n,du,pm,m,e) for p,s,n,du,pm,m,e in todos_p if kw.lower() in p.lower()][:6]
+        todos_p = []
+        for sec, progs in SEC_PROG.items():
+            for p in progs:
+                if not isinstance(p, dict):
+                    continue
+                prog_n = p.get("prog", p.get("NOMBRE_PROGRAMA_FORMACION", ""))
+                nivel  = p.get("nivel", p.get("NIVEL_FORMACION", "CURSO ESPECIAL"))
+                dur    = p.get("dur",   p.get("DURACION_PROGRAMA", 48))
+                prom   = p.get("prom",  p.get("TOTAL_APRENDICES", 0))
+                meses  = p.get("meses", 0)
+                estr   = p.get("estrella", False)
+                if prog_n:
+                    todos_p.append((prog_n, sec, nivel, dur, prom, meses, estr))
+        mts = [(p,s,n,du,pm,m,e) for p,s,n,du,pm,m,e in todos_p
+               if kw.lower() in p.lower()][:6]
         if mts:
             st.markdown(f"**{len(mts)} resultado(s) para «{kw}»:**")
             cks = st.columns(min(len(mts), 3))
-            for i, (prog, sec, niv, dur, prom, mes, estr) in enumerate(mts):
-                    ico = "⭐" if estr else ("⚠️" if mes > 12 else "📌")
-                    lbl_k = ico + " " + prog[:30] + " | " + niv + " · " + str(prom) + " ap/f"
-                    if st.button(lbl_k, key=f"kw{i}", use_container_width=True):
+            for idx_b, (prog, sec, niv, dur, prom, mes, estr) in enumerate(mts):
+                with cks[idx_b % 3]:
+                    ico  = "⭐" if estr else ("⚠️" if mes > 12 else "📌")
+                    lbl_k = f"{ico} {prog[:28]} | {niv} · {prom} ap/f"
+                    if st.button(lbl_k, key=f"kw{idx_b}", use_container_width=True):
                         st.session_state["v3s"] = sec
                         st.session_state["v3p"] = prog
                         st.rerun()
-            st.caption(f"Sin resultados para «{kw}».")
+        else:
+            st.caption(f"Sin resultados para «{kw}». Prueba: café, ganadería, inglés…")
 
     col_f, col_r = st.columns([1.05, 0.95], gap="large")
 
@@ -431,7 +766,7 @@ if modulo == "🎯 Predictor inteligente":
         mes_lbl = ("🔥 Mes pico (+18%)" if p_mes in MM else
                    "📈 Segundo pico (+12%)" if p_mes in MA else
                    "❄️ Mes bajo (-28%)" if p_mes in ML else "")
-        st.caption(f"Mes: **{MESES_L[p_mes]}**  {mes_lbl}")
+        st.caption(f"📅 Mes seleccionado: **{MESES_L[p_mes]}**  {mes_lbl}")
 
         inst_opts = ["— Sin preferencia (prom. 24.5) —"] + [
             f"{r['n']} — {r['prom']} ap/f ({r['fichas']} fichas)" for r in (RESP or [])
@@ -602,7 +937,7 @@ if modulo == "🎯 Predictor inteligente":
 # MÓDULO 2 — DEMANDA POR NIVEL
 # =============================================================================
 elif modulo == "📊 Demanda por nivel":
-    st.markdown('<div class="sh">📊 Demanda por nivel de formación</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sh" style="display:flex;align-items:center;gap:10px">📊 Demanda por nivel de formación</div>', unsafe_allow_html=True)
     st.markdown('<div class="sd">Distribución histórica por nivel, sector y municipio</div>', unsafe_allow_html=True)
 
     nf = st.radio("Filtrar por nivel:",
@@ -675,7 +1010,7 @@ elif modulo == "📊 Demanda por nivel":
 # MÓDULO 3 — RECOMENDACIONES
 # =============================================================================
 elif modulo == "⚡ Recomendaciones":
-    st.markdown('<div class="sh">⚡ Recomendaciones por municipio</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sh" style="display:flex;align-items:center;gap:10px">⚡ Recomendaciones por municipio</div>', unsafe_allow_html=True)
     st.markdown('<div class="sd">Programas históricos con última oferta · Ruta formativa estratégica · ⭐ de mayor demanda</div>', unsafe_allow_html=True)
 
     cr1,cr2 = st.columns([1.0,1.6])
@@ -755,7 +1090,7 @@ elif modulo == "⚡ Recomendaciones":
 # MÓDULO 4 — OPORTUNIDADES DE MEJORA
 # =============================================================================
 elif modulo == "🔭 Oportunidades de mejora":
-    st.markdown('<div class="sh">🔭 Oportunidades de mejora</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sh" style="display:flex;align-items:center;gap:10px">🔭 Oportunidades de mejora</div>', unsafe_allow_html=True)
     st.markdown('<div class="sd">Barras apiladas por nivel · Filtros de año y rubro · Carga de datos actualizados</div>', unsafe_allow_html=True)
 
     RKWS={"Café":["cafe","café","cafeto"],"Cacao":["cacao"],"Aguacate":["aguacate"],
@@ -911,7 +1246,7 @@ elif modulo == "🔭 Oportunidades de mejora":
 # MÓDULO 5 — MANUAL DE USUARIO
 # =============================================================================
 elif modulo == "📖 Manual de usuario":
-    st.markdown('<div class="sh">📖 Manual de usuario</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sh" style="display:flex;align-items:center;gap:10px">📖 Manual de usuario</div>', unsafe_allow_html=True)
     st.markdown('<div class="sd">Guía completa SN Predict v3.2 — SENA Occidente de Antioquia</div>', unsafe_allow_html=True)
 
     with st.expander("🎯 Módulo 1 — Predictor inteligente", expanded=True):
